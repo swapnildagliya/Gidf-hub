@@ -65,7 +65,7 @@ body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg
 .fn-cta:hover{text-decoration:underline}
 .fn-passes{font-size:11px;font-weight:600;color:var(--t2);padding:12px 18px;display:flex;align-items:center;
   gap:5px;cursor:pointer;text-decoration:none;transition:all .15s;font-family:'Inter',sans-serif;
-  background:none;border:none;width:100%;text-align:left}
+  width:100%;text-align:left}
 .fn-passes:hover{color:var(--dark);background:#FBF6EF}
 @media(max-width:768px){.float-nav{display:none}}
 
@@ -506,19 +506,19 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 
 <!-- FLOAT NAV (desktop) -->
 <nav class="float-nav">
-  <button class="fn-item fn-active" onclick="tab('workshops',this)">
+  <div class="fn-item fn-active" onclick="tab('workshops',this)" role="button" tabindex="0">
     <span class="fn-tab-name">Workshops</span>
     <a class="fn-cta" href="https://creatorapp.zohopublic.eu/developer_shoonyadance/shoonya-dance-studio/form-perma/Workshop_Registration_Form/uOO7GVYHQEJn5dSVDz7z1nTXXeEfD0AZ4PJvtQJ0ZbMRum3tBX30zxQHC02n9b3bvTO6ORFDsVCfS4bJQF1VOZdBMZquYuPb4xx8" target="_blank" onclick="event.stopPropagation()">Register →</a>
-  </button>
-  <button class="fn-item" onclick="tab('show',this)">
+  </div>
+  <div class="fn-item" onclick="tab('show',this)" role="button" tabindex="0">
     <span class="fn-tab-name">Gala Showcase</span>
     <a class="fn-cta" href="https://www.abcbollywoodbelgium.com/the-gala-showcase" target="_blank" onclick="event.stopPropagation()">Buy Tickets →</a>
-  </button>
-  <button class="fn-item" onclick="tab('party',this)">
+  </div>
+  <div class="fn-item" onclick="tab('party',this)" role="button" tabindex="0">
     <span class="fn-tab-name">Opening Party</span>
     <a class="fn-cta" href="https://creatorapp.zohopublic.eu/developer_shoonyadance/shoonya-dance-studio/form-perma/Ticket_Registration_Form/uw8PV66d5s2Z5z2G04kXNwjhGMA3B6vBpBWX6NSUC9Ybb0eyb4tUTbNTh0teeDSbAB5O6jnU4wPy67fT7feU3c7h1pyxe2mEtsu4" target="_blank" onclick="event.stopPropagation()">Get Tickets →</a>
-  </button>
-  <button class="fn-passes" onclick="tab('prices',this)">View all passes →</button>
+  </div>
+  <div class="fn-passes" onclick="tab('prices',this)" role="button" tabindex="0">View all passes →</div>
 </nav>
 
 <!-- STORY SCROLL -->
@@ -566,7 +566,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
               <div class="sd-dot sd-dot-lg" style="background:var(--gold)"></div>
             </div>
             <div class="sd-content-party">
-              <div class="sd-label">Night · From 21:00</div>
+              <div class="sd-label">Evening · From 20:00</div>
               <div class="sd-name sd-featured">Opening Party</div>
               <div class="sd-sub">Live performances · Dariya Live Band · DJ @swapkebolly · Kalbeliya community class included</div>
             </div>
@@ -957,12 +957,12 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <!-- ═══ OPENING PARTY ═══ -->
 <div id="tab-party" style="display:none">
   <div class="reg-bar">
-    <div class="reg-bar-text"><strong>Join the Opening Party</strong><span>Friday 1 May 2026 · Studio Ananta · From 21:00</span></div>
+    <div class="reg-bar-text"><strong>Join the Opening Party</strong><span>Friday 1 May 2026 · Studio Ananta · From 20:00</span></div>
     <!-- Update href with actual ticket/registration URL -->
     <a class="reg-btn" href="https://creatorapp.zohopublic.eu/developer_shoonyadance/shoonya-dance-studio/form-perma/Ticket_Registration_Form/uw8PV66d5s2Z5z2G04kXNwjhGMA3B6vBpBWX6NSUC9Ybb0eyb4tUTbNTh0teeDSbAB5O6jnU4wPy67fT7feU3s7h1pyxe2mEtsu4" target="_blank">Get Tickets →</a>
   </div>
   <div class="op-banner">
-    <div class="op-tag">Friday 1 May 2026 &nbsp;&middot;&nbsp; 21:00 onwards</div>
+    <div class="op-tag">Friday 1 May 2026 &nbsp;&middot;&nbsp; 20:00 onwards</div>
     <div class="op-title">Opening <span>Party</span></div>
     <div class="op-when">Studio Ananta &nbsp;&middot;&nbsp; Shoonya Dance Centre, Ghent</div>
     <p class="op-desc">GIDF 2026 opens with a night of live performances, music, and community. Ten specially curated performers take the stage — followed by live music from Dariya and DJ @swapkebolly into the night.</p>
@@ -987,7 +987,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
     <div class="op-card">
       <div class="op-icon">🌿</div>
       <div class="op-card-title">Community Class: Kalbeliya</div>
-      <p class="op-card-desc">Included with your Opening Party ticket — join Swapnil for Kalbeliya from 20:15 – 21:00 before the party begins. No experience needed.</p>
+      <p class="op-card-desc">Included with your Opening Party ticket — join Swapnil for a Kalbeliya community class from 20:15. No experience needed.</p>
     </div>
   </div>
 </div>
@@ -1164,7 +1164,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
       <div>
         <div class="ind-name">Opening Party</div>
         <div class="ind-price">€15</div>
-        <div class="ind-desc">Friday from 21:00 · Studio Ananta<br>Includes Costume Workshop, Community Class, Live Band &amp; DJ</div>
+        <div class="ind-desc">Friday from 20:00 · Studio Ananta<br>Includes Kalbeliya Community Class, Live Band &amp; DJ</div>
       </div>
     </div>
 
@@ -1212,7 +1212,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
       <div class="info-title">Three Days at a Glance</div>
       <div class="irows">
         <div class="irow"><span class="irow-lbl">Fri 12:00</span><span class="irow-val">Friday workshops begin</span></div>
-        <div class="irow"><span class="irow-lbl">Fri 21:00</span><span class="irow-val">Opening Party · Studio Ananta</span></div>
+        <div class="irow"><span class="irow-lbl">Fri 20:00</span><span class="irow-val">Opening Party · Studio Ananta</span></div>
         <div class="irow"><span class="irow-lbl">Sat 09:00</span><span class="irow-val">Saturday workshops begin</span></div>
         <div class="irow"><span class="irow-lbl">Sat 20:30</span><span class="irow-val">Gala Showcase · Shoonya Theatre</span></div>
         <div class="irow"><span class="irow-lbl">Sun 09:30</span><span class="irow-val">Sunday workshops begin</span></div>
@@ -1424,7 +1424,7 @@ const SCHED = {
     {s:'18:30',e:'20:00',n:'Garba Choreography',w:'Shampa Gopikrishna · Art Deco',t:'workshop'},
     {s:'20:00',e:'20:15',n:'Costume Workshop',w:'Kalbeliya Styling',t:'break'},
     {s:'20:15',e:'21:00',n:'Community Class: Kalbeliya',w:'Swapnil Dagliya · Art Deco',t:'community'},
-    {s:'21:00',e:'23:00',n:'Opening Party',w:'Dariya Live Band · DJ @swapkebolly',t:'party'},
+    {s:'20:00',e:'23:00',n:'Opening Party',w:'Kalbeliya Class · Dariya Live Band · DJ @swapkebolly',t:'party'},
   ],
   sat:[
     {s:'08:45',e:'09:00',n:'Rise & Riyaaz',w:'Swapnil · Studio Ananta',t:'riyaaz'},
