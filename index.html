@@ -83,6 +83,8 @@ body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg
 .faq-trigger[aria-expanded="true"] .faq-chevron{transform:rotate(180deg)}
 .faq-body{display:none;padding:0 20px 15px;background:var(--surface)}
 .faq-body.open{display:block}
+.faq-group{margin-bottom:28px}
+.faq-group-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--accent);padding:0 4px;margin-bottom:8px}
 .faq-body p{font-size:13px;color:var(--t2);line-height:1.72}
 
 /* ── CONTENT ── */
@@ -126,21 +128,16 @@ body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg
 .wcard-meta{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:0}
 /* Wear recommendation */
 .wcard-wear{font-size:11px;font-weight:600;color:var(--green);margin-top:8px;display:flex;align-items:center;gap:4px}
-/* Opening Party block in workshops */
-.op-ws-block{grid-column:1/-1;background:var(--dark);border-radius:14px;padding:22px 26px;
-  display:flex;align-items:center;gap:20px;margin-top:4px}
-.op-ws-icon{font-size:28px;flex-shrink:0}
-.op-ws-title{font-family:'Inter',sans-serif;font-size:17px;font-weight:700;color:#fff;margin-bottom:4px}
-.op-ws-sub{font-size:13px;color:#C8A87A;line-height:1.55}
-.op-ws-cta{margin-left:auto;flex-shrink:0;display:inline-flex;align-items:center;background:var(--gold);
-  color:var(--dark);padding:10px 20px;border-radius:50px;text-decoration:none;font-size:13px;
-  font-weight:700;font-family:'Hind',sans-serif;white-space:nowrap}
-@media(max-width:580px){.op-ws-block{flex-wrap:wrap}.op-ws-cta{margin-left:0}}
 
 /* Break rows */
-.break-row{display:flex;align-items:center;gap:14px;padding:10px 4px;color:var(--t3);font-size:13px}
+.break-row{display:flex;align-items:center;gap:10px;padding:6px 4px;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--t3)}
 .break-row::before,.break-row::after{content:'';flex:1;height:1px;background:var(--border)}
-.break-row::before{flex:0 0 0}
+.break-row::before{flex:1}
+.br-riyaaz{color:#3B5BDB}.br-riyaaz::before{flex:0 0 0}.br-riyaaz::after{background:#C5D0FB}
+.br-chai{color:#8C5E2A}.br-chai::after{background:#DEC49A}
+.br-gupshup{color:#9C4F7A}.br-gupshup::after{background:#E0B8D0}
+.br-costume{color:#4A7C59}.br-costume::after{background:#B6D9C3}
+.br-lunch::before{flex:1}
 
 /* ── TEACHER PROFILES ── */
 .teachers-section{margin-top:48px}
@@ -282,33 +279,84 @@ body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg
 .newcomer::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 100%,rgba(196,132,26,.22),transparent)}
 .newcomer::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 20% 0%,rgba(107,45,122,.35),transparent)}
 .nc-eyebrow{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:#E8A96A;margin-bottom:16px;position:relative}
-.nc-heading{font-family:'Inter',sans-serif;font-size:clamp(26px,5vw,44px);font-weight:800;color:#fff;margin-bottom:18px;line-height:1.15;position:relative;letter-spacing:-.5px}
-.nc-text{font-size:15px;color:rgba(255,255,255,.72);line-height:1.85;max-width:560px;margin:0 auto 32px;position:relative}
+.nc-heading{font-family:'Inter',sans-serif;font-size:clamp(26px,5vw,44px);font-weight:800;color:#fff;margin-bottom:16px;line-height:1.15;position:relative;letter-spacing:-.5px}
+.nc-text{font-size:15px;color:rgba(255,255,255,.65);line-height:1.85;max-width:560px;margin:0 auto 40px;position:relative}
+.nc-options{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:720px;margin:0 auto 32px;position:relative;text-align:left}
+@media(max-width:600px){.nc-options{grid-template-columns:1fr}}
+.nc-option{border-radius:14px;padding:26px;display:flex;flex-direction:column;gap:10px}
+.nc-option-party{background:rgba(196,132,26,.12);border:1px solid rgba(196,132,26,.3)}
+.nc-option-discovery{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15)}
+.nc-opt-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,.4)}
+.nc-opt-title{font-family:'Inter',sans-serif;font-size:18px;font-weight:800;color:#fff;line-height:1.2}
+.nc-option-party .nc-opt-title{color:var(--gold)}
+.nc-opt-price{font-family:'Inter',sans-serif;font-size:28px;font-weight:900;color:#fff}
+.nc-opt-desc{font-size:13px;color:rgba(255,255,255,.6);line-height:1.65;flex:1}
+.nc-opt-includes{display:flex;flex-direction:column;gap:5px;margin-top:2px}
+.nc-opt-row{font-size:12px;color:rgba(255,255,255,.5);display:flex;gap:7px;align-items:baseline}
+.nc-opt-row::before{content:'·';color:rgba(255,255,255,.3);flex-shrink:0}
 .nc-btn{display:inline-flex;align-items:center;background:var(--gold);color:var(--dark);padding:15px 36px;border-radius:50px;text-decoration:none;font-size:15px;font-weight:700;font-family:'Hind',sans-serif;transition:all .15s;position:relative;letter-spacing:.3px}
 .nc-btn:hover{background:#A06B12;color:#fff}
+.nc-btn-secondary{display:inline-flex;align-items:center;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.25);color:#fff;padding:15px 36px;border-radius:50px;text-decoration:none;font-size:15px;font-weight:600;font-family:'Hind',sans-serif;transition:all .15s;position:relative;letter-spacing:.3px}
+.nc-btn-secondary:hover{background:rgba(255,255,255,.18)}
+.nc-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative}
 
 /* ── OPENING PARTY ── */
 .op-banner{background:var(--dark);border-radius:16px;padding:44px 40px;margin-bottom:24px;position:relative;overflow:hidden}
 .op-banner::before{content:'';position:absolute;inset:0;
   background:radial-gradient(ellipse 70% 80% at 85% 50%,rgba(196,132,26,.1),transparent),
              radial-gradient(ellipse 40% 60% at 15% 80%,rgba(181,66,26,.1),transparent)}
-.op-tag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2.5px;color:#7A6A52;margin-bottom:14px;position:relative}
+.op-tag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2.5px;color:rgba(255,255,255,.35);margin-bottom:14px;position:relative}
 .op-title{font-family:'Inter',sans-serif;font-size:clamp(32px,6vw,52px);
   font-weight:900;color:#fff;margin-bottom:12px;line-height:1.05;position:relative;letter-spacing:-.8px}
 .op-title span{color:var(--gold)}
 .op-when{font-size:14px;color:#C8A87A;margin-bottom:18px;position:relative}
-.op-desc{font-size:14px;color:#7A6A52;line-height:1.75;max-width:540px;position:relative}
-.op-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
-.op-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px}
-.op-icon{font-size:24px;margin-bottom:10px}
-.op-card-title{font-size:14px;font-weight:700;color:var(--dark);margin-bottom:6px}
-.op-card-desc{font-size:13px;color:var(--t2);line-height:1.65}
+.op-desc{font-size:14px;color:rgba(255,255,255,.55);line-height:1.75;max-width:560px;position:relative}
+/* Evening timeline strip */
+.op-timeline{display:flex;gap:0;margin-bottom:28px;border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.op-tslot{flex:1;padding:14px 16px;border-right:1px solid var(--border);text-align:center}
+.op-tslot:last-child{border-right:none}
+.op-tslot-time{font-size:10px;font-weight:700;color:var(--accent);letter-spacing:.8px;text-transform:uppercase;margin-bottom:4px}
+.op-tslot-name{font-size:12px;font-weight:700;color:var(--dark);line-height:1.3}
+@media(max-width:600px){.op-timeline{flex-wrap:wrap}.op-tslot{flex:0 0 50%;border-bottom:1px solid var(--border)}}
+/* Feature cards */
+.op-features{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+@media(max-width:640px){.op-features{grid-template-columns:1fr}}
+.op-feat{border-radius:14px;padding:28px;display:flex;flex-direction:column;gap:12px}
+.op-feat-kalbeliya{background:linear-gradient(135deg,#1C1108 0%,#2E1A08 60%,#3D2A0E 100%);
+  border:1px solid rgba(196,132,26,.3)}
+.op-feat-dariya{background:linear-gradient(135deg,#0D1A14 0%,#122018 60%,#1A3028 100%);
+  border:1px solid rgba(74,124,89,.3)}
+.op-feat-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2px}
+.op-feat-kalbeliya .op-feat-label{color:var(--gold)}
+.op-feat-dariya .op-feat-label{color:#6EC68A}
+.op-feat-title{font-family:'Inter',sans-serif;font-size:22px;font-weight:800;color:#fff;line-height:1.15;letter-spacing:-.3px}
+.op-feat-desc{font-size:13px;color:rgba(255,255,255,.6);line-height:1.7;flex:1}
+.op-feat-meta{font-size:11px;font-weight:600;color:rgba(255,255,255,.35);letter-spacing:.3px}
+/* Bottom strip */
+.op-strip{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:500px){.op-strip{grid-template-columns:1fr}}
+.op-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+.op-icon{font-size:22px;margin-bottom:8px}
+.op-card-title{font-size:13px;font-weight:700;color:var(--dark);margin-bottom:5px}
+.op-card-desc{font-size:12px;color:var(--t2);line-height:1.65}
 
 /* ── PRACTICAL INFO ── */
 .info-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:16px}
 .info-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:26px}
 .info-icon{font-size:26px;margin-bottom:14px}
 .info-title{font-family:'Inter',sans-serif;font-size:16px;font-weight:700;color:var(--dark);margin-bottom:14px;letter-spacing:-.1px}
+/* Venue feature card */
+.venue-card{background:var(--dark);border-radius:16px;padding:40px;margin-bottom:20px;position:relative;overflow:hidden;display:flex;gap:40px;align-items:flex-start}
+.venue-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 90% 50%,rgba(196,132,26,.08),transparent)}
+.venue-card-body{flex:1}
+.venue-eyebrow{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2.5px;color:rgba(255,255,255,.35);margin-bottom:12px}
+.venue-name{font-family:'Inter',sans-serif;font-size:clamp(22px,4vw,32px);font-weight:800;color:#fff;line-height:1.1;margin-bottom:8px;letter-spacing:-.4px}
+.venue-address{font-size:13px;color:var(--gold);font-weight:600;margin-bottom:18px;letter-spacing:.2px}
+.venue-desc{font-size:14px;color:rgba(255,255,255,.6);line-height:1.8;max-width:580px;margin-bottom:24px}
+.venue-actions{display:flex;gap:10px;flex-wrap:wrap}
+.venue-map-btn{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.2);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:600;font-family:'Hind',sans-serif;transition:all .15s}
+.venue-map-btn:hover{background:rgba(255,255,255,.18)}
+@media(max-width:640px){.venue-card{flex-direction:column;gap:24px;padding:28px}}
 .irows{display:flex;flex-direction:column;gap:9px}
 .irow{display:flex;gap:12px;font-size:13px}
 .irow-lbl{font-weight:700;color:var(--accent);text-transform:uppercase;font-size:10px;letter-spacing:.6px;min-width:72px;padding-top:2px;flex-shrink:0}
@@ -483,6 +531,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
   .sticky-nav{padding:0 8px}
   .snav-btn{padding:12px 13px;font-size:12px}
   .op-banner{padding:32px 24px}
+  .op-feat-title{font-size:18px}
   footer{padding:36px 20px}
 }
 </style>
@@ -665,8 +714,39 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <div class="newcomer">
   <div class="nc-eyebrow">Never tried Indian dance?</div>
   <h2 class="nc-heading">You don't need experience.<br>Just curiosity.</h2>
-  <p class="nc-text">The Opening Party on Friday night is the perfect way in. Watch ten live performances, join a Kalbeliya community class with Swapnil, and dance the night away with the Dariya Live Band and DJ @swapkebolly — all for €15. No skills, no costume, no prior knowledge needed.</p>
-  <a class="nc-btn" href="https://creatorapp.zohopublic.eu/developer_shoonyadance/shoonya-dance-studio/form-perma/Ticket_Registration_Form/uw8PV66d5s2Z5z2G04kXNwjhGMA3B6vBpBWX6NSUC9Ybb0eyb4tUTbNTh0teeDSbAB5O6jnU4wPy67fT7feU3s7h1pyxe2mEtsu4" target="_blank">Come to the Party — €15</a>
+  <p class="nc-text">GIDF is built for everyone — whether you've danced for twenty years or never set foot in a studio. Here are two easy ways in.</p>
+
+  <div class="nc-options">
+    <div class="nc-option nc-option-party">
+      <div class="nc-opt-label">Start here · Friday night</div>
+      <div class="nc-opt-title">Opening Party</div>
+      <div class="nc-opt-price">€15</div>
+      <p class="nc-opt-desc">The festival opens on the floor. Join a Kalbeliya community class with Swapnil, watch ten live performances, then stay for Dariya Live Band and DJ @swapkebolly into the night.</p>
+      <div class="nc-opt-includes">
+        <div class="nc-opt-row">Kalbeliya community class — no experience needed</div>
+        <div class="nc-opt-row">Ten live performances</div>
+        <div class="nc-opt-row">Dariya Live Band + DJ @swapkebolly</div>
+      </div>
+    </div>
+    <div class="nc-option nc-option-discovery">
+      <div class="nc-opt-label">Try the workshops · Sat &amp; Sun</div>
+      <div class="nc-opt-title">Discovery Pass</div>
+      <div class="nc-opt-price">€125</div>
+      <p class="nc-opt-desc">Five workshops across Saturday and Sunday — a curated selection designed to give you a real taste of different Indian dance forms. No prior experience needed for any of them.</p>
+      <div class="nc-opt-includes">
+        <div class="nc-opt-row">Mayurbhanj Chhau — Shampa Gopikrishna</div>
+        <div class="nc-opt-row">Giddha — Manasi</div>
+        <div class="nc-opt-row">Abhinaya — Colleena Shakti</div>
+        <div class="nc-opt-row">Desi-Afro Grooves — Desihop</div>
+        <div class="nc-opt-row">Bamboo Beats: Cheraw — Vaishali Sagar</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nc-btns">
+    <a class="nc-btn" href="https://creatorapp.zohopublic.eu/developer_shoonyadance/shoonya-dance-studio/form-perma/Ticket_Registration_Form/uw8PV66d5s2Z5z2G04kXNwjhGMA3B6vBpBWX6NSUC9Ybb0eyb4tUTbNTh0teeDSbAB5O6jnU4wPy67fT7feU3s7h1pyxe2mEtsu4" target="_blank">Opening Party — €15</a>
+    <a class="nc-btn-secondary" href="https://creatorapp.zohopublic.eu/developer_shoonyadance/shoonya-dance-studio/form-perma/Workshop_Registration_Form/uOO7GVYHQEJn5dSVDz7z1nTXXeEfD0AZ4PJvtQJ0ZbMRum3tBX30zxQHC02n9b3bvTO6ORFDsVCfS4bJQF1VOZdBMZquYuPb4xx8" target="_blank">Discovery Pass — €125</a>
+  </div>
 </div>
 
 <div class="content">
@@ -674,7 +754,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <!-- ═══ WORKSHOPS ═══ -->
 <div id="tab-workshops">
   <div class="reg-bar">
-    <div class="reg-bar-text"><strong>Ready to join?</strong><span>Secure your spot in the workshops you want — places are limited.</span></div>
+    <div class="reg-bar-text"><strong>Ready to join?</strong><span>Secure your spot — places are limited. All registrations are non-refundable.</span></div>
     <!-- Update href with actual registration URL -->
     <a class="reg-btn" href="https://creatorapp.zohopublic.eu/developer_shoonyadance/shoonya-dance-studio/form-perma/Workshop_Registration_Form/uOO7GVYHQEJn5dSVDz7z1nTXXeEfD0AZ4PJvtQJ0ZbMRum3tBX30zxQHC02n9b3bvTO6ORFDsVCfS4bJQF1VOZdBMZquYuPb4xx8" target="_blank">Register for Workshops →</a>
   </div>
@@ -690,7 +770,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
     <div class="wcard full">
       <div class="wcard-top">
         <div class="wcard-time">12:00 – 16:00</div>
-        <div class="wcard-title">Technique &amp; Tools Lab: Pushing the Boundaries of Rajasthani Folk</div>
+        <div class="wcard-title">Technique &amp; Tools Lab<br><span style="font-weight:500;opacity:0.75">Pushing the Boundaries of Rajasthani Folk</span></div>
         <div class="wcard-meta"><span class="wcard-teacher">✦ Colleena Shakti</span><span class="wcard-studio">Studio Aakash</span></div>
         <div class="wcard-wear">👗 Flowy skirt + fitted top</div>
       </div>
@@ -728,9 +808,9 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 
   </div>
 
-  <div class="break-row">16:30 – 17:00 &nbsp;·&nbsp; Spill the Chai — Community Break</div>
+  <div class="break-row">16:30 – 17:00 · Spill the Chai</div>
 
-  <div class="break-row" style="margin-top:8px">20:00 – 20:15 &nbsp;·&nbsp; Costume Workshop: Kalbeliya Styling</div>
+  <div class="break-row br-costume" style="margin-top:8px">20:00 – 20:15 · Costume Workshop: Kalbeliya Styling</div>
 
   <div class="wgrid" style="margin-top:12px">
     <div class="wcard full">
@@ -742,25 +822,15 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
       </div>
       <div class="wcard-body">
         <p class="wcard-desc">Kalbeliya is the serpentine folk dance of the Kalbelia tribe of Rajasthan, recognised by UNESCO as intangible cultural heritage. Fluid, earthy, and deeply alive — this community class is how the Opening Party begins.</p>
+        <p class="wcard-desc" style="margin-top:10px;color:var(--accent);font-weight:600">👗 Bring your own flowing skirt, fabric, or scarf — it captures the full magic of the dance. A limited number of skirts available to borrow on the night, first come first served.</p>
         <div class="wcard-badges"><span class="badge b-style">Kalbeliya / Rajasthani Folk</span><span class="badge b-open">Opening Party</span></div>
       </div>
     </div>
   </div>
 
-  <div class="wgrid" style="margin-top:12px">
-    <div class="op-ws-block">
-      <div class="op-ws-icon">🎉</div>
-      <div>
-        <div class="op-ws-title">Opening Party — From 20:00</div>
-        <div class="op-ws-sub">Live performances · Dariya Live Band · DJ @swapkebolly · Studio Ananta</div>
-      </div>
-      <a class="op-ws-cta" href="https://creatorapp.zohopublic.eu/developer_shoonyadance/shoonya-dance-studio/form-perma/Ticket_Registration_Form/uw8PV66d5s2Z5z2G04kXNwjhGMA3B6vBpBWX6NSUC9Ybb0eyb4tUTbNTh0teeDSbAB5O6jnU4wPy67fT7feU3s7h1pyxe2mEtsu4" target="_blank">Get Tickets — €15 →</a>
-    </div>
-  </div>
-
   <!-- SATURDAY -->
   <div class="day-label">Saturday 2 May 2026</div>
-  <div class="break-row" style="margin-bottom:12px">08:45 – 09:00 &nbsp;·&nbsp; Rise &amp; Riyaaz — Morning Warm-Up with Swapnil</div>
+  <div class="break-row br-riyaaz" style="margin-bottom:12px">08:45 – 09:00 · Rise &amp; Riyaaz</div>
   <div class="wgrid">
 
     <div class="wcard">
@@ -768,7 +838,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
         <div class="wcard-time">09:00 – 11:00</div>
         <div class="wcard-title">Kuthu: The Heartbeat of the Streets</div>
         <div class="wcard-meta"><span class="wcard-teacher">✦ Desihop</span><span class="wcard-studio">Studio Art Deco</span></div>
-        <div class="wcard-wear">👗 Comfortable kurta</div>
+        <div class="wcard-wear">👗 Kurta</div>
       </div>
       <div class="wcard-body">
         <p class="wcard-desc">Tamil street dance — high energy, rhythmic, rooted in Tamil cinema and celebration culture. Fast footwork, expressive hand gestures, and unstoppable groove.</p>
@@ -781,7 +851,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
         <div class="wcard-time">11:00 – 12:30</div>
         <div class="wcard-title">The Martial Grace of Mayurbhanj Chhau</div>
         <div class="wcard-meta"><span class="wcard-teacher">✦ Shampa Gopikrishna</span><span class="wcard-studio">Studio Art Deco</span></div>
-        <div class="wcard-wear">👗 Comfortable kurta</div>
+        <div class="wcard-wear">👗 Kurta</div>
       </div>
       <div class="wcard-body">
         <p class="wcard-desc">A semi-classical dance rooted in martial arts and tribal traditions from Odisha. Powerful leaps, warrior postures, and deeply expressive storytelling — movement as mythology.</p>
@@ -789,12 +859,16 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
       </div>
     </div>
 
+  </div>
+  <div class="break-row br-lunch">12:30 – 13:30 · Lunch Break</div>
+  <div class="wgrid">
+
     <div class="wcard">
       <div class="wcard-top">
         <div class="wcard-time">13:30 – 15:00</div>
         <div class="wcard-title">Giddha: The Pulse of Punjab</div>
         <div class="wcard-meta"><span class="wcard-teacher">✦ Manasi</span><span class="wcard-studio">Studio Ananta</span></div>
-        <div class="wcard-wear">👗 Comfortable kurta</div>
+        <div class="wcard-wear">👗 Kurta</div>
       </div>
       <div class="wcard-body">
         <p class="wcard-desc">The folk dance of Punjabi women — lively, expressive, full of wit. Participants perform boliyan (folk verses) and clap in rhythmic patterns, celebrating everyday life with collective joy.</p>
@@ -803,14 +877,14 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
     </div>
 
   </div>
-  <div class="break-row" style="margin:12px 0">15:00 – 15:20 &nbsp;·&nbsp; Spill the Chai — Community Break</div>
+  <div class="break-row" style="margin:10px 0">15:00 – 15:20 · Spill the Chai</div>
   <div class="wgrid">
     <div class="wcard">
       <div class="wcard-top">
         <div class="wcard-time">15:20 – 16:50</div>
         <div class="wcard-title">Abhinaya: Training Expression for Dance</div>
         <div class="wcard-meta"><span class="wcard-teacher">✦ Colleena Shakti</span><span class="wcard-studio">Studio Ananta</span></div>
-        <div class="wcard-wear">👗 Comfortable kurta</div>
+        <div class="wcard-wear">👗 Kurta</div>
       </div>
       <div class="wcard-body">
         <p class="wcard-desc">The ancient art of expressive storytelling — communicating emotion through facial expression, gesture, and the whole body. Learn to inhabit a character and move an audience.</p>
@@ -822,7 +896,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 
   <!-- SUNDAY -->
   <div class="day-label">Sunday 3 May 2026</div>
-  <div class="break-row" style="margin-bottom:12px">09:15 – 09:30 &nbsp;·&nbsp; Rise &amp; Riyaaz — Morning Warm-Up with Swapnil</div>
+  <div class="break-row br-riyaaz" style="margin-bottom:12px">09:15 – 09:30 · Rise &amp; Riyaaz</div>
   <div class="wgrid">
 
     <div class="wcard">
@@ -830,7 +904,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
         <div class="wcard-time">09:30 – 11:00</div>
         <div class="wcard-title">Indian Fusion Bellydance</div>
         <div class="wcard-meta"><span class="wcard-teacher">✦ Colleena Shakti</span><span class="wcard-studio">Studio Ananta</span></div>
-        <div class="wcard-wear">👗 Dance wear</div>
+        <div class="wcard-wear">👗 Comfortable clothing</div>
       </div>
       <div class="wcard-body">
         <p class="wcard-desc">A fusion workshop blending Indian folk aesthetics with the fluid isolations of bellydance — where two ancient traditions meet to create something entirely new.</p>
@@ -843,7 +917,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
         <div class="wcard-time">11:00 – 12:30</div>
         <div class="wcard-title">Desi-Afro Grooves: From Mumbai to Lagos</div>
         <div class="wcard-meta"><span class="wcard-teacher">✦ Desihop</span><span class="wcard-studio">Studio Ananta</span></div>
-        <div class="wcard-wear">👗 Dance wear</div>
+        <div class="wcard-wear">👗 Comfortable clothing</div>
       </div>
       <div class="wcard-body">
         <p class="wcard-desc">A genre-defying workshop exploring where Indian and African dance traditions collide — rhythm, groove, and movement that crosses continents.</p>
@@ -851,12 +925,16 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
       </div>
     </div>
 
+  </div>
+  <div class="break-row br-lunch">12:30 – 13:30 · Lunch Break</div>
+  <div class="wgrid">
+
     <div class="wcard">
       <div class="wcard-top">
         <div class="wcard-time">13:30 – 15:30</div>
         <div class="wcard-title">Lavani: The Bold Heart of Maharashtra</div>
         <div class="wcard-meta"><span class="wcard-teacher">✦ Swapnil Dagliya</span><span class="wcard-studio">Studio Ananta</span></div>
-        <div class="wcard-wear">👗 Comfortable kurta</div>
+        <div class="wcard-wear">👗 Kurta</div>
       </div>
       <div class="wcard-body">
         <p class="wcard-desc">Lavani is a powerful folk form from Maharashtra — strong rhythms, dramatic expression, and the kind of energy that fills a room without warning. Bold, proud, and utterly captivating.</p>
@@ -865,14 +943,14 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
     </div>
 
   </div>
-  <div class="break-row" style="margin:12px 0">15:30 – 15:50 &nbsp;·&nbsp; Spill the Chai — Community Break</div>
+  <div class="break-row" style="margin:10px 0">15:30 – 15:50 · Spill the Chai</div>
   <div class="wgrid">
     <div class="wcard">
       <div class="wcard-top">
         <div class="wcard-time">15:50 – 17:20</div>
         <div class="wcard-title">Bamboo Beats: The Rhythms of Cheraw</div>
         <div class="wcard-meta"><span class="wcard-teacher">✦ Vaishali Sagar</span><span class="wcard-studio">Studio Ananta</span></div>
-        <div class="wcard-wear">👗 Comfortable kurta</div>
+        <div class="wcard-wear">👗 Kurta</div>
       </div>
       <div class="wcard-body">
         <p class="wcard-desc">Cheraw is the bamboo dance of Mizoram, northeast India — a striking and playful tradition where dancers weave between moving bamboo poles. Precision, rhythm, and pure joy.</p>
@@ -882,7 +960,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 
   </div>
 
-  <div class="break-row" style="margin-top:16px">17:20 – 18:00 &nbsp;·&nbsp; One Last Gupshup — Closing Circle</div>
+  <div class="break-row br-gupshup" style="margin-top:14px">17:20 – 18:00 · One Last Gupshup</div>
 
 
 </div><!-- /workshops -->
@@ -891,7 +969,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <!-- ═══ GALA SHOWCASE ═══ -->
 <div id="tab-show" style="display:none">
   <div class="reg-bar">
-    <div class="reg-bar-text"><strong>Get your tickets</strong><span>Saturday 2 May 2026 · Shoonya Theatre · Doors 20:00</span></div>
+    <div class="reg-bar-text"><strong>Get your tickets</strong><span>Saturday 2 May 2026 · Shoonya Theatre · Doors 20:00 · Non-refundable</span></div>
     <a class="reg-btn" href="https://www.abcbollywoodbelgium.com/the-gala-showcase" target="_blank">Buy Tickets →</a>
   </div>
   <div class="sec-header">
@@ -985,6 +1063,8 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
     <div class="checklist">
       <div class="chk"><div class="chk-dot"></div><span>Doors open 20:00 — show begins promptly at 20:30</span></div>
       <div class="chk"><div class="chk-dot"></div><span>Seating in Shoonya Theatre (Studio Art Deco, 1st Floor)</span></div>
+      <div class="chk"><div class="chk-dot"></div><span>General admission — seats available on a first-come, first-served basis</span></div>
+      <div class="chk"><div class="chk-dot"></div><span>Ages 8 and above only — children under 8 are not permitted, to preserve the performance atmosphere</span></div>
       <div class="chk"><div class="chk-dot"></div><span>No photography or video filming during the show</span></div>
       <div class="chk"><div class="chk-dot"></div><span>18 acts, approximately 90 minutes, no interval</span></div>
     </div>
@@ -994,37 +1074,64 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <!-- ═══ OPENING PARTY ═══ -->
 <div id="tab-party" style="display:none">
   <div class="reg-bar">
-    <div class="reg-bar-text"><strong>Join the Opening Party</strong><span>Friday 1 May 2026 · Studio Ananta · From 20:00</span></div>
+    <div class="reg-bar-text"><strong>Join the Opening Party</strong><span>Friday 1 May 2026 · Studio Ananta · From 20:00 · Non-refundable</span></div>
     <!-- Update href with actual ticket/registration URL -->
     <a class="reg-btn" href="https://creatorapp.zohopublic.eu/developer_shoonyadance/shoonya-dance-studio/form-perma/Ticket_Registration_Form/uw8PV66d5s2Z5z2G04kXNwjhGMA3B6vBpBWX6NSUC9Ybb0eyb4tUTbNTh0teeDSbAB5O6jnU4wPy67fT7feU3s7h1pyxe2mEtsu4" target="_blank">Get Tickets →</a>
   </div>
   <div class="op-banner">
-    <div class="op-tag">Friday 1 May 2026 &nbsp;&middot;&nbsp; 20:00 onwards</div>
+    <div class="op-tag">Friday 1 May 2026 &nbsp;&middot;&nbsp; 20:00 onwards &nbsp;&middot;&nbsp; Studio Ananta</div>
     <div class="op-title">Opening <span>Party</span></div>
-    <div class="op-when">Studio Ananta &nbsp;&middot;&nbsp; Shoonya Dance Centre, Ghent</div>
-    <p class="op-desc">GIDF 2026 opens with a night of live performances, music, and community. Ten specially curated performers take the stage — followed by live music from Dariya and DJ @swapkebolly into the night.</p>
+    <p class="op-desc">The festival doesn't start with a lecture or a warm-up stretch. It starts with a dance. GIDF 2026 opens on the floor — Kalbeliya, live music from Dariya, ten performances, and Swapnil on the decks into the night.</p>
   </div>
 
-  <div class="op-cards">
+  <div class="op-timeline">
+    <div class="op-tslot">
+      <div class="op-tslot-time">20:00</div>
+      <div class="op-tslot-name">Doors open</div>
+    </div>
+    <div class="op-tslot">
+      <div class="op-tslot-time">20:15</div>
+      <div class="op-tslot-name">Kalbeliya community class</div>
+    </div>
+    <div class="op-tslot">
+      <div class="op-tslot-time">21:00</div>
+      <div class="op-tslot-name">Live performances</div>
+    </div>
+    <div class="op-tslot">
+      <div class="op-tslot-time">21:00+</div>
+      <div class="op-tslot-name">Dariya Live Band</div>
+    </div>
+    <div class="op-tslot">
+      <div class="op-tslot-time">22:00+</div>
+      <div class="op-tslot-name">DJ @swapkebolly</div>
+    </div>
+  </div>
+
+  <div class="op-features">
+    <div class="op-feat op-feat-kalbeliya">
+      <div class="op-feat-label">How the night begins</div>
+      <div class="op-feat-title">Community Class:<br>Kalbeliya</div>
+      <p class="op-feat-desc">Kalbeliya is the serpentine folk dance of the Kalbelia tribe of Rajasthan — fluid, earthy, and UNESCO-recognised as intangible cultural heritage. Swapnil leads an open community class from 20:15. No experience needed. You will be moving from the very first minute of the festival.</p>
+      <div class="op-feat-meta">Led by Swapnil Dagliya &nbsp;·&nbsp; 20:15 – 21:00 &nbsp;·&nbsp; No experience needed</div>
+    </div>
+    <div class="op-feat op-feat-dariya">
+      <div class="op-feat-label">Live Music</div>
+      <div class="op-feat-title">Dariya<br>Live Band</div>
+      <p class="op-feat-desc">Dariya bring Rajasthani folk music to life — dhol, sarangi, and raw vocals that fill a room and pull you onto the floor. After the performances, they take over. No DJ, no playlist — just the band, the beat, and the crowd moving together.</p>
+      <div class="op-feat-meta">Live from 21:00 &nbsp;·&nbsp; Rajasthani folk &nbsp;·&nbsp; Studio Ananta</div>
+    </div>
+  </div>
+
+  <div class="op-strip">
     <div class="op-card">
       <div class="op-icon">🎭</div>
-      <div class="op-card-title">Ten Live Performances</div>
-      <p class="op-card-desc">An eclectic mix of music, dance, and performance curated to open the festival with intention and joy.</p>
-    </div>
-    <div class="op-card">
-      <div class="op-icon">🎵</div>
-      <div class="op-card-title">Dariya Live Band</div>
-      <p class="op-card-desc">Live music from Dariya follows the performances, setting the tone for an unforgettable opening night.</p>
+      <div class="op-card-title">Ten curated performances</div>
+      <p class="op-card-desc">Indian dance in many forms — specially selected opening party performers who set the mood for the weekend ahead.</p>
     </div>
     <div class="op-card">
       <div class="op-icon">🎧</div>
       <div class="op-card-title">DJ @swapkebolly</div>
-      <p class="op-card-desc">From 22:00 and into the late hours — DJ @swapkebolly keeps the energy going.</p>
-    </div>
-    <div class="op-card">
-      <div class="op-icon">🌿</div>
-      <div class="op-card-title">Community Class: Kalbeliya</div>
-      <p class="op-card-desc">The Opening Party begins with a Kalbeliya community class led by Swapnil from 20:15. No experience needed — just come and dance.</p>
+      <p class="op-card-desc">Swapnil takes the decks from 22:00 — Bollywood, folk beats and everything in between until the night is done.</p>
     </div>
   </div>
 </div>
@@ -1214,7 +1321,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 
   <!-- FINE PRINT -->
   <div class="fine-print">
-    <strong>Please note:</strong> The Gala Showcase and the Technique &amp; Tools Lab are <strong>not included in any pass</strong> — including the Early Bird Festival Pass — and must be booked separately. All passes include Rise &amp; Riyaaz (daily morning class), Spill the Chai (community breaks), and One Last Gupshup (Sunday closing circle). Single workshop prices are higher on the day: <strong>90-minute sessions cost €35 on the spot</strong> (€30 online) and <strong>120-minute sessions cost €45 on the spot</strong> (€40 online) — book in advance to save.
+    <strong>Please note:</strong> The Gala Showcase and the Technique &amp; Tools Lab are <strong>not included in any pass</strong> — including the Early Bird Festival Pass — and must be booked separately. All passes include Rise &amp; Riyaaz (daily morning class), Spill the Chai (community breaks), and One Last Gupshup (Sunday closing circle). Single workshop prices are higher on the day: <strong>90-minute sessions cost €35 on the spot</strong> (€30 online) and <strong>120-minute sessions cost €45 on the spot</strong> (€40 online) — book in advance to save. Entry fees exclude food and drinks, purchased separately on the day. <strong>All registrations and tickets are non-transferable and non-refundable</strong>, including missed sessions and force majeure events.
   </div>
 
 </div><!-- /prices -->
@@ -1228,18 +1335,20 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
     <p class="sec-intro">Everything you need before you arrive at Shoonya Dance Centre for GIDF 2026.</p>
   </div>
 
-  <div class="info-grid">
-    <div class="info-card">
-      <div class="info-icon">📍</div>
-      <div class="info-title">Venue</div>
-      <div class="irows">
-        <div class="irow"><span class="irow-lbl">Name</span><span class="irow-val">Shoonya Dance Centre</span></div>
-        <div class="irow"><span class="irow-lbl">City</span><span class="irow-val">Ghent, Belgium</span></div>
-        <div class="irow"><span class="irow-lbl">Gala Stage</span><span class="irow-val">Shoonya Theatre (Studio Art Deco · First Floor)</span></div>
-        <div class="irow"><span class="irow-lbl">Opening Party</span><span class="irow-val">Studio Ananta · Ground Floor</span></div>
+  <div class="venue-card">
+    <div class="venue-card-body">
+      <div class="venue-eyebrow">Festival Venue</div>
+      <div class="venue-name">Shoonya Dance Centre</div>
+      <div class="venue-address">📍 Stapelplein 41, 9000 Gent — Belgium</div>
+      <p class="venue-desc">Our creative home in the heart of Ghent, Shoonya Dance Centre is the central hub for GIDF. From immersive workshops and technical labs to the Gala Showcase and Opening Party, every moment of the festival unfolds under one roof — in the space where it all happens.</p>
+      <div class="venue-actions">
+        <a class="venue-map-btn" href="https://maps.google.com/?q=Stapelplein+41+9000+Gent" target="_blank">📍 Open in Google Maps</a>
+        <a class="venue-map-btn" href="https://www.shoonyadance.com" target="_blank">↗ shoonyadance.com</a>
       </div>
-      <a class="map-btn" href="https://maps.google.com/?q=Shoonya+Dance+Centre+Ghent" target="_blank">📍 Open in Google Maps</a>
     </div>
+  </div>
+
+  <div class="info-grid">
     <div class="info-card">
       <div class="info-icon">🚗</div>
       <div class="info-title">Getting There</div>
@@ -1251,13 +1360,14 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
       </div>
     </div>
     <div class="info-card">
-      <div class="info-icon">👟</div>
-      <div class="info-title">What to bring</div>
+      <div class="info-icon">👗</div>
+      <div class="info-title">What to wear</div>
       <div class="checklist">
-        <div class="chk"><div class="chk-dot"></div><span>Comfortable clothing you can move freely in</span></div>
-        <div class="chk"><div class="chk-dot"></div><span>We will be dancing barefoot — no street shoes on studio floors</span></div>
-        <div class="chk"><div class="chk-dot"></div><span>Water bottle &amp; small towel</span></div>
-        <div class="chk"><div class="chk-dot"></div><span>An open mind — no experience needed</span></div>
+        <div class="chk"><div class="chk-dot"></div><span>All workshops are barefoot — leave street shoes at the door</span></div>
+        <div class="chk"><div class="chk-dot"></div><span>Each workshop card shows a suggested outfit — flowy skirt + fitted top for Friday, kurta for most workshops, comfortable clothing for the Sunday fusion classes</span></div>
+        <div class="chk"><div class="chk-dot"></div><span>Wear something you can move freely in — fitted enough not to get in the way, loose enough to breathe</span></div>
+        <div class="chk"><div class="chk-dot"></div><span>Bring a change of clothes and a towel — you will sweat</span></div>
+        <div class="chk"><div class="chk-dot"></div><span>Water bottle — studios get warm</span></div>
       </div>
     </div>
     <div class="info-card">
@@ -1274,72 +1384,136 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 
   <div class="faq-section">
     <div class="faq-title">Frequently Asked Questions</div>
-    <div class="faq-list">
+    <div class="faq-group">
+      <div class="faq-group-label">Workshops</div>
+      <div class="faq-list">
 
-      <div class="faq-item">
-        <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false">
-          <span class="faq-q-text">Do I need dance experience to join workshops?</span>
-          <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
-        </button>
-        <div class="faq-body"><p>Not at all. Every workshop at GIDF 2026 welcomes complete beginners. Come curious, open, and ready to move — no previous experience needed.</p></div>
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false">
+            <span class="faq-q-text">Do I need dance experience to join workshops?</span>
+            <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+          </button>
+          <div class="faq-body"><p>No experience is needed to join any workshop — every teacher at GIDF welcomes beginners. That said, these are real workshops led by master teachers, and they will challenge you. You won't be standing at the back watching; you'll be learning, moving, and probably working harder than you expected. That's the point. If you're new and want a gentler entry, the <strong>Discovery Pass</strong> (€125) gives you five foundation workshops across Saturday and Sunday — a good mix to find your footing.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false">
+            <span class="faq-q-text">Are workshops taught in English?</span>
+            <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+          </button>
+          <div class="faq-body"><p>Yes, all workshops are conducted in English.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false">
+            <span class="faq-q-text">What should I wear to workshops?</span>
+            <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+          </button>
+          <div class="faq-body"><p>All workshops are barefoot — no street shoes on studio floors. Each workshop card shows a suggested outfit: flowy skirt + fitted top for Friday, kurta for most workshops, and comfortable clothing for the Sunday fusion classes. Wear something you can move freely in. Bring a change of clothes and a towel — you will sweat.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false">
+            <span class="faq-q-text">What is Rise &amp; Riyaaz?</span>
+            <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+          </button>
+          <div class="faq-body"><p>A morning warm-up session with Swapnil to start the day — Saturday 08:45–09:00, Sunday 09:15–09:30. Included with all passes. Not on Friday.</p></div>
+        </div>
+
       </div>
+    </div>
 
-      <div class="faq-item">
-        <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false">
-          <span class="faq-q-text">Do I need to book in advance?</span>
-          <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
-        </button>
-        <div class="faq-body"><p>Yes — spaces are limited and some workshops are selling fast. Single workshop prices are also higher on the day (€35 vs €30 for 90-min, €45 vs €40 for 120-min), so booking online saves you money too.</p></div>
+    <div class="faq-group">
+      <div class="faq-group-label">Opening Party &amp; Gala</div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false">
+            <span class="faq-q-text">What's the difference between the Opening Party and the Gala Showcase?</span>
+            <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+          </button>
+          <div class="faq-body"><p>The Opening Party (Friday night) is a social celebration — a Kalbeliya community class, live performances, the Dariya Live Band, and DJ @swapkebolly. The Gala Showcase (Saturday evening) is a seated theatrical performance with 18 acts across ~90 minutes.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false">
+            <span class="faq-q-text">What should I wear to the Gala Showcase?</span>
+            <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+          </button>
+          <div class="faq-body"><p>It's a seated evening show in a proper theatre — dress up a little. Desi festive or Indian formal is very much at home here; this is an Indian dance festival after all. Smart casual works fine too. There's no dress code, but people do make an effort.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false">
+            <span class="faq-q-text">Can I perform at the Opening Party?</span>
+            <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+          </button>
+          <div class="faq-body"><p>Applications for the Opening Party are now closed. Follow us on Instagram for news about future editions.</p></div>
+        </div>
+
       </div>
+    </div>
 
-      <div class="faq-item">
-        <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false">
-          <span class="faq-q-text">What should I wear to workshops?</span>
-          <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
-        </button>
-        <div class="faq-body"><p>We will be dancing barefoot — no street shoes on studio floors. Each workshop has a suggested dress code shown on the workshop card (e.g. flowy skirt + top for Friday, kurta for most workshops). Bring a water bottle and a small towel.</p></div>
+    <div class="faq-group">
+      <div class="faq-group-label">Tickets &amp; Booking</div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false">
+            <span class="faq-q-text">Do I need to book in advance?</span>
+            <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+          </button>
+          <div class="faq-body"><p>Recommended but not mandatory — on-the-spot registration is available on the day, subject to space. That said, workshops do sell out, and walk-in prices are higher than online. Book in advance to secure your spot and save.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false">
+            <span class="faq-q-text">Can I attend just one day?</span>
+            <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+          </button>
+          <div class="faq-body"><p>Absolutely. Day passes are available for Friday (€65), Saturday (€110), and Sunday (€110). You can also book individual workshops without a pass.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false">
+            <span class="faq-q-text">What is the refund policy?</span>
+            <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+          </button>
+          <div class="faq-body"><p>All registrations and tickets are non-transferable and non-refundable under any circumstances — this applies to workshops, showcases, and all other events. Entry fees do not include food and drinks, which are purchased separately on the day. Missed sessions and cancellations due to force majeure are also non-refundable.</p></div>
+        </div>
+
       </div>
+    </div>
 
-      <div class="faq-item">
-        <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false">
-          <span class="faq-q-text">What should I wear to the Gala Showcase?</span>
-          <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
-        </button>
-        <div class="faq-body"><p>Dress to celebrate — smart casual to festive. The Gala is an evening show at Shoonya Theatre. Doors open at 20:00, show begins at 20:30. No photography or video during the performance.</p></div>
+    <div class="faq-group">
+      <div class="faq-group-label">On the Day</div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false">
+            <span class="faq-q-text">Is food available at the festival?</span>
+            <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+          </button>
+          <div class="faq-body"><p>Yes. Workshop participants can buy a light lunch — soup and a sandwich — during the afternoon. The Spill the Chai community breaks come with chai we make and share, included with your pass. At the Opening Party on Friday night, Indian food and snacks will be on sale.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false">
+            <span class="faq-q-text">Is the venue accessible?</span>
+            <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+          </button>
+          <div class="faq-body"><p>Yes — Shoonya Dance Centre is accessible. If you have specific access needs or questions, get in touch before the event and we'll make sure everything is arranged.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false">
+            <span class="faq-q-text">Will workshops be photographed or filmed?</span>
+            <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+          </button>
+          <div class="faq-body"><p>Yes — workshops and festival moments will be photographed and filmed for GIDF and ABC. If you have any concerns about being included, speak to a team member on the day.</p></div>
+        </div>
+
       </div>
-
-      <div class="faq-item">
-        <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false">
-          <span class="faq-q-text">Are workshops taught in English?</span>
-          <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
-        </button>
-        <div class="faq-body"><p>Yes, all workshops are conducted in English.</p></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false">
-          <span class="faq-q-text">What's the difference between the Opening Party and the Gala Showcase?</span>
-          <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
-        </button>
-        <div class="faq-body"><p>The Opening Party (Friday night) is a social celebration — live performances, the Dariya Live Band, and DJ @swapkebolly. The Gala Showcase (Saturday evening) is a seated theatrical performance with 18 acts across ~90 minutes.</p></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false">
-          <span class="faq-q-text">Can I attend just one day?</span>
-          <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
-        </button>
-        <div class="faq-body"><p>Absolutely. Day passes are available for Friday (€65), Saturday (€110), and Sunday (€110). You can also book individual workshops without a pass.</p></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-trigger" onclick="toggleFaq(this)" aria-expanded="false">
-          <span class="faq-q-text">What is Rise &amp; Riyaaz?</span>
-          <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
-        </button>
-        <div class="faq-body"><p>A morning warm-up class with Swapnil to start the day — Saturday 08:45–09:00, Sunday 09:15–09:30. Included with all passes. Not on Friday.</p></div>
-      </div>
-
     </div>
   </div>
 </div>
