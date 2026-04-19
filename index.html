@@ -21,17 +21,17 @@ body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg
 .hero{background:var(--dark);padding:72px 32px 56px;text-align:center;position:relative;overflow:hidden}
 .hero-photo{position:absolute;inset:0;background-image:url('images/hero/Finale Gala Showcase-Stijn Dejonckheere.jpg');background-size:cover;background-position:center 30%;opacity:.32}
 .hero::before{content:'';position:absolute;inset:0;
-  background:linear-gradient(to bottom,rgba(28,17,8,.78) 0%,rgba(28,17,8,.42) 45%,rgba(28,17,8,.90) 100%)}
+  background:linear-gradient(to bottom,rgba(28,17,8,.85) 0%,rgba(28,17,8,.68) 45%,rgba(28,17,8,.92) 100%)}
 .hero-ctas{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:36px;position:relative}
 .hero-cta-primary{display:inline-flex;align-items:center;background:var(--accent);color:#fff;padding:14px 32px;border-radius:50px;text-decoration:none;font-size:15px;font-weight:700;font-family:'Hind',sans-serif;transition:background .15s;letter-spacing:.3px}
 .hero-cta-primary:hover{background:#A03818}
 .hero-cta-secondary{display:inline-flex;align-items:center;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.3);color:#fff;padding:14px 32px;border-radius:50px;text-decoration:none;font-size:15px;font-weight:600;font-family:'Hind',sans-serif;transition:all .15s}
 .hero-cta-secondary:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.5)}
-.hero-eyebrow{font-family:'Hind',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3.5px;color:#7A6A52;margin-bottom:18px;position:relative}
+.hero-eyebrow{font-family:'Hind',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3.5px;color:rgba(255,255,255,.5);margin-bottom:18px;position:relative}
 .hero-title{font-family:'Inter',sans-serif;font-style:italic;font-size:clamp(56px,12vw,96px);font-weight:900;color:#fff;line-height:.92;margin-bottom:10px;position:relative}
 .hero-title span{color:var(--gold)}
 .hero-tagline{font-family:'Inter',sans-serif;font-size:clamp(16px,3vw,22px);color:#C8A87A;font-weight:400;font-style:italic;margin-bottom:24px;position:relative}
-.hero-meta{font-size:14px;color:#7A6A52;letter-spacing:.5px;margin-bottom:48px;position:relative}
+.hero-meta{font-size:14px;color:rgba(255,255,255,.5);letter-spacing:.5px;margin-bottom:48px;position:relative}
 .hero-meta strong{color:#C8A87A;font-weight:600}
 .hero-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;position:relative}
 .hero-pill{background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.15);color:#C8A87A;
@@ -122,6 +122,20 @@ body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg
 .wcard.full{grid-column:1/-1;flex-direction:row}
 .wcard.full .wcard-top{border-bottom:none;border-right:1px solid var(--border);min-width:240px;display:flex;flex-direction:column;justify-content:center}
 @media(max-width:580px){.wcard.full{flex-direction:column}.wcard.full .wcard-top{border-right:none;border-bottom:1px solid var(--border)}}
+/* Teacher/studio inline wrapper */
+.wcard-meta{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:0}
+/* Wear recommendation */
+.wcard-wear{font-size:11px;font-weight:600;color:var(--green);margin-top:8px;display:flex;align-items:center;gap:4px}
+/* Opening Party block in workshops */
+.op-ws-block{grid-column:1/-1;background:var(--dark);border-radius:14px;padding:22px 26px;
+  display:flex;align-items:center;gap:20px;margin-top:4px}
+.op-ws-icon{font-size:28px;flex-shrink:0}
+.op-ws-title{font-family:'Inter',sans-serif;font-size:17px;font-weight:700;color:#fff;margin-bottom:4px}
+.op-ws-sub{font-size:13px;color:#C8A87A;line-height:1.55}
+.op-ws-cta{margin-left:auto;flex-shrink:0;display:inline-flex;align-items:center;background:var(--gold);
+  color:var(--dark);padding:10px 20px;border-radius:50px;text-decoration:none;font-size:13px;
+  font-weight:700;font-family:'Hind',sans-serif;white-space:nowrap}
+@media(max-width:580px){.op-ws-block{flex-wrap:wrap}.op-ws-cta{margin-left:0}}
 
 /* Break rows */
 .break-row{display:flex;align-items:center;gap:14px;padding:10px 4px;color:var(--t3);font-size:13px}
@@ -326,12 +340,12 @@ body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg
 
 /* ── COUNTDOWN ── */
 .hero-cd{margin:0 0 36px;position:relative}
-.hero-cd-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2.5px;color:#5C4E3C;margin-bottom:12px}
+.hero-cd-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2.5px;color:rgba(255,255,255,.45);margin-bottom:12px}
 .hero-cd-units{display:flex;justify-content:center;align-items:center;gap:2px}
 .hero-cd-unit{display:flex;flex-direction:column;align-items:center;min-width:68px}
 .hero-cd-num{font-family:'Inter',sans-serif;font-size:clamp(34px,7vw,54px);font-weight:900;color:#fff;line-height:1;display:block}
-.hero-cd-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#5C4E3C;margin-top:4px}
-.hero-cd-sep{font-family:'Inter',sans-serif;font-size:clamp(26px,5vw,42px);font-weight:700;color:#3A3028;padding-bottom:18px;margin:0 2px;line-height:1}
+.hero-cd-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,.4);margin-top:4px}
+.hero-cd-sep{font-family:'Inter',sans-serif;font-size:clamp(26px,5vw,42px);font-weight:700;color:rgba(255,255,255,.25);padding-bottom:18px;margin:0 2px;line-height:1}
 
 /* ── SCHEDULE GRID ── */
 .sched-note{font-size:13px;color:var(--t2);background:var(--surface);border:1px solid var(--border);
@@ -568,7 +582,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
             <div class="sd-content-party">
               <div class="sd-label">Evening · From 20:00</div>
               <div class="sd-name sd-featured">Opening Party</div>
-              <div class="sd-sub">Live performances · Dariya Live Band · DJ @swapkebolly · Kalbeliya community class included</div>
+              <div class="sd-sub">Kalbeliya community class with Swapnil · Live performances · Dariya Live Band · DJ @swapkebolly</div>
             </div>
           </div>
 
@@ -677,7 +691,8 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
       <div class="wcard-top">
         <div class="wcard-time">12:00 – 16:00</div>
         <div class="wcard-title">Technique &amp; Tools Lab: Pushing the Boundaries of Rajasthani Folk</div>
-        <span class="wcard-teacher">✦ Colleena Shakti</span><span class="wcard-studio">Studio Aakash</span>
+        <div class="wcard-meta"><span class="wcard-teacher">✦ Colleena Shakti</span><span class="wcard-studio">Studio Aakash</span></div>
+        <div class="wcard-wear">👗 Flowy skirt + fitted top</div>
       </div>
       <div class="wcard-body">
         <p class="wcard-desc">A deep-dive into the foundational tools of performance — how the body communicates beyond steps. Explore breath, gaze, intention and the distinct vocabulary of Rajasthani folk as instruments of expression.</p>
@@ -689,7 +704,8 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
       <div class="wcard-top">
         <div class="wcard-time">17:00 – 18:30</div>
         <div class="wcard-title">Bollywood Folk Fusion</div>
-        <span class="wcard-teacher">✦ Vaishali Sagar</span><span class="wcard-studio">Studio Art Deco</span>
+        <div class="wcard-meta"><span class="wcard-teacher">✦ Vaishali Sagar</span><span class="wcard-studio">Studio Art Deco</span></div>
+        <div class="wcard-wear">👗 Flowy skirt + fitted top</div>
       </div>
       <div class="wcard-body">
         <p class="wcard-desc">Where Bollywood meets folk — a joyful fusion blending the energy of Indian cinema dance with the vibrancy of regional folk traditions. High energy, full heart.</p>
@@ -701,7 +717,8 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
       <div class="wcard-top">
         <div class="wcard-time">18:30 – 20:00</div>
         <div class="wcard-title">Garba Choreography</div>
-        <span class="wcard-teacher">✦ Shampa Gopikrishna</span><span class="wcard-studio">Studio Art Deco</span>
+        <div class="wcard-meta"><span class="wcard-teacher">✦ Shampa Gopikrishna</span><span class="wcard-studio">Studio Art Deco</span></div>
+        <div class="wcard-wear">👗 Flowy skirt + fitted top</div>
       </div>
       <div class="wcard-body">
         <p class="wcard-desc">The spirited circular dance of Gujarat, traditionally performed during Navratri. Rhythmic footwork, graceful arm patterns, and the profound joy of dancing together in a circle.</p>
@@ -720,12 +737,24 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
       <div class="wcard-top">
         <div class="wcard-time">20:15 – 21:00</div>
         <div class="wcard-title">Community Class: Kalbeliya</div>
-        <span class="wcard-teacher">✦ Swapnil Dagliya</span><span class="wcard-studio">Studio Art Deco</span>
+        <div class="wcard-meta"><span class="wcard-teacher">✦ Swapnil Dagliya</span><span class="wcard-studio">Studio Art Deco</span></div>
+        <div class="wcard-wear">👗 Flowy skirt + fitted top</div>
       </div>
       <div class="wcard-body">
-        <p class="wcard-desc">Kalbeliya is the serpentine folk dance of the Kalbelia tribe of Rajasthan, recognised by UNESCO as intangible cultural heritage. Fluid, earthy, and deeply alive. Included with your Opening Party ticket — right before the party begins.</p>
-        <div class="wcard-badges"><span class="badge b-style">Kalbeliya / Rajasthani Folk</span><span class="badge b-open">Included with Opening Party</span></div>
+        <p class="wcard-desc">Kalbeliya is the serpentine folk dance of the Kalbelia tribe of Rajasthan, recognised by UNESCO as intangible cultural heritage. Fluid, earthy, and deeply alive — this community class is how the Opening Party begins.</p>
+        <div class="wcard-badges"><span class="badge b-style">Kalbeliya / Rajasthani Folk</span><span class="badge b-open">Opening Party</span></div>
       </div>
+    </div>
+  </div>
+
+  <div class="wgrid" style="margin-top:12px">
+    <div class="op-ws-block">
+      <div class="op-ws-icon">🎉</div>
+      <div>
+        <div class="op-ws-title">Opening Party — From 20:00</div>
+        <div class="op-ws-sub">Live performances · Dariya Live Band · DJ @swapkebolly · Studio Ananta</div>
+      </div>
+      <a class="op-ws-cta" href="https://creatorapp.zohopublic.eu/developer_shoonyadance/shoonya-dance-studio/form-perma/Ticket_Registration_Form/uw8PV66d5s2Z5z2G04kXNwjhGMA3B6vBpBWX6NSUC9Ybb0eyb4tUTbNTh0teeDSbAB5O6jnU4wPy67fT7feU3s7h1pyxe2mEtsu4" target="_blank">Get Tickets — €15 →</a>
     </div>
   </div>
 
@@ -738,7 +767,8 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
       <div class="wcard-top">
         <div class="wcard-time">09:00 – 11:00</div>
         <div class="wcard-title">Kuthu: The Heartbeat of the Streets</div>
-        <span class="wcard-teacher">✦ Desihop</span><span class="wcard-studio">Studio Art Deco</span>
+        <div class="wcard-meta"><span class="wcard-teacher">✦ Desihop</span><span class="wcard-studio">Studio Art Deco</span></div>
+        <div class="wcard-wear">👗 Comfortable kurta</div>
       </div>
       <div class="wcard-body">
         <p class="wcard-desc">Tamil street dance — high energy, rhythmic, rooted in Tamil cinema and celebration culture. Fast footwork, expressive hand gestures, and unstoppable groove.</p>
@@ -750,7 +780,8 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
       <div class="wcard-top">
         <div class="wcard-time">11:00 – 12:30</div>
         <div class="wcard-title">The Martial Grace of Mayurbhanj Chhau</div>
-        <span class="wcard-teacher">✦ Shampa Gopikrishna</span><span class="wcard-studio">Studio Art Deco</span>
+        <div class="wcard-meta"><span class="wcard-teacher">✦ Shampa Gopikrishna</span><span class="wcard-studio">Studio Art Deco</span></div>
+        <div class="wcard-wear">👗 Comfortable kurta</div>
       </div>
       <div class="wcard-body">
         <p class="wcard-desc">A semi-classical dance rooted in martial arts and tribal traditions from Odisha. Powerful leaps, warrior postures, and deeply expressive storytelling — movement as mythology.</p>
@@ -762,7 +793,8 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
       <div class="wcard-top">
         <div class="wcard-time">13:30 – 15:00</div>
         <div class="wcard-title">Giddha: The Pulse of Punjab</div>
-        <span class="wcard-teacher">✦ Manasi</span><span class="wcard-studio">Studio Ananta</span>
+        <div class="wcard-meta"><span class="wcard-teacher">✦ Manasi</span><span class="wcard-studio">Studio Ananta</span></div>
+        <div class="wcard-wear">👗 Comfortable kurta</div>
       </div>
       <div class="wcard-body">
         <p class="wcard-desc">The folk dance of Punjabi women — lively, expressive, full of wit. Participants perform boliyan (folk verses) and clap in rhythmic patterns, celebrating everyday life with collective joy.</p>
@@ -777,7 +809,8 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
       <div class="wcard-top">
         <div class="wcard-time">15:20 – 16:50</div>
         <div class="wcard-title">Abhinaya: Training Expression for Dance</div>
-        <span class="wcard-teacher">✦ Colleena Shakti</span><span class="wcard-studio">Studio Ananta</span>
+        <div class="wcard-meta"><span class="wcard-teacher">✦ Colleena Shakti</span><span class="wcard-studio">Studio Ananta</span></div>
+        <div class="wcard-wear">👗 Comfortable kurta</div>
       </div>
       <div class="wcard-body">
         <p class="wcard-desc">The ancient art of expressive storytelling — communicating emotion through facial expression, gesture, and the whole body. Learn to inhabit a character and move an audience.</p>
@@ -796,7 +829,8 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
       <div class="wcard-top">
         <div class="wcard-time">09:30 – 11:00</div>
         <div class="wcard-title">Indian Fusion Bellydance</div>
-        <span class="wcard-teacher">✦ Colleena Shakti</span><span class="wcard-studio">Studio Ananta</span>
+        <div class="wcard-meta"><span class="wcard-teacher">✦ Colleena Shakti</span><span class="wcard-studio">Studio Ananta</span></div>
+        <div class="wcard-wear">👗 Dance wear</div>
       </div>
       <div class="wcard-body">
         <p class="wcard-desc">A fusion workshop blending Indian folk aesthetics with the fluid isolations of bellydance — where two ancient traditions meet to create something entirely new.</p>
@@ -808,7 +842,8 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
       <div class="wcard-top">
         <div class="wcard-time">11:00 – 12:30</div>
         <div class="wcard-title">Desi-Afro Grooves: From Mumbai to Lagos</div>
-        <span class="wcard-teacher">✦ Desihop</span><span class="wcard-studio">Studio Ananta</span>
+        <div class="wcard-meta"><span class="wcard-teacher">✦ Desihop</span><span class="wcard-studio">Studio Ananta</span></div>
+        <div class="wcard-wear">👗 Dance wear</div>
       </div>
       <div class="wcard-body">
         <p class="wcard-desc">A genre-defying workshop exploring where Indian and African dance traditions collide — rhythm, groove, and movement that crosses continents.</p>
@@ -820,7 +855,8 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
       <div class="wcard-top">
         <div class="wcard-time">13:30 – 15:30</div>
         <div class="wcard-title">Lavani: The Bold Heart of Maharashtra</div>
-        <span class="wcard-teacher">✦ Swapnil Dagliya</span><span class="wcard-studio">Studio Ananta</span>
+        <div class="wcard-meta"><span class="wcard-teacher">✦ Swapnil Dagliya</span><span class="wcard-studio">Studio Ananta</span></div>
+        <div class="wcard-wear">👗 Comfortable kurta</div>
       </div>
       <div class="wcard-body">
         <p class="wcard-desc">Lavani is a powerful folk form from Maharashtra — strong rhythms, dramatic expression, and the kind of energy that fills a room without warning. Bold, proud, and utterly captivating.</p>
@@ -835,7 +871,8 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
       <div class="wcard-top">
         <div class="wcard-time">15:50 – 17:20</div>
         <div class="wcard-title">Bamboo Beats: The Rhythms of Cheraw</div>
-        <span class="wcard-teacher">✦ Vaishali Sagar</span><span class="wcard-studio">Studio Ananta</span>
+        <div class="wcard-meta"><span class="wcard-teacher">✦ Vaishali Sagar</span><span class="wcard-studio">Studio Ananta</span></div>
+        <div class="wcard-wear">👗 Comfortable kurta</div>
       </div>
       <div class="wcard-body">
         <p class="wcard-desc">Cheraw is the bamboo dance of Mizoram, northeast India — a striking and playful tradition where dancers weave between moving bamboo poles. Precision, rhythm, and pure joy.</p>
@@ -987,7 +1024,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
     <div class="op-card">
       <div class="op-icon">🌿</div>
       <div class="op-card-title">Community Class: Kalbeliya</div>
-      <p class="op-card-desc">Included with your Opening Party ticket — join Swapnil for a Kalbeliya community class from 20:15. No experience needed.</p>
+      <p class="op-card-desc">The Opening Party begins with a Kalbeliya community class led by Swapnil from 20:15. No experience needed — just come and dance.</p>
     </div>
   </div>
 </div>
@@ -1015,17 +1052,14 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
         <div class="pcard-name">Full Festival Pass</div>
         <div class="pcard-price">
           <div class="pcard-amount big">€220</div>
-          <div class="pcard-was">€200</div>
         </div>
-        <div class="pcard-note">Early bird was €180 – €200</div>
       </div>
       <div class="pcard-divider"></div>
       <div class="pcard-body">
         <div class="pcard-includes-title">Includes</div>
         <div class="pcard-includes">
           <div class="pi-row"><div class="pi-dot"></div>All main workshops Friday – Sunday</div>
-          <div class="pi-row"><div class="pi-dot"></div>Community Class: Kalbeliya (Friday)</div>
-          <div class="pi-row"><div class="pi-dot"></div>Opening Party (Friday night)</div>
+          <div class="pi-row"><div class="pi-dot"></div>Opening Party (Friday night — incl. Kalbeliya community class)</div>
           <div class="pi-row"><div class="pi-dot"></div>Rise &amp; Riyaaz, Spill the Chai &amp; Gupshup</div>
         </div>
       </div>
@@ -1070,8 +1104,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
         <div class="pcard-includes">
           <div class="pi-row"><div class="pi-dot"></div>Bollywood Folk Fusion — Vaishali Sagar</div>
           <div class="pi-row"><div class="pi-dot"></div>Garba Choreography — Shampa Gopikrishna</div>
-          <div class="pi-row"><div class="pi-dot"></div>Community Class: Kalbeliya — Swapnil Dagliya</div>
-          <div class="pi-row"><div class="pi-dot"></div>Opening Party entry</div>
+          <div class="pi-row"><div class="pi-dot"></div>Opening Party — incl. Kalbeliya community class with Swapnil</div>
         </div>
       </div>
     </div>
@@ -1208,18 +1241,6 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
       <a class="map-btn" href="https://maps.google.com/?q=Shoonya+Dance+Centre+Ghent" target="_blank">📍 Open in Google Maps</a>
     </div>
     <div class="info-card">
-      <div class="info-icon">📅</div>
-      <div class="info-title">Three Days at a Glance</div>
-      <div class="irows">
-        <div class="irow"><span class="irow-lbl">Fri 12:00</span><span class="irow-val">Friday workshops begin</span></div>
-        <div class="irow"><span class="irow-lbl">Fri 20:00</span><span class="irow-val">Opening Party · Studio Ananta</span></div>
-        <div class="irow"><span class="irow-lbl">Sat 09:00</span><span class="irow-val">Saturday workshops begin</span></div>
-        <div class="irow"><span class="irow-lbl">Sat 20:30</span><span class="irow-val">Gala Showcase · Shoonya Theatre</span></div>
-        <div class="irow"><span class="irow-lbl">Sun 09:30</span><span class="irow-val">Sunday workshops begin</span></div>
-        <div class="irow"><span class="irow-lbl">Sun 17:20</span><span class="irow-val">Closing Circle — One Last Gupshup</span></div>
-      </div>
-    </div>
-    <div class="info-card">
       <div class="info-icon">🚗</div>
       <div class="info-title">Getting There</div>
       <div class="irows">
@@ -1234,19 +1255,10 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
       <div class="info-title">What to bring</div>
       <div class="checklist">
         <div class="chk"><div class="chk-dot"></div><span>Comfortable clothing you can move freely in</span></div>
-        <div class="chk"><div class="chk-dot"></div><span>Dance shoes, socks, or bare feet — no street shoes on studio floors</span></div>
+        <div class="chk"><div class="chk-dot"></div><span>We will be dancing barefoot — no street shoes on studio floors</span></div>
         <div class="chk"><div class="chk-dot"></div><span>Water bottle &amp; small towel</span></div>
         <div class="chk"><div class="chk-dot"></div><span>An open mind — no experience needed</span></div>
       </div>
-    </div>
-    <div class="info-card">
-      <div class="info-icon">👗</div>
-      <div class="info-title">Changing Rooms</div>
-      <div class="irows">
-        <div class="irow"><span class="irow-lbl">Opening Party</span><span class="irow-val">1st Floor, behind the backdrop</span></div>
-        <div class="irow"><span class="irow-lbl">Gala Showcase</span><span class="irow-val">Studio Aakash — 2nd Floor</span></div>
-      </div>
-      <p style="font-size:12px;color:var(--t2);margin-top:12px;line-height:1.65;">Look after your own belongings — GIDF and Shoonya Dance Centre cannot be held responsible for lost or stolen items.</p>
     </div>
     <div class="info-card">
       <div class="info-icon">🏛️</div>
@@ -1285,7 +1297,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
           <span class="faq-q-text">What should I wear to workshops?</span>
           <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
         </button>
-        <div class="faq-body"><p>Comfortable clothing you can move freely in. Dance shoes, socks, or bare feet — no street shoes on studio floors. Bring a water bottle and a small towel.</p></div>
+        <div class="faq-body"><p>We will be dancing barefoot — no street shoes on studio floors. Each workshop has a suggested dress code shown on the workshop card (e.g. flowy skirt + top for Friday, kurta for most workshops). Bring a water bottle and a small towel.</p></div>
       </div>
 
       <div class="faq-item">
@@ -1397,7 +1409,7 @@ function tab(name, btn, fromNav) {
   document.querySelectorAll('.fn-item').forEach(b => {
     b.classList.toggle('fn-active', (b.getAttribute('onclick')||'').includes("'"+name+"'"));
   });
-  if(fromNav) document.querySelector('.content').scrollIntoView({behavior:'smooth',block:'start'});
+  document.querySelector('.content').scrollIntoView({behavior:'smooth',block:'start'});
 }
 
 function toggleFaq(trigger) {
