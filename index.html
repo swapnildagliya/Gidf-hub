@@ -42,32 +42,11 @@ body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg
 
 /* ── STICKY NAV (mobile only) ── */
 .sticky-nav{position:sticky;top:0;z-index:100;background:var(--dark);border-bottom:2px solid rgba(181,66,26,.5);
-  padding:0 16px;display:none;overflow-x:auto}
-.snav-btn{background:none;border:none;color:#7A6A52;padding:13px 16px;font-size:12px;font-weight:600;
+  padding:0 16px;display:flex;overflow-x:auto;justify-content:center}
+.snav-btn{background:none;border:none;color:#7A6A52;padding:13px 18px;font-size:13px;font-weight:600;
   cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;font-family:'Hind',sans-serif;transition:all .18s}
 .snav-btn:hover{color:#C8A87A}
 .snav-btn.active{color:#fff;border-bottom-color:var(--accent)}
-@media(max-width:768px){.sticky-nav{display:flex}}
-
-/* ── FLOAT NAV (desktop) ── */
-.float-nav{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:200;
-  display:flex;flex-direction:column;background:var(--surface);
-  border:1px solid var(--border);border-right:none;
-  border-radius:12px 0 0 12px;
-  box-shadow:-4px 4px 24px rgba(28,17,8,.1);overflow:hidden;min-width:148px}
-.fn-item{display:flex;flex-direction:column;padding:13px 18px;cursor:pointer;
-  border-bottom:1px solid var(--border);text-decoration:none;transition:background .15s;position:relative}
-.fn-item:hover{background:#FBF6EF}
-.fn-item.fn-active{background:#FEF0E8}
-.fn-item.fn-active::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent)}
-.fn-tab-name{font-size:12px;font-weight:700;color:var(--dark);margin-bottom:4px;font-family:'Inter',sans-serif}
-.fn-cta{font-size:11px;color:var(--accent);font-weight:600;font-family:'Inter',sans-serif;text-decoration:none;display:inline-block}
-.fn-cta:hover{text-decoration:underline}
-.fn-passes{font-size:11px;font-weight:600;color:var(--t2);padding:12px 18px;display:flex;align-items:center;
-  gap:5px;cursor:pointer;text-decoration:none;transition:all .15s;font-family:'Inter',sans-serif;
-  width:100%;text-align:left}
-.fn-passes:hover{color:var(--dark);background:#FBF6EF}
-@media(max-width:768px){.float-nav{display:none}}
 
 /* ── FAQ ACCORDION ── */
 .faq-list{display:flex;flex-direction:column;border:1px solid var(--border);border-radius:12px;overflow:hidden}
@@ -429,6 +408,10 @@ body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg
   padding:11px 22px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;
   font-family:'Hind',sans-serif;transition:background .15s;white-space:nowrap}
 .reg-btn:hover{background:#A03818}
+.reg-bar-soldout{background:#F9F6F3;border-color:#DDD5C8}
+.reg-bar-soldout strong{color:var(--t2) !important}
+.reg-btn-soldout{background:#E8E0D4;color:var(--t3);cursor:default;font-size:13px;font-weight:700;padding:11px 22px;border-radius:8px;white-space:nowrap}
+.fn-cta-soldout{background:transparent !important;color:var(--t3) !important;font-weight:700;font-size:11px;cursor:default;pointer-events:none;letter-spacing:.3px}
 
 /* ── COUNTDOWN ── */
 .hero-cd{margin:0 0 36px;position:relative}
@@ -572,7 +555,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 @media(max-width:640px){
   .hero{padding:52px 20px 44px}
   .content{padding:32px 16px 48px}
-  .sticky-nav{padding:0 8px}
+  .sticky-nav{justify-content:flex-start}
   .snav-btn{padding:12px 13px;font-size:12px}
   .op-banner{padding:32px 24px}
   .op-feat-title{font-size:18px}
@@ -611,22 +594,6 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
   <button class="snav-btn" onclick="tab('prices',this,true)">Passes &amp; Prices</button>
 </nav>
 
-<!-- FLOAT NAV (desktop) -->
-<nav class="float-nav">
-  <div class="fn-item fn-active" onclick="tab('workshops',this)" role="button" tabindex="0">
-    <span class="fn-tab-name">Workshops</span>
-    <a class="fn-cta" href="https://creatorapp.zohopublic.eu/developer_shoonyadance/shoonya-dance-studio/form-perma/Workshop_Registration_Form/uOO7GVYHQEJn5dSVDz7z1nTXXeEfD0AZ4PJvtQJ0ZbMRum3tBX30zxQHC02n9b3bvTO6ORFDsVCfS4bJQF1VOZdBMZquYuPb4xx8" target="_blank" onclick="event.stopPropagation()">Register →</a>
-  </div>
-  <div class="fn-item" onclick="tab('show',this)" role="button" tabindex="0">
-    <span class="fn-tab-name">Gala Showcase</span>
-    <a class="fn-cta" href="https://www.abcbollywoodbelgium.com/the-gala-showcase" target="_blank" onclick="event.stopPropagation()">Buy Tickets →</a>
-  </div>
-  <div class="fn-item" onclick="tab('party',this)" role="button" tabindex="0">
-    <span class="fn-tab-name">Opening Party</span>
-    <a class="fn-cta" href="https://creatorapp.zohopublic.eu/developer_shoonyadance/shoonya-dance-studio/form-perma/Ticket_Registration_Form/uw8PV66d5s2Z5z2G04kXNwjhGMA3B6vBpBWX6NSUC9Ybb0eyb4tUTbNTh0teeDSbAB5O6jnU4wPy67fT7feU3c7h1pyxe2mEtsu4" target="_blank" onclick="event.stopPropagation()">Get Tickets →</a>
-  </div>
-  <div class="fn-passes" onclick="tab('prices',this)" role="button" tabindex="0">View all passes →</div>
-</nav>
 
 <!-- WHAT IS GIDF -->
 <div class="gidf-what">
@@ -1122,9 +1089,9 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 
 <!-- ═══ GALA SHOWCASE ═══ -->
 <div id="tab-show" style="display:none">
-  <div class="reg-bar">
-    <div class="reg-bar-text"><strong>Get your tickets</strong><span>Saturday 2 May 2026 · Shoonya Theatre · Doors 20:00 · Non-refundable</span></div>
-    <a class="reg-btn" href="https://www.abcbollywoodbelgium.com/the-gala-showcase" target="_blank">Buy Tickets →</a>
+  <div class="reg-bar reg-bar-soldout">
+    <div class="reg-bar-text"><strong>Sold Out</strong><span>Saturday 2 May 2026 · Shoonya Theatre · Doors 20:00</span></div>
+    <div class="reg-btn reg-btn-soldout">Sold Out</div>
   </div>
   <div class="sec-header">
     <div class="sec-title">Gala Showcase</div>
@@ -1748,9 +1715,6 @@ function tab(name, btn, fromNav) {
   });
   document.querySelectorAll('.snav-btn').forEach(b => {
     b.classList.toggle('active', (b.getAttribute('onclick')||'').includes("'"+name+"'"));
-  });
-  document.querySelectorAll('.fn-item').forEach(b => {
-    b.classList.toggle('fn-active', (b.getAttribute('onclick')||'').includes("'"+name+"'"));
   });
   document.querySelector('.content').scrollIntoView({behavior:'smooth',block:'start'});
 }
