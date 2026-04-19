@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Schedule Styles — GIDF 2026</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Hind:wght@400;500;600;700&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#F7F0E6;--surface:#FFFDF8;--dark:#1C1108;
+  --accent:#B5421A;--gold:#C4841A;
+  --text:#1C1108;--t2:#6B5840;--t3:#9B8B72;
+  --border:#E0D5C4;--green:#4A7C59;
+}
+body{font-family:'Hind',sans-serif;background:var(--bg);color:var(--text);padding:40px 24px 80px}
+h1{font-family:'Playfair Display',serif;font-style:italic;font-size:32px;color:var(--dark);margin-bottom:6px}
+.intro{font-size:14px;color:var(--t2);margin-bottom:56px}
+
+.option{margin-bottom:72px}
+.option-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--accent);margin-bottom:8px}
+.option-title{font-family:'Playfair Display',serif;font-style:italic;font-size:24px;font-weight:700;color:var(--dark);margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+
+/* ═══ OPTION A — HORIZONTAL BLOCKS ═══ */
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(28,17,8,.1)}
+.tday{display:flex;flex-direction:column}
+.tday-header{background:var(--dark);color:#fff;padding:16px 20px;text-align:center}
+.tday-name{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;font-style:italic}
+.tday-date{font-size:11px;color:#7A6A52;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-top:3px}
+.tblock{padding:14px 18px;display:flex;flex-direction:column;gap:4px;position:relative}
+.tblock-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;opacity:.7}
+.tblock-name{font-size:14px;font-weight:700;line-height:1.3}
+.tblock-sub{font-size:12px;opacity:.75;line-height:1.4}
+
+.tb-workshop{background:#FEF0E8;border-left:4px solid var(--accent)}
+.tb-workshop .tblock-label{color:var(--accent)}
+.tb-workshop .tblock-name{color:var(--dark)}
+.tb-lab{background:#FEF6E0;border-left:4px solid var(--gold)}
+.tb-lab .tblock-label{color:#8B5E0A}
+.tb-lab .tblock-name{color:var(--dark)}
+.tb-party{background:#1C1108;border-left:4px solid var(--gold)}
+.tb-party .tblock-label{color:var(--gold)}
+.tb-party .tblock-name,.tb-party .tblock-sub{color:#C8A87A}
+.tb-gala{background:#2D0E08;border-left:4px solid var(--accent)}
+.tb-gala .tblock-label{color:#F4A261}
+.tb-gala .tblock-name,.tb-gala .tblock-sub{color:#fff}
+.tb-community{background:var(--bg);border-left:4px solid var(--green)}
+.tb-community .tblock-label{color:var(--green)}
+.tb-community .tblock-name{color:var(--dark)}
+.tb-riyaaz{background:#EEF4FF;border-left:4px solid #5C7CFA}
+.tb-riyaaz .tblock-label{color:#3B5BDB}
+.tb-riyaaz .tblock-name{color:var(--dark)}
+.tb-social{background:var(--surface);border-left:4px solid var(--border)}
+.tb-social .tblock-label{color:var(--t3)}
+.tb-social .tblock-name{color:var(--t2)}
+.tgap{height:6px;background:var(--border)}
+
+/* ═══ OPTION B — STORY SCROLL ═══ */
+.story{display:flex;flex-direction:column;gap:0}
+.sday{display:flex;gap:32px;align-items:flex-start}
+.sday+.sday{margin-top:0;border-top:1px solid var(--border)}
+.sday-left{width:110px;flex-shrink:0;padding:28px 0}
+.sday-name{font-family:'Playfair Display',serif;font-style:italic;font-size:22px;font-weight:700;color:var(--dark)}
+.sday-date{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--t3);margin-top:3px}
+.sday-right{flex:1;padding:28px 0;display:flex;flex-direction:column;gap:10px}
+.spill{display:flex;align-items:center;gap:12px}
+.spill-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.spill-text{font-size:15px;color:var(--dark);line-height:1.5}
+.spill-text strong{font-weight:700}
+.spill-text em{font-size:13px;color:var(--t2);font-style:normal}
+.spill-connector{width:10px;height:24px;border-left:2px dashed var(--border);margin-left:4px}
+
+/* ═══ OPTION C — DAY CARDS ═══ */
+.daycards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.daycard{background:var(--surface);border:1px solid var(--border);border-radius:18px;overflow:hidden}
+.dc-header{padding:22px 24px 18px;border-bottom:1px solid var(--border)}
+.dc-day{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--t3);margin-bottom:6px}
+.dc-name{font-family:'Playfair Display',serif;font-style:italic;font-size:26px;font-weight:900;color:var(--dark);line-height:1}
+.dc-date{font-size:13px;color:var(--t2);margin-top:5px}
+.dc-body{padding:20px 24px;display:flex;flex-direction:column;gap:12px}
+.dc-event{display:flex;align-items:flex-start;gap:12px}
+.dc-pip{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.dc-event-name{font-size:14px;font-weight:700;color:var(--dark);line-height:1.3}
+.dc-event-sub{font-size:12px;color:var(--t2);margin-top:2px}
+.dc-footer{padding:16px 24px;background:var(--bg);border-top:1px solid var(--border)}
+.dc-highlight{font-size:13px;font-weight:700;color:var(--accent)}
+
+@media(max-width:640px){
+  .timeline{grid-template-columns:1fr}
+  .daycards{grid-template-columns:1fr}
+  .sday{flex-direction:column;gap:8px}
+  .sday-left{width:100%;padding:20px 0 0}
+}
+</style>
+</head>
+<body>
+
+<h1>Schedule — three visual ideas</h1>
+<p class="intro">Pick the one that feels right, or mix elements from different ones.</p>
+
+<!-- ═══ OPTION A ═══ -->
+<div class="option">
+  <div class="option-label">Option A</div>
+  <div class="option-title">Colour blocks — structured but visual</div>
+
+  <div class="timeline">
+
+    <!-- FRIDAY -->
+    <div class="tday">
+      <div class="tday-header"><div class="tday-name">Friday</div><div class="tday-date">1 May 2026</div></div>
+      <div class="tblock tb-lab">
+        <div class="tblock-label">Afternoon</div>
+        <div class="tblock-name">Technique & Tools Lab</div>
+        <div class="tblock-sub">Colleena Shakti · 4 hours</div>
+      </div>
+      <div class="tgap"></div>
+      <div class="tblock tb-workshop">
+        <div class="tblock-label">Evening</div>
+        <div class="tblock-name">Bollywood Folk Fusion</div>
+        <div class="tblock-sub">Vaishali Sagar</div>
+      </div>
+      <div class="tblock tb-workshop">
+        <div class="tblock-label"></div>
+        <div class="tblock-name">Garba Choreography</div>
+        <div class="tblock-sub">Shampa Gopikrishna</div>
+      </div>
+      <div class="tgap"></div>
+      <div class="tblock tb-community">
+        <div class="tblock-label">Night</div>
+        <div class="tblock-name">Kalbeliya Community Class</div>
+        <div class="tblock-sub">Swapnil Dagliya</div>
+      </div>
+      <div class="tblock tb-party">
+        <div class="tblock-label">✦ The Party</div>
+        <div class="tblock-name">Opening Party</div>
+        <div class="tblock-sub">Dariya Live Band · DJ @swapkebolly</div>
+      </div>
+    </div>
+
+    <!-- SATURDAY -->
+    <div class="tday">
+      <div class="tday-header"><div class="tday-name">Saturday</div><div class="tday-date">2 May 2026</div></div>
+      <div class="tblock tb-riyaaz">
+        <div class="tblock-label">Morning</div>
+        <div class="tblock-name">Rise & Riyaaz</div>
+        <div class="tblock-sub">Swapnil Dagliya</div>
+      </div>
+      <div class="tblock tb-workshop">
+        <div class="tblock-label"></div>
+        <div class="tblock-name">Kuthu</div>
+        <div class="tblock-sub">Desihop · 2 hours</div>
+      </div>
+      <div class="tblock tb-workshop">
+        <div class="tblock-label"></div>
+        <div class="tblock-name">Mayurbhanj Chhau</div>
+        <div class="tblock-sub">Shampa Gopikrishna</div>
+      </div>
+      <div class="tgap"></div>
+      <div class="tblock tb-workshop">
+        <div class="tblock-label">Afternoon</div>
+        <div class="tblock-name">Giddha</div>
+        <div class="tblock-sub">Manasi</div>
+      </div>
+      <div class="tblock tb-workshop">
+        <div class="tblock-label"></div>
+        <div class="tblock-name">Abhinaya</div>
+        <div class="tblock-sub">Colleena Shakti</div>
+      </div>
+      <div class="tgap"></div>
+      <div class="tblock tb-gala">
+        <div class="tblock-label">✦ The Show</div>
+        <div class="tblock-name">Gala Showcase</div>
+        <div class="tblock-sub">18 acts · Shoonya Theatre</div>
+      </div>
+    </div>
+
+    <!-- SUNDAY -->
+    <div class="tday">
+      <div class="tday-header"><div class="tday-name">Sunday</div><div class="tday-date">3 May 2026</div></div>
+      <div class="tblock tb-riyaaz">
+        <div class="tblock-label">Morning</div>
+        <div class="tblock-name">Rise & Riyaaz</div>
+        <div class="tblock-sub">Swapnil Dagliya</div>
+      </div>
+      <div class="tblock tb-workshop">
+        <div class="tblock-label"></div>
+        <div class="tblock-name">Indian Fusion Bellydance</div>
+        <div class="tblock-sub">Colleena Shakti</div>
+      </div>
+      <div class="tblock tb-workshop">
+        <div class="tblock-label"></div>
+        <div class="tblock-name">Desi-Afro Grooves</div>
+        <div class="tblock-sub">Desihop</div>
+      </div>
+      <div class="tgap"></div>
+      <div class="tblock tb-workshop">
+        <div class="tblock-label">Afternoon</div>
+        <div class="tblock-name">Lavani</div>
+        <div class="tblock-sub">Swapnil Dagliya · 2 hours</div>
+      </div>
+      <div class="tblock tb-workshop">
+        <div class="tblock-label"></div>
+        <div class="tblock-name">Bamboo Beats: Cheraw</div>
+        <div class="tblock-sub">Vaishali Sagar</div>
+      </div>
+      <div class="tgap"></div>
+      <div class="tblock tb-social">
+        <div class="tblock-label">Closing</div>
+        <div class="tblock-name">One Last Gupshup</div>
+        <div class="tblock-sub">Closing circle</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══ OPTION B ═══ -->
+<div class="option">
+  <div class="option-label">Option B</div>
+  <div class="option-title">Story scroll — flowing and narrative</div>
+
+  <div class="story">
+
+    <div class="sday">
+      <div class="sday-left">
+        <div class="sday-name">Friday</div>
+        <div class="sday-date">1 May</div>
+      </div>
+      <div class="sday-right">
+        <div class="spill"><div class="spill-dot" style="background:var(--gold)"></div><div class="spill-text"><strong>Technique & Tools Lab</strong> with Colleena Shakti — a 4-hour deep dive into Rajasthani folk. <em>Afternoon</em></div></div>
+        <div class="spill-connector"></div>
+        <div class="spill"><div class="spill-dot" style="background:var(--accent)"></div><div class="spill-text"><strong>Bollywood Folk Fusion</strong> with Vaishali Sagar, then <strong>Garba</strong> with Shampa Gopikrishna. <em>Evening workshops</em></div></div>
+        <div class="spill-connector"></div>
+        <div class="spill"><div class="spill-dot" style="background:var(--green)"></div><div class="spill-text"><strong>Kalbeliya community class</strong> with Swapnil — open to all, no experience needed. <em>20:15</em></div></div>
+        <div class="spill-connector"></div>
+        <div class="spill"><div class="spill-dot" style="background:#C4841A;width:14px;height:14px;border-radius:50%"></div><div class="spill-text"><strong>Opening Party</strong> — live performances, Dariya Live Band, DJ @swapkebolly into the night. <em>From 21:00</em></div></div>
+      </div>
+    </div>
+
+    <div class="sday">
+      <div class="sday-left">
+        <div class="sday-name">Saturday</div>
+        <div class="sday-date">2 May</div>
+      </div>
+      <div class="sday-right">
+        <div class="spill"><div class="spill-dot" style="background:#5C7CFA"></div><div class="spill-text"><strong>Rise & Riyaaz</strong> — morning warm-up with Swapnil. <em>08:45</em></div></div>
+        <div class="spill-connector"></div>
+        <div class="spill"><div class="spill-dot" style="background:var(--accent)"></div><div class="spill-text"><strong>Kuthu</strong> with Desihop, <strong>Mayurbhanj Chhau</strong> with Shampa Gopikrishna. <em>Morning workshops</em></div></div>
+        <div class="spill-connector"></div>
+        <div class="spill"><div class="spill-dot" style="background:var(--accent)"></div><div class="spill-text"><strong>Giddha</strong> with Manasi, <strong>Abhinaya</strong> with Colleena Shakti. <em>Afternoon workshops</em></div></div>
+        <div class="spill-connector"></div>
+        <div class="spill"><div class="spill-dot" style="background:var(--dark);width:14px;height:14px;border-radius:50%"></div><div class="spill-text"><strong>Gala Showcase</strong> — 18 acts at Shoonya Theatre. Doors 20:00, show begins 20:30. <em>The evening</em></div></div>
+      </div>
+    </div>
+
+    <div class="sday">
+      <div class="sday-left">
+        <div class="sday-name">Sunday</div>
+        <div class="sday-date">3 May</div>
+      </div>
+      <div class="sday-right">
+        <div class="spill"><div class="spill-dot" style="background:#5C7CFA"></div><div class="spill-text"><strong>Rise & Riyaaz</strong> — morning warm-up with Swapnil. <em>09:15</em></div></div>
+        <div class="spill-connector"></div>
+        <div class="spill"><div class="spill-dot" style="background:var(--accent)"></div><div class="spill-text"><strong>Indian Fusion Bellydance</strong> with Colleena, <strong>Desi-Afro Grooves</strong> with Desihop. <em>Morning workshops</em></div></div>
+        <div class="spill-connector"></div>
+        <div class="spill"><div class="spill-dot" style="background:var(--accent)"></div><div class="spill-text"><strong>Lavani</strong> with Swapnil, <strong>Bamboo Beats: Cheraw</strong> with Vaishali Sagar. <em>Afternoon workshops</em></div></div>
+        <div class="spill-connector"></div>
+        <div class="spill"><div class="spill-dot" style="background:var(--t3)"></div><div class="spill-text"><strong>One Last Gupshup</strong> — closing circle. <em>17:20</em></div></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══ OPTION C ═══ -->
+<div class="option">
+  <div class="option-label">Option C</div>
+  <div class="option-title">Day cards — simple, at a glance</div>
+
+  <div class="daycards">
+
+    <div class="daycard">
+      <div class="dc-header">
+        <div class="dc-day">Day 1</div>
+        <div class="dc-name">Friday</div>
+        <div class="dc-date">1 May 2026</div>
+      </div>
+      <div class="dc-body">
+        <div class="dc-event">
+          <div class="dc-pip" style="background:var(--gold)"></div>
+          <div><div class="dc-event-name">Technique & Tools Lab</div><div class="dc-event-sub">Colleena Shakti — 4 hrs</div></div>
+        </div>
+        <div class="dc-event">
+          <div class="dc-pip" style="background:var(--accent)"></div>
+          <div><div class="dc-event-name">Bollywood Folk Fusion</div><div class="dc-event-sub">Vaishali Sagar</div></div>
+        </div>
+        <div class="dc-event">
+          <div class="dc-pip" style="background:var(--accent)"></div>
+          <div><div class="dc-event-name">Garba Choreography</div><div class="dc-event-sub">Shampa Gopikrishna</div></div>
+        </div>
+        <div class="dc-event">
+          <div class="dc-pip" style="background:var(--green)"></div>
+          <div><div class="dc-event-name">Community Class: Kalbeliya</div><div class="dc-event-sub">Swapnil Dagliya</div></div>
+        </div>
+      </div>
+      <div class="dc-footer">
+        <div class="dc-highlight">✦ Opening Party from 21:00</div>
+      </div>
+    </div>
+
+    <div class="daycard">
+      <div class="dc-header">
+        <div class="dc-day">Day 2</div>
+        <div class="dc-name">Saturday</div>
+        <div class="dc-date">2 May 2026</div>
+      </div>
+      <div class="dc-body">
+        <div class="dc-event">
+          <div class="dc-pip" style="background:#5C7CFA"></div>
+          <div><div class="dc-event-name">Rise & Riyaaz</div><div class="dc-event-sub">Morning warm-up</div></div>
+        </div>
+        <div class="dc-event">
+          <div class="dc-pip" style="background:var(--accent)"></div>
+          <div><div class="dc-event-name">Kuthu + Mayurbhanj Chhau</div><div class="dc-event-sub">Desihop · Shampa Gopikrishna</div></div>
+        </div>
+        <div class="dc-event">
+          <div class="dc-pip" style="background:var(--accent)"></div>
+          <div><div class="dc-event-name">Giddha + Abhinaya</div><div class="dc-event-sub">Manasi · Colleena Shakti</div></div>
+        </div>
+      </div>
+      <div class="dc-footer">
+        <div class="dc-highlight">✦ Gala Showcase — 18 acts, 20:30</div>
+      </div>
+    </div>
+
+    <div class="daycard">
+      <div class="dc-header">
+        <div class="dc-day">Day 3</div>
+        <div class="dc-name">Sunday</div>
+        <div class="dc-date">3 May 2026</div>
+      </div>
+      <div class="dc-body">
+        <div class="dc-event">
+          <div class="dc-pip" style="background:#5C7CFA"></div>
+          <div><div class="dc-event-name">Rise & Riyaaz</div><div class="dc-event-sub">Morning warm-up</div></div>
+        </div>
+        <div class="dc-event">
+          <div class="dc-pip" style="background:var(--accent)"></div>
+          <div><div class="dc-event-name">Fusion Bellydance + Desi-Afro</div><div class="dc-event-sub">Colleena Shakti · Desihop</div></div>
+        </div>
+        <div class="dc-event">
+          <div class="dc-pip" style="background:var(--accent)"></div>
+          <div><div class="dc-event-name">Lavani + Cheraw</div><div class="dc-event-sub">Swapnil Dagliya · Vaishali Sagar</div></div>
+        </div>
+        <div class="dc-event">
+          <div class="dc-pip" style="background:var(--t3)"></div>
+          <div><div class="dc-event-name">One Last Gupshup</div><div class="dc-event-sub">Closing circle</div></div>
+        </div>
+      </div>
+      <div class="dc-footer">
+        <div class="dc-highlight" style="color:var(--t2)">Festival ends ~18:00</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
