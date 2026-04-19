@@ -352,6 +352,7 @@ body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg
 .op-feat-title{font-family:'Inter',sans-serif;font-size:22px;font-weight:800;color:#fff;line-height:1.15;letter-spacing:-.3px}
 .op-feat-desc{font-size:13px;color:rgba(255,255,255,.6);line-height:1.7;flex:1}
 .op-feat-meta{font-size:11px;font-weight:600;color:rgba(255,255,255,.35);letter-spacing:.3px}
+.op-feat-tip{font-size:12px;color:rgba(255,255,255,.55);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:10px 14px;margin:12px 0 10px;line-height:1.6}
 /* Bottom strip */
 .op-strip{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 @media(max-width:500px){.op-strip{grid-template-columns:1fr}}
@@ -647,18 +648,18 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
       <div class="trow-item" onclick="toggleBio(this)"
            data-photo="images/teachers/Hameed Khan Kawa.JPG"
            data-name="Hameed Khan Kawa"
-           data-styles="Kalbeliya · Rajasthani Folk"
-           data-bio="Born into the legendary Kawa Khelna family of Pushkar, Hameed Khan Kawa is a master of Kalbeliya — the serpentine folk dance of Rajasthan. He has performed and taught across the world, carrying forward a lineage that has been passed down for generations within his community.">
+           data-styles="Tabla · Live Music"
+           data-bio="An internationally renowned tabla maestro, Hameed Khan Kawa carries the soul of Rajasthan in every beat. The visionary behind ensembles like Musafir, Jaipur Kawa Brass Band, and Kawa Circus, he has performed worldwide — from Edgbaston Stadium to Coke Studio Bharat alongside Sunidhi Chauhan — and collaborated with Ustad Zakir Hussain and the Gypsy Kings. At GIDF 2026, he accompanies workshops and performances with live music.">
         <div class="trow-photo"><img src="images/teachers/Hameed Khan Kawa.JPG" alt="Hameed Khan Kawa"></div>
         <div class="trow-name">Hameed Khan Kawa</div>
-        <div class="trow-style">Kalbeliya · Folk</div>
+        <div class="trow-style">Tabla · Live Music</div>
       </div>
 
       <div class="trow-item" onclick="toggleBio(this)"
            data-photo="https://lh3.googleusercontent.com/d/1Pmt9QpTSPJFlIPECw7RB-KG4nivx4gJK"
            data-name="Manasi Khanna"
            data-styles="Giddha · Punjabi Folk"
-           data-bio="A specialist in Punjabi folk dance and Giddha, Manasi brings the collective joy and wit of Punjab's folk traditions to life. Her teaching is rooted in the boliyan — the folk verses that give Giddha its voice and rhythm.">
+           data-bio="A key figure in the European Punjabi folk scene and the lead force behind Amsterdam Bhangra, Manasi has been instrumental in bringing the high-octane energy of North Indian folk to the heart of Europe. Her journey has reached the grandest stages — including performing as part of the dance crew for Diljit Dosanjh during his historic Dil-Luminati tour in the Netherlands.">
         <div class="trow-photo"><img src="https://lh3.googleusercontent.com/d/1Pmt9QpTSPJFlIPECw7RB-KG4nivx4gJK" alt="Manasi Khanna"></div>
         <div class="trow-name">Manasi Khanna</div>
         <div class="trow-style">Giddha · Punjabi Folk</div>
@@ -668,7 +669,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
            data-photo="https://lh3.googleusercontent.com/d/1sitj_n2mRGYQMLwUaMKr3vvBDOxMnUvW"
            data-name="Desihop"
            data-styles="Kuthu · Desi-Afro Grooves"
-           data-bio="A dynamic duo bringing South Indian urban energy to international stages. Specialists in Kuthu — the high-intensity Tamil street dance rooted in cinema and celebration — and Desi-Afro Grooves, a genre-defying blend of Indian and African movement traditions.">
+           data-bio="DesiHop is a collective of three Indian dancers — Gokul Gopi, Saumya Singh, and Rayeez Mohammed — born in Frankfurt in 2023. Blending Bollywood, hip-hop, Afro, and the raw energy of Tamil Kuthu, they've built a growing movement with over 15 workshops across Germany, creating a space where South-Asian dance feels like home.">
         <div class="trow-photo"><img src="https://lh3.googleusercontent.com/d/1sitj_n2mRGYQMLwUaMKr3vvBDOxMnUvW" alt="Desihop"></div>
         <div class="trow-name">Desihop</div>
         <div class="trow-style">Kuthu · Desi-Afro</div>
@@ -678,7 +679,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
            data-photo="https://lh3.googleusercontent.com/d/1Q2x1fdKvrVqK7tb-bH5UpdUh4QdEEIp7"
            data-name="Swapnil Dagliya"
            data-styles="Lavani · Kalbeliya"
-           data-bio="Curator of GIDF and artistic director of ABC. A dancer, teacher, and cultural bridge-builder based in Ghent, Swapnil has been bringing Indian dance to Belgium for over a decade. He teaches Lavani, Kalbeliya, and leads Rise &amp; Riyaaz each morning of the festival.">
+           data-bio="Curator of GIDF and co-founder of Shoonya Dance Centre in Ghent. Born near Mumbai, Swapnil trained at the Broadway Dance Center in New York and Opus Ballet in Florence, blending Indian folk roots with ballet, jazz, and contemporary dance. He has been bringing Indian dance to Belgium for over a decade — teaching Kalbeliya and Lavani, and leading Rise &amp; Riyaaz each morning of the festival.">
         <div class="trow-photo"><img src="https://lh3.googleusercontent.com/d/1Q2x1fdKvrVqK7tb-bH5UpdUh4QdEEIp7" alt="Swapnil Dagliya"></div>
         <div class="trow-name">Swapnil Dagliya</div>
         <div class="trow-style">Lavani · Kalbeliya</div>
@@ -1245,13 +1246,14 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
       <div class="op-feat-label">How the night begins</div>
       <div class="op-feat-title">Community Class:<br>Kalbeliya</div>
       <p class="op-feat-desc">Kalbeliya is the serpentine folk dance of the Kalbelia tribe of Rajasthan — fluid, earthy, and UNESCO-recognised as intangible cultural heritage. Swapnil leads an open community class from 20:15. No experience needed. You will be moving from the very first minute of the festival.</p>
+      <div class="op-feat-tip">👗 Bring a flowing skirt or a scarf to wrap around your hips — it makes the movement come alive. No specific outfit required.</div>
       <div class="op-feat-meta">Led by Swapnil Dagliya &nbsp;·&nbsp; 20:15 – 21:00 &nbsp;·&nbsp; No experience needed</div>
     </div>
     <div class="op-feat op-feat-dariya">
       <div class="op-feat-label">Live Music</div>
       <div class="op-feat-title">Dariya<br>Live Band</div>
-      <p class="op-feat-desc">Dariya bring Rajasthani folk music to life — dhol, sarangi, and raw vocals that fill a room and pull you onto the floor. After the performances, they take over. No DJ, no playlist — just the band, the beat, and the crowd moving together.</p>
-      <div class="op-feat-meta">Live from 21:00 &nbsp;·&nbsp; Rajasthani folk &nbsp;·&nbsp; Studio Ananta</div>
+      <p class="op-feat-desc">Led by Shivam on vocals and guitar, with Ramit on drums and multi-percussion, and Abhijit on bass, Dariya weave folk-inspired melodies with raw emotion and deep-rooted honesty. Shivam's songwriting draws from the eastern landscapes of India — echoes of satire, mythology, and symbols like Natraja and Ardhanarishwar. Original compositions alongside soulful Bollywood interpretations. After the performances, they take over. No DJ, no playlist — just the band, the beat, and the crowd moving together.</p>
+      <div class="op-feat-meta">Live from 21:00 &nbsp;·&nbsp; Folk · Original compositions &nbsp;·&nbsp; Studio Ananta</div>
     </div>
   </div>
 
