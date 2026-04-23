@@ -4,17 +4,45 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<meta name="theme-color" content="#B5421A"/>
 <title>GIDF 2026 — Gent India Dans Festival</title>
 <meta content="Gent India Dans Festival 2026 — workshops, gala showcase and opening party. 1–3 May 2026, Shoonya Dance Centre, Ghent." name="description"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="GIDF 2026 — Gent India Dans Festival"/>
+<meta property="og:description" content="Three days of Indian dance in the heart of Ghent. Workshops, Gala Showcase &amp; Opening Party. 1–3 May 2026, Shoonya Dance Centre."/>
+<meta property="og:image" content="images/hero/Finale Gala Showcase-Stijn Dejonckheere.jpg"/>
+<meta property="og:url" content="https://gidf.abcdans.com"/>
+<meta property="og:site_name" content="Gent India Dans Festival"/>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Hind:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Hind:wght@400;500;600&display=swap');
 
 *{box-sizing:border-box;margin:0;padding:0}
+/* ── ACCESSIBILITY: focus indicators ── */
+*:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* ── ANIMATIONS ── */
+@keyframes heroFadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes tabIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes revealUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+/* Hero stagger — 5 real elements, evenly spaced */
+.hero-eyebrow{animation:heroFadeUp .6s cubic-bezier(0.22,1,0.36,1) .05s both}
+.hero-title{animation:heroFadeUp .72s cubic-bezier(0.22,1,0.36,1) .16s both}
+.hero-tagline{animation:heroFadeUp .6s cubic-bezier(0.22,1,0.36,1) .30s both}
+.hero-meta{animation:heroFadeUp .6s cubic-bezier(0.22,1,0.36,1) .42s both}
+.hero-cd{animation:heroFadeUp .6s cubic-bezier(0.22,1,0.36,1) .54s both}
+/* Tab content fade */
+.tab-fade-in{animation:tabIn .32s cubic-bezier(0.22,1,0.36,1) both}
+/* Scroll reveals */
+.scroll-reveal{opacity:0}
+.scroll-reveal.sr-visible{animation:revealUp .65s cubic-bezier(0.22,1,0.36,1) both}
+
 :root{
   --bg:#F7F0E6;--surface:#FFFDF8;--dark:#0A0A14;
   --accent:#B5421A;--gold:#C4841A;
-  --text:#1C1108;--t2:#6B5840;--t3:#9B8B72;
-  --border:#E0D5C4;--green:#4A7C59;--gtint:#EDF5F1;
+  --text:#1C1108;--t2:#6B5840;--t3:#7A6A52;
+  --border:#E0D5C4;--green:#4A7C59;--gtint:#EDF5F1;--nav-dark:#0D0828;
 }
 body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg);color:var(--text);min-height:100vh}
 
@@ -24,26 +52,15 @@ body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg
 .hero-photo.loaded{background-image:url('images/hero/Finale Gala Showcase-Stijn Dejonckheere.jpg')}
 .hero::before{content:'';position:absolute;inset:0;
   background:linear-gradient(to bottom,rgba(28,17,8,.85) 0%,rgba(28,17,8,.68) 45%,rgba(28,17,8,.92) 100%)}
-.hero-ctas{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:36px;position:relative}
-.hero-cta-primary{display:inline-flex;align-items:center;background:var(--accent);color:#fff;padding:14px 32px;border-radius:50px;text-decoration:none;font-size:15px;font-weight:700;font-family:'Hind',sans-serif;transition:background .15s;letter-spacing:.3px}
-.hero-cta-primary:hover{background:#A03818}
-.hero-cta-secondary{display:inline-flex;align-items:center;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.3);color:#fff;padding:14px 32px;border-radius:50px;text-decoration:none;font-size:15px;font-weight:600;font-family:'Hind',sans-serif;transition:all .15s}
-.hero-cta-secondary:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.5)}
 .hero-eyebrow{font-family:'Hind',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3.5px;color:rgba(255,255,255,.5);margin-bottom:18px;position:relative}
 .hero-title{font-family:'Inter',sans-serif;font-style:italic;font-size:clamp(56px,12vw,96px);font-weight:900;color:#fff;line-height:.92;margin-bottom:10px;position:relative}
 .hero-title span{color:var(--gold)}
 .hero-tagline{font-family:'Inter',sans-serif;font-size:clamp(16px,3vw,22px);color:#C8A87A;font-weight:400;font-style:italic;margin-bottom:24px;position:relative}
 .hero-meta{font-size:14px;color:rgba(255,255,255,.5);letter-spacing:.5px;margin-bottom:48px;position:relative}
 .hero-meta strong{color:#C8A87A;font-weight:600}
-.hero-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;position:relative}
-.hero-pill{background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.15);color:#C8A87A;
-  font-family:'Hind',sans-serif;font-size:13px;font-weight:600;padding:11px 24px;border-radius:50px;
-  cursor:pointer;transition:all .2s;letter-spacing:.3px;white-space:nowrap}
-.hero-pill:hover{background:rgba(181,66,26,.3);border-color:var(--accent);color:#fff}
-.hero-pill.active{background:var(--accent);border-color:var(--accent);color:#fff}
 
 /* ── STICKY NAV (mobile only) ── */
-.sticky-nav{position:sticky;top:0;z-index:100;background:#0D0828;border-bottom:2px solid rgba(196,132,26,.4);
+.sticky-nav{position:sticky;top:0;z-index:100;background:var(--nav-dark);border-bottom:2px solid rgba(196,132,26,.4);
   padding:0 20px;display:flex;overflow-x:auto;justify-content:center}
 .snav-btn{background:none;border:none;color:rgba(255,255,255,.42);padding:15px 22px;font-size:14px;font-weight:600;
   cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;font-family:'Hind',sans-serif;transition:all .18s}
@@ -62,24 +79,25 @@ body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg
 .faq-q-text{font-size:13px;font-weight:600;color:var(--dark);line-height:1.4}
 .faq-chevron{flex-shrink:0;width:16px;height:16px;color:var(--t3);transition:transform .2s;display:block}
 .faq-trigger[aria-expanded="true"] .faq-chevron{transform:rotate(180deg)}
-.faq-body{display:none;padding:0 20px 15px;background:var(--surface)}
-.faq-body.open{display:block}
+.faq-body{overflow:hidden;max-height:0;opacity:0;padding:0 20px;background:var(--surface);
+  transition:max-height .35s cubic-bezier(0.22,1,0.36,1),opacity .22s ease,padding-bottom .35s ease}
+.faq-body.open{max-height:600px;opacity:1;padding-bottom:15px}
 .faq-group{margin-bottom:28px}
 .faq-group-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--accent);padding:0 4px;margin-bottom:8px}
 .faq-body p{font-size:13px;color:var(--t2);line-height:1.72}
 
 /* ── CONTENT ── */
 .content{max-width:980px;margin:0 auto;padding:44px 28px 60px}
-@media(min-width:769px){.content{padding-right:172px}}
+@media(min-width:769px){.content{padding-right:28px}}
 .sec-header{margin-bottom:36px}
 #tab-workshops,#tab-show,#tab-party,#tab-prices{max-width:980px;margin:0 auto;padding:48px 28px 60px}
 .sec-title{font-family:'Inter',sans-serif;font-size:clamp(28px,5vw,40px);
   font-weight:800;color:var(--dark);line-height:1.1;margin-bottom:10px;letter-spacing:-.5px}
-.sec-intro{font-size:15px;color:var(--t2);max-width:640px;line-height:1.75}
+.sec-intro{font-size:16px;color:var(--t2);max-width:640px;line-height:1.75}
 
 /* Day label */
 .day-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2.5px;color:var(--t3);
-  margin:36px 0 16px;display:flex;align-items:center;gap:12px}
+  margin:52px 0 20px;display:flex;align-items:center;gap:12px}
 .day-label::after{content:'';flex:1;height:1px;background:var(--border)}
 
 /* ── WORKSHOP CARDS ── */
@@ -95,7 +113,7 @@ body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg
 .wcard[data-style="mizoram"]{--sc:#0284C7;--sb:rgba(2,132,199,.05)}
 .wcard[data-style="fusion"]{--sc:#6D28D9;--sb:rgba(109,40,217,.05)}
 
-.wgrid{display:flex;flex-direction:column;gap:8px}
+.wgrid{display:flex;flex-direction:column;gap:14px}
 .wcard{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--sc,var(--border));border-radius:12px;overflow:hidden;transition:box-shadow .2s,border-color .2s}
 .wcard:hover{box-shadow:0 4px 20px rgba(28,17,8,.09);border-color:var(--sc,var(--border))}
 .wcard-row{display:flex;align-items:stretch}
@@ -106,12 +124,12 @@ body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg
 .wcard-teacher{font-size:13px;font-weight:600;color:var(--t2);margin-bottom:10px;display:flex;align-items:center;gap:7px}
 .wavatar{width:26px;height:26px;border-radius:50%;object-fit:cover;object-position:top center;border:1.5px solid var(--border);flex-shrink:0}
 .wcard-meta{display:flex;flex-wrap:wrap;gap:5px;margin-top:auto}
-.wpill{font-size:10px;font-weight:600;padding:2px 9px;border-radius:20px;line-height:1.7;letter-spacing:.2px;white-space:nowrap}
+.wpill{font-size:10px;font-weight:600;padding:4px 12px;border-radius:20px;line-height:1.6;letter-spacing:.2px;white-space:nowrap}
 .wpill-lvl.wlvl-all{background:#DCEEE3;color:#155E30}
 .wpill-lvl.wlvl-mid{background:#FDE8C8;color:#7A420A}
 .wpill-lvl.wlvl-exp{background:#FAE0D5;color:#8A2808}
-.wpill-studio{background:#E6EEF8;color:#2A4A80}
-.wpill-attire{background:#EDE8DE;color:#5A4828}
+.wpill-studio{background:#E6EEF8;color:#1A3160}
+.wpill-attire{background:#EDE8DE;color:#3D2E13}
 .wcard-aside{padding:18px 20px;flex:1;display:flex;flex-direction:column;justify-content:flex-start;border-left:1px solid var(--border);background:var(--sb,transparent)}
 .wcard.wcard-lab .wcard-main{background:linear-gradient(135deg,rgba(196,85,10,.04) 0%,transparent 100%)}
 .wcard-sname{display:inline-block;font-size:10px;font-weight:700;color:#fff;background:var(--sc,var(--accent));border-radius:20px;padding:3px 11px;margin-bottom:10px;letter-spacing:.5px;text-transform:uppercase;line-height:1.6}
@@ -142,7 +160,7 @@ body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg
 .gidf-what-inner{max-width:720px;margin:0 auto;position:relative;z-index:1}
 .gidf-what-line1{font-family:'Inter',sans-serif;font-size:clamp(22px,4vw,34px);font-weight:800;color:#fff;line-height:1.2;margin-bottom:32px;letter-spacing:-.4px}
 .gidf-what-line1 em{color:var(--gold);font-style:normal}
-.gidf-what-body{font-size:15px;color:rgba(255,255,255,.65);line-height:1.9}
+.gidf-what-body{font-size:16px;color:rgba(255,255,255,.65);line-height:1.9}
 .gidf-what-body p{margin:0 0 18px;padding-left:18px;border-left:2px solid rgba(196,132,26,.35)}
 .gidf-what-body p:last-child{margin:0;border-left-color:rgba(196,132,26,.6);color:rgba(255,255,255,.85);font-weight:600}
 .gidf-what-footer{margin-top:32px;font-size:12px;font-weight:700;color:rgba(255,255,255,.28);letter-spacing:.5px}
@@ -150,12 +168,12 @@ body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg
 /* ── TEACHER PROFILES ── */
 .teachers-section{margin:28px 0 36px}
 .teacher-row{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
-.trow-item{display:flex;flex-direction:column;align-items:center;gap:8px;flex:1;min-width:72px;max-width:110px;cursor:pointer}
+.trow-item{display:flex;flex-direction:column;align-items:center;gap:8px;flex:1;min-width:72px;max-width:110px;cursor:pointer;background:none;border:none;padding:0;font-family:inherit;text-align:center}
 .trow-photo{width:100px;height:100px;border-radius:50%;overflow:hidden;background:#EFE5D8;border:2px solid var(--border);flex-shrink:0;transition:transform .15s,border-color .15s}
 .trow-photo img{width:100%;height:100%;object-fit:cover;object-position:top center}
 .trow-initial{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;color:var(--accent);font-family:'Inter',sans-serif}
 .trow-name{font-size:11px;font-weight:700;color:var(--dark);text-align:center;line-height:1.3}
-.trow-style{font-size:9px;font-weight:600;color:var(--t3);text-align:center;text-transform:uppercase;letter-spacing:.5px;line-height:1.4}
+.trow-style{font-size:10px;font-weight:600;color:var(--t3);text-align:center;text-transform:uppercase;letter-spacing:.5px;line-height:1.4}
 .trow-item:hover .trow-photo{transform:scale(1.06)}
 .trow-item.active .trow-photo{border-color:var(--accent);transform:scale(1.06)}
 .trow-item.active .trow-name{color:var(--accent)}
@@ -176,7 +194,7 @@ body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg
 
 /* ── PHOTO STRIPS ── */
 .photo-strip{display:flex;gap:6px;height:210px;margin:24px 0;border-radius:12px;overflow:hidden}
-.photo-strip img{flex:1;object-fit:cover;min-width:0;transition:flex .35s ease}
+.photo-strip img{flex:1;object-fit:cover;min-width:0;transition:flex .35s ease;will-change:flex}
 .photo-strip img:hover{flex:2}
 
 /* ── EVENING ARC ── */
@@ -244,7 +262,7 @@ body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg
 .ov-intro{margin-bottom:44px;max-width:680px}
 .ov-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--accent);margin-bottom:12px}
 .ov-heading{font-family:'Inter',sans-serif;font-style:italic;font-size:clamp(26px,4vw,38px);font-weight:700;color:var(--dark);margin-bottom:14px;line-height:1.2}
-.ov-text{font-size:15px;color:var(--t2);line-height:1.8}
+.ov-text{font-size:16px;color:var(--t2);line-height:1.8}
 .ov-grid{display:grid;grid-template-columns:240px 1fr;gap:32px;align-items:start}
 @media(max-width:760px){.ov-grid{grid-template-columns:1fr}}
 .ov-poster img{width:100%;border-radius:14px;box-shadow:0 8px 32px rgba(28,17,8,.15);display:block}
@@ -257,7 +275,7 @@ body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg
 .ev-tag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--t3);margin-bottom:5px}
 .ev-name{font-family:'Inter',sans-serif;font-size:18px;font-weight:700;color:var(--dark);margin-bottom:7px}
 .ev-desc{font-size:13px;color:var(--t2);line-height:1.6;margin-bottom:12px;flex:1}
-.ev-btn{display:inline-flex;align-items:center;padding:8px 18px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;font-family:'Hind',sans-serif;transition:background .15s;align-self:flex-start;color:#fff}
+.ev-btn{display:inline-flex;align-items:center;padding:11px 18px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;font-family:'Hind',sans-serif;transition:background .15s;align-self:flex-start;color:#fff}
 .ev-btn-dark{background:var(--dark)}.ev-btn-dark:hover{background:#1A1430}
 .ev-btn-gold{background:var(--gold)}.ev-btn-gold:hover{background:#A06B12}
 .ev-btn-accent{background:var(--accent)}.ev-btn-accent:hover{background:#A03818}
@@ -312,7 +330,7 @@ body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg
 .newcomer::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 100%,rgba(196,132,26,.18),transparent),radial-gradient(ellipse 50% 40% at 90% 0%,rgba(255,120,30,.15),transparent);pointer-events:none}
 .nc-eyebrow{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:#E8A96A;margin-bottom:16px;position:relative}
 .nc-heading{font-family:'Inter',sans-serif;font-size:clamp(26px,5vw,44px);font-weight:800;color:#fff;margin-bottom:16px;line-height:1.15;position:relative;letter-spacing:-.5px}
-.nc-text{font-size:15px;color:rgba(255,255,255,.65);line-height:1.85;max-width:560px;margin:0 auto 40px;position:relative}
+.nc-text{font-size:16px;color:rgba(255,255,255,.65);line-height:1.85;max-width:560px;margin:0 auto 40px;position:relative}
 .nc-options{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:720px;margin:0 auto 32px;position:relative;text-align:left}
 @media(max-width:600px){.nc-options{grid-template-columns:1fr}}
 .nc-option{border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:10px;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s;cursor:pointer;border-top-width:3px;border-top-style:solid}
@@ -393,7 +411,7 @@ body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg
 .op-card-desc{font-size:12px;color:var(--t2);line-height:1.65}
 
 /* ── PRACTICAL INFO ── */
-.info-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:16px}
+.info-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:20px}
 .info-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:26px}
 .info-icon{font-size:26px;margin-bottom:14px}
 .info-title{font-family:'Inter',sans-serif;font-size:16px;font-weight:700;color:var(--dark);margin-bottom:14px;letter-spacing:-.1px}
@@ -409,7 +427,7 @@ body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg
 .venue-address{font-size:13px;color:var(--gold);font-weight:600;margin-bottom:18px;letter-spacing:.2px}
 .venue-desc{font-size:14px;color:rgba(255,255,255,.6);line-height:1.8;max-width:580px;margin-bottom:24px}
 .venue-actions{display:flex;gap:10px;flex-wrap:wrap}
-.venue-map-btn{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.2);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:600;font-family:'Hind',sans-serif;transition:all .15s}
+.venue-map-btn{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.2);color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:600;font-family:'Hind',sans-serif;transition:all .15s}
 .venue-map-btn:hover{background:rgba(255,255,255,.18)}
 @media(max-width:640px){.venue-card{flex-direction:column;gap:24px;padding:28px}}
 .irows{display:flex;flex-direction:column;gap:9px}
@@ -417,7 +435,7 @@ body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg
 .irow-lbl{font-weight:700;color:var(--accent);text-transform:uppercase;font-size:10px;letter-spacing:.6px;min-width:72px;padding-top:2px;flex-shrink:0}
 .irow-val{color:var(--text);line-height:1.55}
 .map-btn{display:inline-flex;align-items:center;gap:7px;background:#FEF0E8;border:1.5px solid var(--accent);
-  color:var(--accent);padding:9px 16px;border-radius:8px;text-decoration:none;font-size:13px;
+  color:var(--accent);padding:12px 16px;border-radius:8px;text-decoration:none;font-size:13px;
   font-weight:700;margin-top:16px;transition:background .15s}
 .map-btn:hover{background:#FEE0CC}
 .checklist{display:flex;flex-direction:column;gap:8px}
@@ -437,7 +455,7 @@ body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg
 .reg-bar-text strong{font-size:14px;font-weight:700;color:var(--dark);display:block;margin-bottom:2px}
 .reg-bar-text span{font-size:13px;color:var(--t2)}
 .reg-btn{display:inline-flex;align-items:center;gap:7px;background:var(--accent);color:#fff;
-  padding:11px 22px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;
+  padding:13px 22px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;
   font-family:'Hind',sans-serif;transition:background .15s;white-space:nowrap}
 .reg-btn:hover{background:#A03818}
 .reg-bar-soldout{background:#F9F6F3;border-color:#DDD5C8}
@@ -573,6 +591,10 @@ body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg
   font-size:13px;color:var(--t2);line-height:1.75}
 .fine-print strong{color:var(--dark)}
 
+/* ── SKIP NAV ── */
+.skip-nav{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip-nav:focus{position:fixed;top:0;left:0;width:auto;height:auto;padding:12px 20px;background:var(--accent);color:#fff;font-size:14px;font-weight:700;font-family:'Hind',sans-serif;z-index:9999;border-radius:0 0 8px 0;text-decoration:none}
+
 /* ── FOOTER ── */
 footer{background:var(--dark);padding:44px 32px;text-align:center}
 .ft-logo{font-family:'Inter',sans-serif;font-style:italic;font-size:32px;font-weight:700;color:#fff;margin-bottom:8px}
@@ -580,7 +602,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 .ft-sub{font-size:12px;color:#5C4E3C;margin-bottom:24px;line-height:1.8}
 .socials{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:28px}
 .soc-btn{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);
-  border:1.5px solid rgba(255,255,255,.14);color:#C8A87A;padding:10px 20px;border-radius:50px;
+  border:1.5px solid rgba(255,255,255,.14);color:#C8A87A;padding:12px 20px;border-radius:50px;
   text-decoration:none;font-size:13px;font-weight:600;font-family:'Hind',sans-serif;transition:all .18s}
 .soc-btn:hover{border-color:var(--gold);color:var(--gold)}
 .ft-copy{font-size:11px;color:#3A3028}
@@ -597,11 +619,12 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 </style>
 </head>
 <body>
+<a class="skip-nav" href="#program">Skip to content</a>
 <!-- HERO -->
 <div class="hero">
 <div class="hero-photo"></div>
 <div class="hero-eyebrow">Gent India Dans Festival</div>
-<div class="hero-title">GIDF <span>2026</span></div>
+<h1 class="hero-title">GIDF <span>2026</span></h1>
 <div class="hero-tagline">An annual celebration of Indian dance in Belgium</div>
 <div class="hero-meta"><strong>1 – 3 May 2026</strong>  ·  Shoonya Dance Centre, Ghent</div>
 <div class="hero-cd" id="hero-cd">
@@ -619,10 +642,10 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 </div>
 <!-- STICKY NAV (mobile) -->
 <nav class="sticky-nav">
-<button class="snav-btn active" onclick="tab('workshops',this,true)">Workshops</button>
-<button class="snav-btn" onclick="tab('show',this,true)">Gala Showcase</button>
-<button class="snav-btn" onclick="tab('party',this,true)">Opening Party</button>
-<button class="snav-btn" onclick="tab('prices',this,true)">Passes &amp; Prices</button>
+<button type="button" class="snav-btn active" onclick="tab('workshops',this,true)">Workshops</button>
+<button type="button" class="snav-btn" onclick="tab('show',this,true)">Gala Showcase</button>
+<button type="button" class="snav-btn" onclick="tab('party',this,true)">Opening Party</button>
+<button type="button" class="snav-btn" onclick="tab('prices',this,true)">Passes &amp; Prices</button>
 </nav>
 <!-- WHAT IS GIDF -->
 <div class="gidf-what">
@@ -641,45 +664,45 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <div class="faculty-label">2026 Faculty</div>
 <div class="teachers-section" id="faculty-section">
 <div class="teacher-row">
-<div class="trow-item" data-bio="With over two decades immersed in India's artistic traditions, Colleena is a world-renowned dancer and founder of the Shakti School of Dance in Pushkar. Her methodology draws on Natya Shastra, Yoga, and Martial Arts — navigating the space between ancient heritage and contemporary fusion." data-name="Colleena Shakti" data-photo="https://lh3.googleusercontent.com/d/1m2Pg7C7vWPRTk9rO-LDYFYGvcOWJIIHh" data-styles="Rajasthani Folk · Abhinaya · Bellydance" onclick="toggleBio(this)">
-<div class="trow-photo"><img alt="Colleena Shakti" src="https://lh3.googleusercontent.com/d/1m2Pg7C7vWPRTk9rO-LDYFYGvcOWJIIHh"/></div>
+<button type="button" class="trow-item" data-bio="With over two decades immersed in India's artistic traditions, Colleena is a world-renowned dancer and founder of the Shakti School of Dance in Pushkar. Her methodology draws on Natya Shastra, Yoga, and Martial Arts — navigating the space between ancient heritage and contemporary fusion." data-name="Colleena Shakti" data-photo="https://lh3.googleusercontent.com/d/1m2Pg7C7vWPRTk9rO-LDYFYGvcOWJIIHh" data-styles="Rajasthani Folk · Abhinaya · Bellydance" onclick="toggleBio(this)">
+<div class="trow-photo"><img alt="Colleena Shakti" src="https://lh3.googleusercontent.com/d/1m2Pg7C7vWPRTk9rO-LDYFYGvcOWJIIHh"/ loading="lazy"></div>
 <div class="trow-name">Colleena Shakti</div>
 <div class="trow-style">Rajasthani Folk · Abhinaya</div>
-</div>
-<div class="trow-item" data-bio="Hailing from Mumbai, Vaishali holds a master's degree in Indian Folk Dance and directs Kalanjay Dance Academy — 900 students and 5,000+ alumni. She has represented India at international folk dance festivals across Italy, Turkey, South Korea, Belgium, and more." data-name="Vaishali Sagar" data-photo="images/teachers/Vaishali Sagar.jpg" data-styles="Bollywood Folk Fusion · Cheraw" onclick="toggleBio(this)">
-<div class="trow-photo"><img alt="Vaishali Sagar" src="images/teachers/Vaishali Sagar.jpg"/></div>
+</button>
+<button type="button" class="trow-item" data-bio="Hailing from Mumbai, Vaishali holds a master's degree in Indian Folk Dance and directs Kalanjay Dance Academy — 900 students and 5,000+ alumni. She has represented India at international folk dance festivals across Italy, Turkey, South Korea, Belgium, and more." data-name="Vaishali Sagar" data-photo="images/teachers/Vaishali Sagar.jpg" data-styles="Bollywood Folk Fusion · Cheraw" onclick="toggleBio(this)">
+<div class="trow-photo"><img alt="Vaishali Sagar" src="images/teachers/Vaishali Sagar.jpg"/ loading="lazy"></div>
 <div class="trow-name">Vaishali Sagar</div>
 <div class="trow-style">Folk Fusion · Cheraw</div>
-</div>
-<div class="trow-item" data-bio="Daughter of legendary Kathak exponent Natraj Shri Gopikrishna, Shampa began dancing at age 4. Her choreographic work spans Monsoon Wedding, Disney's Aladdin, Padmaavat, and Ram Leela — and she is a two-time champion of India's Jhalak Dikhhla Jaa." data-name="Shampa Gopikrishna" data-photo="https://lh3.googleusercontent.com/d/16QPGKgnbzt-AwYk_cV3flEMYUgZySaKV" data-styles="Semi-Classical · Odisha · Garba" onclick="toggleBio(this)">
-<div class="trow-photo"><img alt="Shampa Gopikrishna" src="https://lh3.googleusercontent.com/d/16QPGKgnbzt-AwYk_cV3flEMYUgZySaKV"/></div>
+</button>
+<button type="button" class="trow-item" data-bio="Daughter of legendary Kathak exponent Natraj Shri Gopikrishna, Shampa began dancing at age 4. Her choreographic work spans Monsoon Wedding, Disney's Aladdin, Padmaavat, and Ram Leela — and she is a two-time champion of India's Jhalak Dikhhla Jaa." data-name="Shampa Gopikrishna" data-photo="https://lh3.googleusercontent.com/d/16QPGKgnbzt-AwYk_cV3flEMYUgZySaKV" data-styles="Semi-Classical · Odisha · Garba" onclick="toggleBio(this)">
+<div class="trow-photo"><img alt="Shampa Gopikrishna" src="https://lh3.googleusercontent.com/d/16QPGKgnbzt-AwYk_cV3flEMYUgZySaKV"/ loading="lazy"></div>
 <div class="trow-name">Shampa Gopikrishna</div>
 <div class="trow-style">Chhau · Garba</div>
-</div>
-<div class="trow-item" data-bio="An internationally renowned tabla maestro, Hameed Khan Kawa carries the soul of Rajasthan in every beat. The visionary behind ensembles like Musafir, Jaipur Kawa Brass Band, and Kawa Circus, he has performed worldwide — from Edgbaston Stadium to Coke Studio Bharat alongside Sunidhi Chauhan — and collaborated with Ustad Zakir Hussain and the Gypsy Kings. At GIDF 2026, he accompanies workshops and performances with live music." data-name="Hameed Khan Kawa" data-photo="images/teachers/Hameed Khan Kawa.JPG" data-styles="Tabla · Live Music" onclick="toggleBio(this)">
-<div class="trow-photo"><img alt="Hameed Khan Kawa" src="images/teachers/Hameed Khan Kawa.JPG"/></div>
+</button>
+<button type="button" class="trow-item" data-bio="An internationally renowned tabla maestro, Hameed Khan Kawa carries the soul of Rajasthan in every beat. The visionary behind ensembles like Musafir, Jaipur Kawa Brass Band, and Kawa Circus, he has performed worldwide — from Edgbaston Stadium to Coke Studio Bharat alongside Sunidhi Chauhan — and collaborated with Ustad Zakir Hussain and the Gypsy Kings. At GIDF 2026, he accompanies workshops and performances with live music." data-name="Hameed Khan Kawa" data-photo="images/teachers/Hameed Khan Kawa.JPG" data-styles="Tabla · Live Music" onclick="toggleBio(this)">
+<div class="trow-photo"><img alt="Hameed Khan Kawa" src="images/teachers/Hameed Khan Kawa.JPG"/ loading="lazy"></div>
 <div class="trow-name">Hameed Khan Kawa</div>
 <div class="trow-style">Tabla · Live Music</div>
-</div>
-<div class="trow-item" data-bio="A key figure in the European Punjabi folk scene and the lead force behind Amsterdam Bhangra, Manasi has been instrumental in bringing the high-octane energy of North Indian folk to the heart of Europe. Her journey has reached the grandest stages — including performing as part of the dance crew for Diljit Dosanjh during his historic Dil-Luminati tour in the Netherlands." data-name="Manasi Khanna" data-photo="https://lh3.googleusercontent.com/d/1Pmt9QpTSPJFlIPECw7RB-KG4nivx4gJK" data-styles="Giddha · Punjabi Folk" onclick="toggleBio(this)">
-<div class="trow-photo"><img alt="Manasi Khanna" src="https://lh3.googleusercontent.com/d/1Pmt9QpTSPJFlIPECw7RB-KG4nivx4gJK"/></div>
+</button>
+<button type="button" class="trow-item" data-bio="A key figure in the European Punjabi folk scene and the lead force behind Amsterdam Bhangra, Manasi has been instrumental in bringing the high-octane energy of North Indian folk to the heart of Europe. Her journey has reached the grandest stages — including performing as part of the dance crew for Diljit Dosanjh during his historic Dil-Luminati tour in the Netherlands." data-name="Manasi Khanna" data-photo="https://lh3.googleusercontent.com/d/1Pmt9QpTSPJFlIPECw7RB-KG4nivx4gJK" data-styles="Giddha · Punjabi Folk" onclick="toggleBio(this)">
+<div class="trow-photo"><img alt="Manasi Khanna" src="https://lh3.googleusercontent.com/d/1Pmt9QpTSPJFlIPECw7RB-KG4nivx4gJK"/ loading="lazy"></div>
 <div class="trow-name">Manasi Khanna</div>
 <div class="trow-style">Giddha · Punjabi Folk</div>
-</div>
-<div class="trow-item" data-bio="DesiHop is a collective of three Indian dancers — Gokul Gopi, Saumya Singh, and Rayeez Mohammed — born in Frankfurt in 2023. Blending Bollywood, hip-hop, Afro, and the raw energy of Tamil Kuthu, they've built a growing movement with over 15 workshops across Germany, creating a space where South-Asian dance feels like home." data-name="Desihop" data-photo="https://lh3.googleusercontent.com/d/1sitj_n2mRGYQMLwUaMKr3vvBDOxMnUvW" data-styles="Kuthu · Desi-Afro Grooves" onclick="toggleBio(this)">
-<div class="trow-photo"><img alt="Desihop" src="https://lh3.googleusercontent.com/d/1sitj_n2mRGYQMLwUaMKr3vvBDOxMnUvW"/></div>
+</button>
+<button type="button" class="trow-item" data-bio="DesiHop is a collective of three Indian dancers — Gokul Gopi, Saumya Singh, and Rayeez Mohammed — born in Frankfurt in 2023. Blending Bollywood, hip-hop, Afro, and the raw energy of Tamil Kuthu, they've built a growing movement with over 15 workshops across Germany, creating a space where South-Asian dance feels like home." data-name="Desihop" data-photo="https://lh3.googleusercontent.com/d/1sitj_n2mRGYQMLwUaMKr3vvBDOxMnUvW" data-styles="Kuthu · Desi-Afro Grooves" onclick="toggleBio(this)">
+<div class="trow-photo"><img alt="Desihop" src="https://lh3.googleusercontent.com/d/1sitj_n2mRGYQMLwUaMKr3vvBDOxMnUvW"/ loading="lazy"></div>
 <div class="trow-name">Desihop</div>
 <div class="trow-style">Kuthu · Desi-Afro</div>
-</div>
-<div class="trow-item" data-bio="Curator of GIDF and co-founder of Shoonya Dance Centre in Ghent. Born near Mumbai, Swapnil trained at the Broadway Dance Center in New York and Opus Ballet in Florence, blending Indian folk roots with ballet, jazz, and contemporary dance. He has been bringing Indian dance to Belgium for over a decade — teaching Kalbeliya and Lavani, and leading Rise &amp; Riyaaz each morning of the festival." data-name="Swapnil Dagliya" data-photo="https://lh3.googleusercontent.com/d/1Q2x1fdKvrVqK7tb-bH5UpdUh4QdEEIp7" data-styles="Lavani · Kalbeliya" onclick="toggleBio(this)">
-<div class="trow-photo"><img alt="Swapnil Dagliya" src="https://lh3.googleusercontent.com/d/1Q2x1fdKvrVqK7tb-bH5UpdUh4QdEEIp7"/></div>
+</button>
+<button type="button" class="trow-item" data-bio="Curator of GIDF and co-founder of Shoonya Dance Centre in Ghent. Born near Mumbai, Swapnil trained at the Broadway Dance Center in New York and Opus Ballet in Florence, blending Indian folk roots with ballet, jazz, and contemporary dance. He has been bringing Indian dance to Belgium for over a decade — teaching Kalbeliya and Lavani, and leading Rise &amp; Riyaaz each morning of the festival." data-name="Swapnil Dagliya" data-photo="https://lh3.googleusercontent.com/d/1Q2x1fdKvrVqK7tb-bH5UpdUh4QdEEIp7" data-styles="Lavani · Kalbeliya" onclick="toggleBio(this)">
+<div class="trow-photo"><img alt="Swapnil Dagliya" src="https://lh3.googleusercontent.com/d/1Q2x1fdKvrVqK7tb-bH5UpdUh4QdEEIp7"/ loading="lazy"></div>
 <div class="trow-name">Swapnil Dagliya</div>
 <div class="trow-style">Lavani · Kalbeliya</div>
-</div>
+</button>
 </div>
 <div class="trow-panel" id="trow-panel">
 <div class="trow-panel-inner">
-<div class="trow-panel-photo"><img alt="" id="trow-panel-img" src=""/></div>
+<div class="trow-panel-photo"><img alt="" id="trow-panel-img" src=""/ loading="lazy"></div>
 <div class="trow-panel-info">
 <div class="trow-panel-name" id="trow-panel-name"></div>
 <div class="trow-panel-styles" id="trow-panel-styles"></div>
@@ -813,15 +836,15 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 </div>
 </div>
 </div>
-<div id="program"></div>
+<main id="program">
 <!-- ═══ WORKSHOPS ═══ -->
 <div id="tab-workshops">
 <div class="reg-bar">
-<div class="reg-bar-text"><strong>Ready to join?</strong><span>Secure your spot — places are limited. All registrations are non-refundable.</span></div>
-<a class="reg-btn" href="https://creatorapp.zohopublic.eu/developer_shoonyadance/shoonya-dance-studio/form-perma/Workshop_Registration_Form/uOO7GVYHQEJn5dSVDz7z1nTXXeEfD0AZ4PJvtQJ0ZbMRum3tBX30zxQHC02n9b3bvTO6ORFDsVCfS4bJQF1VOZdBMZquYuPb4xx8" target="_blank">Register for Workshops →</a>
+<div class="reg-bar-text"><strong>Reserve your place</strong><span>Limited spots available · Bookings are non-refundable</span></div>
+<a class="reg-btn" href="https://creatorapp.zohopublic.eu/developer_shoonyadance/shoonya-dance-studio/form-perma/Workshop_Registration_Form/uOO7GVYHQEJn5dSVDz7z1nTXXeEfD0AZ4PJvtQJ0ZbMRum3tBX30zxQHC02n9b3bvTO6ORFDsVCfS4bJQF1VOZdBMZquYuPb4xx8" target="_blank" rel="noopener noreferrer">Register for Workshops →</a>
 </div>
 <div class="sec-header">
-<div class="sec-title">Workshops</div>
+<h2 class="sec-title">Workshops</h2>
 <p class="sec-intro">Three days of immersive Indian dance workshops led by master teachers — from classical expression to vibrant folk traditions. All workshops welcome dancers of every background.</p>
 </div>
 <!-- FRIDAY -->
@@ -833,7 +856,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <div class="wcard-time">12:00 – 16:00</div>
 <div class="wcard-title">Technique &amp; Tools Lab</div>
 <div class="wcard-subtitle">Pushing the Boundaries of Rajasthani Folk</div>
-<div class="wcard-teacher"><img alt="Colleena Shakti" class="wavatar" src="https://lh3.googleusercontent.com/d/1m2Pg7C7vWPRTk9rO-LDYFYGvcOWJIIHh"/>✦ Colleena Shakti</div>
+<div class="wcard-teacher"><img alt="Colleena Shakti" class="wavatar" src="https://lh3.googleusercontent.com/d/1m2Pg7C7vWPRTk9rO-LDYFYGvcOWJIIHh"/ loading="lazy">✦ Colleena Shakti</div>
 <div class="wcard-meta"><span class="wpill wpill-lvl wlvl-exp">Experienced dancers</span><span class="wpill wpill-studio">Studio Aakash</span><span class="wpill wpill-attire">Long, flowy skirt + fitted top</span></div></div>
 <div class="wcard-aside">
 <div class="wcard-sname">Rajasthani Folk</div>
@@ -850,7 +873,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <div class="wcard-main">
 <div class="wcard-time">17:00 – 18:30</div>
 <div class="wcard-title">Bollywood Folk Fusion</div>
-<div class="wcard-teacher"><img alt="Vaishali Sagar" class="wavatar" src="images/teachers/Vaishali Sagar.jpg"/>✦ Vaishali Sagar</div>
+<div class="wcard-teacher"><img alt="Vaishali Sagar" class="wavatar" src="images/teachers/Vaishali Sagar.jpg"/ loading="lazy">✦ Vaishali Sagar</div>
 <div class="wcard-meta"><span class="wpill wpill-lvl wlvl-exp">Experienced dancers</span><span class="wpill wpill-studio">Studio Art Deco</span><span class="wpill wpill-attire">Long, flowy skirt + fitted top</span></div></div>
 <div class="wcard-aside">
 <div class="wcard-sname">Bollyfolk</div>
@@ -864,7 +887,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <div class="wcard-main">
 <div class="wcard-time">18:30 – 20:00</div>
 <div class="wcard-title">Garba Choreography</div>
-<div class="wcard-teacher"><img alt="Shampa Gopikrishna" class="wavatar" src="https://lh3.googleusercontent.com/d/16QPGKgnbzt-AwYk_cV3flEMYUgZySaKV"/>✦ Shampa Gopikrishna</div>
+<div class="wcard-teacher"><img alt="Shampa Gopikrishna" class="wavatar" src="https://lh3.googleusercontent.com/d/16QPGKgnbzt-AwYk_cV3flEMYUgZySaKV"/ loading="lazy">✦ Shampa Gopikrishna</div>
 <div class="wcard-meta"><span class="wpill wpill-lvl wlvl-mid">Experience helpful</span><span class="wpill wpill-studio">Studio Art Deco</span><span class="wpill wpill-attire">Long, flowy skirt + fitted top</span></div></div>
 <div class="wcard-aside">
 <div class="wcard-sname">Gujarati Folk</div>
@@ -881,7 +904,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <div class="wcard-main">
 <div class="wcard-time">20:15 – 21:00</div>
 <div class="wcard-title">Community Class: Kalbeliya</div>
-<div class="wcard-teacher"><img alt="Swapnil Dagliya" class="wavatar" src="https://lh3.googleusercontent.com/d/1Q2x1fdKvrVqK7tb-bH5UpdUh4QdEEIp7"/>✦ Swapnil Dagliya</div>
+<div class="wcard-teacher"><img alt="Swapnil Dagliya" class="wavatar" src="https://lh3.googleusercontent.com/d/1Q2x1fdKvrVqK7tb-bH5UpdUh4QdEEIp7"/ loading="lazy">✦ Swapnil Dagliya</div>
 <div class="wcard-meta"><span class="wpill wpill-lvl wlvl-all">Open to all</span><span class="wpill wpill-studio">Studio Art Deco</span><span class="wpill wpill-attire">Long, flowy skirt + fitted top</span></div></div>
 <div class="wcard-aside">
 <div class="wcard-sname">Rajasthani Folk</div>
@@ -900,7 +923,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <div class="wcard-main">
 <div class="wcard-time">09:00 – 11:00</div>
 <div class="wcard-title">Kuthu: The Heartbeat of the Streets</div>
-<div class="wcard-teacher"><img alt="Desihop" class="wavatar" src="https://lh3.googleusercontent.com/d/1sitj_n2mRGYQMLwUaMKr3vvBDOxMnUvW"/>✦ Desihop</div>
+<div class="wcard-teacher"><img alt="Desihop" class="wavatar" src="https://lh3.googleusercontent.com/d/1sitj_n2mRGYQMLwUaMKr3vvBDOxMnUvW"/ loading="lazy">✦ Desihop</div>
 <div class="wcard-meta"><span class="wpill wpill-lvl wlvl-mid">Experience helpful</span><span class="wpill wpill-studio">Studio Art Deco</span><span class="wpill wpill-attire">Comfortable attire</span></div></div>
 <div class="wcard-aside">
 <div class="wcard-sname">Tamil Folk</div>
@@ -914,7 +937,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <div class="wcard-main">
 <div class="wcard-time">11:00 – 12:30</div>
 <div class="wcard-title">The Martial Grace of Mayurbhanj Chhau</div>
-<div class="wcard-teacher"><img alt="Shampa Gopikrishna" class="wavatar" src="https://lh3.googleusercontent.com/d/16QPGKgnbzt-AwYk_cV3flEMYUgZySaKV"/>✦ Shampa Gopikrishna</div>
+<div class="wcard-teacher"><img alt="Shampa Gopikrishna" class="wavatar" src="https://lh3.googleusercontent.com/d/16QPGKgnbzt-AwYk_cV3flEMYUgZySaKV"/ loading="lazy">✦ Shampa Gopikrishna</div>
 <div class="wcard-meta"><span class="wpill wpill-lvl wlvl-all">Open to all</span><span class="wpill wpill-studio">Studio Art Deco</span><span class="wpill wpill-attire">Comfortable attire</span></div></div>
 <div class="wcard-aside">
 <div class="wcard-sname">Semi-Classical · Odisha</div>
@@ -931,7 +954,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <div class="wcard-main">
 <div class="wcard-time">13:30 – 15:00</div>
 <div class="wcard-title">Giddha: The Pulse of Punjab</div>
-<div class="wcard-teacher"><img alt="Manasi Khanna" class="wavatar" src="https://lh3.googleusercontent.com/d/1Pmt9QpTSPJFlIPECw7RB-KG4nivx4gJK"/>✦ Manasi Khanna</div>
+<div class="wcard-teacher"><img alt="Manasi Khanna" class="wavatar" src="https://lh3.googleusercontent.com/d/1Pmt9QpTSPJFlIPECw7RB-KG4nivx4gJK"/ loading="lazy">✦ Manasi Khanna</div>
 <div class="wcard-meta"><span class="wpill wpill-lvl wlvl-all">Open to all</span><span class="wpill wpill-studio">Studio Ananta</span><span class="wpill wpill-attire">Knee-length tunic (kurta) + leggings</span></div></div>
 <div class="wcard-aside">
 <div class="wcard-sname">Punjabi Folk</div>
@@ -946,7 +969,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <div class="wcard-main">
 <div class="wcard-time">15:20 – 16:50</div>
 <div class="wcard-title">Abhinaya: Training Expression for Dance</div>
-<div class="wcard-teacher"><img alt="Colleena Shakti" class="wavatar" src="https://lh3.googleusercontent.com/d/1m2Pg7C7vWPRTk9rO-LDYFYGvcOWJIIHh"/>✦ Colleena Shakti</div>
+<div class="wcard-teacher"><img alt="Colleena Shakti" class="wavatar" src="https://lh3.googleusercontent.com/d/1m2Pg7C7vWPRTk9rO-LDYFYGvcOWJIIHh"/ loading="lazy">✦ Colleena Shakti</div>
 <div class="wcard-meta"><span class="wpill wpill-lvl wlvl-all">Open to all</span><span class="wpill wpill-studio">Studio Ananta</span><span class="wpill wpill-attire">Knee-length tunic (kurta) + leggings</span></div></div>
 <div class="wcard-aside">
 <div class="wcard-sname">Odissi · Expression</div>
@@ -965,7 +988,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <div class="wcard-main">
 <div class="wcard-time">09:30 – 11:00</div>
 <div class="wcard-title">Indian Fusion Bellydance</div>
-<div class="wcard-teacher"><img alt="Colleena Shakti" class="wavatar" src="https://lh3.googleusercontent.com/d/1m2Pg7C7vWPRTk9rO-LDYFYGvcOWJIIHh"/>✦ Colleena Shakti</div>
+<div class="wcard-teacher"><img alt="Colleena Shakti" class="wavatar" src="https://lh3.googleusercontent.com/d/1m2Pg7C7vWPRTk9rO-LDYFYGvcOWJIIHh"/ loading="lazy">✦ Colleena Shakti</div>
 <div class="wcard-meta"><span class="wpill wpill-lvl wlvl-mid">Experience helpful</span><span class="wpill wpill-studio">Studio Ananta</span><span class="wpill wpill-attire">Comfortable attire</span></div></div>
 <div class="wcard-aside">
 <div class="wcard-sname">Fusion · Raqs Sharqi</div>
@@ -979,7 +1002,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <div class="wcard-main">
 <div class="wcard-time">11:00 – 12:30</div>
 <div class="wcard-title">Desi-Afro Grooves: From Mumbai to Lagos</div>
-<div class="wcard-teacher"><img alt="Desihop" class="wavatar" src="https://lh3.googleusercontent.com/d/1sitj_n2mRGYQMLwUaMKr3vvBDOxMnUvW"/>✦ Desihop</div>
+<div class="wcard-teacher"><img alt="Desihop" class="wavatar" src="https://lh3.googleusercontent.com/d/1sitj_n2mRGYQMLwUaMKr3vvBDOxMnUvW"/ loading="lazy">✦ Desihop</div>
 <div class="wcard-meta"><span class="wpill wpill-lvl wlvl-all">Open to all</span><span class="wpill wpill-studio">Studio Ananta</span><span class="wpill wpill-attire">Comfortable attire</span></div></div>
 <div class="wcard-aside">
 <div class="wcard-sname">Fusion</div>
@@ -996,7 +1019,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <div class="wcard-main">
 <div class="wcard-time">13:30 – 15:30</div>
 <div class="wcard-title">Lavani: The Bold Heart of Maharashtra</div>
-<div class="wcard-teacher"><img alt="Swapnil Dagliya" class="wavatar" src="https://lh3.googleusercontent.com/d/1Q2x1fdKvrVqK7tb-bH5UpdUh4QdEEIp7"/>✦ Swapnil Dagliya</div>
+<div class="wcard-teacher"><img alt="Swapnil Dagliya" class="wavatar" src="https://lh3.googleusercontent.com/d/1Q2x1fdKvrVqK7tb-bH5UpdUh4QdEEIp7"/ loading="lazy">✦ Swapnil Dagliya</div>
 <div class="wcard-meta"><span class="wpill wpill-lvl wlvl-mid">Experience helpful</span><span class="wpill wpill-studio">Studio Ananta</span><span class="wpill wpill-attire">Knee-length tunic (kurta) + leggings</span></div></div>
 <div class="wcard-aside">
 <div class="wcard-sname">Maharashtrian Folk</div>
@@ -1011,7 +1034,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <div class="wcard-main">
 <div class="wcard-time">15:50 – 17:20</div>
 <div class="wcard-title">Bamboo Beats: The Rhythms of Cheraw</div>
-<div class="wcard-teacher"><img alt="Vaishali Sagar" class="wavatar" src="images/teachers/Vaishali Sagar.jpg"/>✦ Vaishali Sagar</div>
+<div class="wcard-teacher"><img alt="Vaishali Sagar" class="wavatar" src="images/teachers/Vaishali Sagar.jpg"/ loading="lazy">✦ Vaishali Sagar</div>
 <div class="wcard-meta"><span class="wpill wpill-lvl wlvl-all">Open to all</span><span class="wpill wpill-studio">Studio Ananta</span><span class="wpill wpill-attire">Knee-length tunic (kurta) + leggings</span></div></div>
 <div class="wcard-aside">
 <div class="wcard-sname">Mizoram Folk</div>
@@ -1026,11 +1049,11 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <!-- ═══ GALA SHOWCASE ═══ -->
 <div id="tab-show" style="display:none">
 <div class="reg-bar reg-bar-soldout">
-<div class="reg-bar-text"><strong>Sold Out</strong><span>Saturday 2 May 2026 · Shoonya Theatre · Doors 20:00</span></div>
-<div class="reg-btn reg-btn-soldout">Sold Out</div>
+<div class="reg-bar-text"><strong>Gala Showcase — Sold Out</strong><span>All tickets sold · Workshops &amp; Opening Party still available</span></div>
+<div class="reg-btn reg-btn-soldout">Tickets Sold Out</div>
 </div>
 <div class="sec-header">
-<div class="sec-title">Gala Showcase</div>
+<h2 class="sec-title">Gala Showcase</h2>
 <p class="sec-intro">18 acts, no interval, approximately 90 minutes. Swapnil Dagliya and ABC, a Bollywood company, alongside five guest teachers, students of Shoonya Dance Centre, and guests. One stage, one evening, every style.</p>
 </div>
 <div class="show-vitals">
@@ -1042,9 +1065,9 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <div class="vital"><div class="vital-lbl">Venue</div><div class="vital-val" style="font-size:14px">Shoonya Theatre</div><div class="vital-sub">Studio Art Deco · 1st Floor</div></div>
 </div>
 <div class="photo-strip">
-<img alt="Gala Showcase performance" src="images/venue/Julien Gala Showcase PC Stijn Dejonckheere.jpg">
-<img alt="Gala Showcase performance" src="images/venue/Vanisha Kathak PC Stijn Dejonckheere.jpg">
-<img alt="Gala Showcase performance" src="images/venue/aakansha bollypop kalbeliya pc stijn dejonckheere.jpg">
+<img alt="Gala Showcase performance" src="images/venue/Julien Gala Showcase PC Stijn Dejonckheere.jpg" loading="lazy">
+<img alt="Gala Showcase performance" src="images/venue/Vanisha Kathak PC Stijn Dejonckheere.jpg" loading="lazy">
+<img alt="Gala Showcase performance" src="images/venue/aakansha bollypop kalbeliya pc stijn dejonckheere.jpg" loading="lazy">
 </img></img></img></div>
 <div class="arc-wrap">
 <div class="arc-moment">
@@ -1109,10 +1132,14 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 </div>
 <!-- ═══ OPENING PARTY ═══ -->
 <div id="tab-party" style="display:none">
-<div class="reg-bar">
+<div class="sec-header" style="padding:48px 28px 0;max-width:980px;margin:0 auto">
+<h2 class="sec-title">Opening Party</h2>
+<p class="sec-intro">Friday 1 May 2026 · Studio Ananta, Shoonya Dance Centre · Doors from 19:30</p>
+</div>
+<div class="reg-bar" style="max-width:980px;margin:20px auto 0;">
 <div class="reg-bar-text"><strong>Join the Opening Party</strong><span>Friday 1 May 2026 · Studio Ananta · From 19:30 · Non-refundable</span></div>
 <!-- Update href with actual ticket/registration URL -->
-<a class="reg-btn" href="https://creatorapp.zohopublic.eu/developer_shoonyadance/shoonya-dance-studio/form-perma/Ticket_Registration_Form/uw8PV66d5s2Z5z2G04kXNwjhGMA3B6vBpBWX6NSUC9Ybb0eyb4tUTbNTh0teeDSbAB5O6jnU4wPy67fT7feU3s7h1pyxe2mEtsu4" target="_blank">Get Tickets →</a>
+<a class="reg-btn" href="https://creatorapp.zohopublic.eu/developer_shoonyadance/shoonya-dance-studio/form-perma/Ticket_Registration_Form/uw8PV66d5s2Z5z2G04kXNwjhGMA3B6vBpBWX6NSUC9Ybb0eyb4tUTbNTh0teeDSbAB5O6jnU4wPy67fT7feU3s7h1pyxe2mEtsu4" target="_blank" rel="noopener noreferrer">Get Tickets →</a>
 </div>
 <div class="op-banner">
 <video autoplay="" class="op-video-bg" loop="" muted="" playsinline="" preload="none" src="images/events/Opening Party.MOV"></video>
@@ -1147,14 +1174,14 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <div class="op-photostrip">
 
   <div class="op-ps-kalb">
-    <img src="images/teachers/Kalbeliya-Swapnil%20Kalbeliya-Stijn%20Dejonckheere.jpg" alt="Kalbeliya community class">
+    <img src="images/teachers/Kalbeliya-Swapnil%20Kalbeliya-Stijn%20Dejonckheere.jpg" alt="Kalbeliya community class" loading="lazy">
     <div class="op-ps-label">Community Class &nbsp;·&nbsp; 20:00</div>
     <div class="op-ps-name">Kalbeliya with Swapnil Dagliya</div>
     <div class="op-ps-note">Open to all &nbsp;·&nbsp; No experience needed &nbsp;·&nbsp; 👗 Bring a flowing skirt or scarf</div>
   </div>
 
   <div class="op-ps-dariya">
-    <img src="images/events/Dariya.jpeg" alt="Dariya Live Band">
+    <img src="images/events/Dariya.jpeg" alt="Dariya Live Band" loading="lazy">
     <div class="op-ps-label">Live Music &nbsp;·&nbsp; From 21:00+</div>
     <div class="op-ps-name">Dariya Live Band</div>
     <div class="op-ps-note">Folk-inspired originals and soulful Bollywood interpretations</div>
@@ -1181,13 +1208,13 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <!-- ═══ PASSES & PRICES ═══ -->
 <div id="tab-prices" style="display:none">
 <div class="sec-header">
-<div class="sec-title">Passes &amp; Prices</div>
-<p class="sec-intro">Choose the pass that fits your festival — from a single workshop to the full three-day experience. All passes include Rise &amp; Riyaaz, Spill the Chai &amp; One Last Gupshup.</p>
+<h2 class="sec-title">Passes &amp; Prices</h2>
+<p class="sec-intro">Choose the pass that fits — from a single workshop to the full three-day experience. All passes include Rise &amp; Riyaaz, Spill the Chai &amp; One Last Gupshup.</p>
 </div>
 <!-- SOLD OUT ALERT -->
 <div class="sold-out-alert">
-<div class="soa-icon">🔥</div>
-<div>Gala Showcase tickets are <strong>sold out</strong>.</div>
+<div class="soa-icon">🎭</div>
+<div>Gala Showcase is <strong>sold out</strong> — workshops and Opening Party are still available.</div>
 </div>
 <!-- MAIN PASSES -->
 <div class="pass-grid">
@@ -1208,7 +1235,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <div class="pi-row"><div class="pi-dot"></div>Opening Party (Friday night — incl. Kalbeliya community class)</div>
 <div class="pi-row"><div class="pi-dot"></div>Rise &amp; Riyaaz, Spill the Chai &amp; Gupshup</div>
 </div>
-<div class="pcard-excl">* Technique &amp; Tools Lab not included &nbsp;·&nbsp; Gala Showcase ticket not included</div>
+<div class="pcard-excl">Does not include: Technique &amp; Tools Lab or Gala Showcase ticket</div>
 </div>
 </div>
 <!-- Discovery Pass -->
@@ -1251,7 +1278,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <div class="pi-row"><div class="pi-dot"></div>Garba Choreography — Shampa Gopikrishna</div>
 <div class="pi-row"><div class="pi-dot"></div>Opening Party — incl. Kalbeliya community class with Swapnil</div>
 </div>
-<div class="pcard-excl">* Technique &amp; Tools Lab not included &nbsp;·&nbsp; Gala Showcase ticket not included</div>
+<div class="pcard-excl">Does not include: Technique &amp; Tools Lab or Gala Showcase ticket</div>
 </div>
 </div>
 <!-- Saturday Pass -->
@@ -1300,7 +1327,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <!-- SINGLE WORKSHOPS -->
 <div class="singles-section">
 <div class="singles-title">Single Workshops</div>
-<div class="singles-sub">Book individual workshops — online prices are lower, so book ahead.</div>
+<div class="singles-sub">Book individual workshops — prices are lower online than on the day.</div>
 <div class="price-table">
 <div class="pt-head">
 <div>Workshop</div>
@@ -1344,7 +1371,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <div>
 <div class="ind-name">Gala Showcase</div>
 <div class="ind-price">€20</div>
-<div class="ind-desc" style="color:var(--t2);font-weight:600">Sold out<br/><em style="color:var(--t2);font-weight:400">Saturday 2 May · Shoonya Theatre</em></div>
+<div class="ind-desc" style="color:var(--t2);font-weight:600">All tickets sold<br/><em style="color:var(--t2);font-weight:400">Saturday 2 May · Shoonya Theatre</em></div>
 </div>
 </div>
 </div>
@@ -1357,7 +1384,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <!-- ═══ PRACTICAL INFO ═══ -->
 <div class="content" id="practical-info" style="border-top:1px solid var(--border)">
 <div class="sec-header">
-<div class="sec-title">Practical Info</div>
+<h2 class="sec-title">Practical Info</h2>
 <p class="sec-intro">Everything you need before you arrive at Shoonya Dance Centre for GIDF 2026.</p>
 </div>
 <div class="venue-card">
@@ -1367,13 +1394,12 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <div class="venue-address">📍 Stapelplein 41, 9000 Gent — Belgium</div>
 <p class="venue-desc">Our creative home in the heart of Ghent, Shoonya Dance Centre is the central hub for GIDF. From immersive workshops and technical labs to the Gala Showcase and Opening Party, every moment of the festival unfolds under one roof — in the space where it all happens.</p>
 <div class="venue-actions">
-<a class="venue-map-btn" href="https://maps.google.com/?q=Stapelplein+41+9000+Gent" target="_blank">📍 Open in Google Maps</a>
-<a class="venue-map-btn" href="https://www.shoonyadance.com" target="_blank">↗ shoonyadance.com</a>
+<a class="venue-map-btn" href="https://maps.google.com/?q=Stapelplein+41+9000+Gent" target="_blank" rel="noopener noreferrer">📍 Open in Google Maps</a>
+<a class="venue-map-btn" href="https://www.shoonyadance.com" target="_blank" rel="noopener noreferrer">↗ shoonyadance.com</a>
 </div>
 </div>
 <div class="venue-photo">
-<img alt="Shoonya Dance Centre" src="images/venue/Shoonya Facade.jpg" style="object-position:center 20%">
-</img></div>
+<img alt="Shoonya Dance Centre" src="images/venue/Shoonya Facade.jpg" style="object-position:center 20%" loading="lazy"></div>
 </div>
 <div class="info-grid">
 <div class="info-card">
@@ -1414,28 +1440,28 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <div class="faq-group-label">Workshops</div>
 <div class="faq-list">
 <div class="faq-item">
-<button aria-expanded="false" class="faq-trigger" onclick="toggleFaq(this)">
+<button type="button" aria-expanded="false" class="faq-trigger" onclick="toggleFaq(this)">
 <span class="faq-q-text">Do I need dance experience to join workshops?</span>
 <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 16 16"><path d="M4 6l4 4 4-4"></path></svg>
 </button>
 <div class="faq-body"><p>No experience is needed to join any workshop — every teacher at GIDF welcomes beginners. That said, these are real workshops led by master teachers, and they will challenge you. You won't be standing at the back watching; you'll be learning, moving, and probably working harder than you expected. That's the point. If you're new and want a gentler entry, the <strong>Discovery Pass</strong> (€125) gives you five foundation workshops across Saturday and Sunday — a good mix to find your footing.</p></div>
 </div>
 <div class="faq-item">
-<button aria-expanded="false" class="faq-trigger" onclick="toggleFaq(this)">
+<button type="button" aria-expanded="false" class="faq-trigger" onclick="toggleFaq(this)">
 <span class="faq-q-text">Are workshops taught in English?</span>
 <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 16 16"><path d="M4 6l4 4 4-4"></path></svg>
 </button>
 <div class="faq-body"><p>Yes, all workshops are conducted in English.</p></div>
 </div>
 <div class="faq-item">
-<button aria-expanded="false" class="faq-trigger" onclick="toggleFaq(this)">
+<button type="button" aria-expanded="false" class="faq-trigger" onclick="toggleFaq(this)">
 <span class="faq-q-text">What should I wear to workshops?</span>
 <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 16 16"><path d="M4 6l4 4 4-4"></path></svg>
 </button>
 <div class="faq-body"><p>All workshops are barefoot — no street shoes on studio floors. Each workshop card shows a suggested outfit: long, flowy skirt + fitted top for skirt-based styles, knee-length tunic (kurta) + leggings for most workshops, and comfortable attire suitable for movement for fusion and high-energy classes. Wear something you can move freely in. Bring a change of clothes and a towel — you will sweat.</p></div>
 </div>
 <div class="faq-item">
-<button aria-expanded="false" class="faq-trigger" onclick="toggleFaq(this)">
+<button type="button" aria-expanded="false" class="faq-trigger" onclick="toggleFaq(this)">
 <span class="faq-q-text">What is Rise &amp; Riyaaz?</span>
 <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 16 16"><path d="M4 6l4 4 4-4"></path></svg>
 </button>
@@ -1447,21 +1473,21 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <div class="faq-group-label">Opening Party &amp; Gala</div>
 <div class="faq-list">
 <div class="faq-item">
-<button aria-expanded="false" class="faq-trigger" onclick="toggleFaq(this)">
+<button type="button" aria-expanded="false" class="faq-trigger" onclick="toggleFaq(this)">
 <span class="faq-q-text">What's the difference between the Opening Party and the Gala Showcase?</span>
 <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 16 16"><path d="M4 6l4 4 4-4"></path></svg>
 </button>
 <div class="faq-body"><p>The Opening Party (Friday night) is a social celebration — a Kalbeliya community class, live performances, the Dariya Live Band, and DJ @swapkebolly. The Gala Showcase (Saturday evening) is a seated theatrical performance with 18 acts across ~90 minutes.</p></div>
 </div>
 <div class="faq-item">
-<button aria-expanded="false" class="faq-trigger" onclick="toggleFaq(this)">
+<button type="button" aria-expanded="false" class="faq-trigger" onclick="toggleFaq(this)">
 <span class="faq-q-text">What should I wear to the Gala Showcase?</span>
 <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 16 16"><path d="M4 6l4 4 4-4"></path></svg>
 </button>
 <div class="faq-body"><p>It's a seated evening show in a proper theatre — dress up a little. Desi festive or Indian formal is very much at home here; this is an Indian dance festival after all. Smart casual works fine too. There's no dress code, but people do make an effort.</p></div>
 </div>
 <div class="faq-item">
-<button aria-expanded="false" class="faq-trigger" onclick="toggleFaq(this)">
+<button type="button" aria-expanded="false" class="faq-trigger" onclick="toggleFaq(this)">
 <span class="faq-q-text">Can I perform at the Opening Party?</span>
 <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 16 16"><path d="M4 6l4 4 4-4"></path></svg>
 </button>
@@ -1473,21 +1499,21 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <div class="faq-group-label">Tickets &amp; Booking</div>
 <div class="faq-list">
 <div class="faq-item">
-<button aria-expanded="false" class="faq-trigger" onclick="toggleFaq(this)">
+<button type="button" aria-expanded="false" class="faq-trigger" onclick="toggleFaq(this)">
 <span class="faq-q-text">Do I need to book in advance?</span>
 <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 16 16"><path d="M4 6l4 4 4-4"></path></svg>
 </button>
 <div class="faq-body"><p>Recommended but not mandatory — on-the-spot registration is available on the day, subject to space. That said, workshops do sell out, and walk-in prices are higher than online. Book in advance to secure your spot and save.</p></div>
 </div>
 <div class="faq-item">
-<button aria-expanded="false" class="faq-trigger" onclick="toggleFaq(this)">
+<button type="button" aria-expanded="false" class="faq-trigger" onclick="toggleFaq(this)">
 <span class="faq-q-text">Can I attend just one day?</span>
 <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 16 16"><path d="M4 6l4 4 4-4"></path></svg>
 </button>
 <div class="faq-body"><p>Absolutely. Day passes are available for Friday (€65), Saturday (€110), and Sunday (€110). You can also book individual workshops without a pass.</p></div>
 </div>
 <div class="faq-item">
-<button aria-expanded="false" class="faq-trigger" onclick="toggleFaq(this)">
+<button type="button" aria-expanded="false" class="faq-trigger" onclick="toggleFaq(this)">
 <span class="faq-q-text">What is the refund policy?</span>
 <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 16 16"><path d="M4 6l4 4 4-4"></path></svg>
 </button>
@@ -1499,21 +1525,21 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <div class="faq-group-label">On the Day</div>
 <div class="faq-list">
 <div class="faq-item">
-<button aria-expanded="false" class="faq-trigger" onclick="toggleFaq(this)">
+<button type="button" aria-expanded="false" class="faq-trigger" onclick="toggleFaq(this)">
 <span class="faq-q-text">Is food available at the festival?</span>
 <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 16 16"><path d="M4 6l4 4 4-4"></path></svg>
 </button>
 <div class="faq-body"><p>Yes. Workshop participants can buy a light lunch — soup and a sandwich — during the afternoon. The Spill the Chai community breaks come with chai we make and share, included with your pass. At the Opening Party on Friday night, Indian food and snacks will be on sale.</p></div>
 </div>
 <div class="faq-item">
-<button aria-expanded="false" class="faq-trigger" onclick="toggleFaq(this)">
+<button type="button" aria-expanded="false" class="faq-trigger" onclick="toggleFaq(this)">
 <span class="faq-q-text">Is the venue accessible?</span>
 <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 16 16"><path d="M4 6l4 4 4-4"></path></svg>
 </button>
 <div class="faq-body"><p>Yes — Shoonya Dance Centre is accessible. If you have specific access needs or questions, get in touch before the event and we'll make sure everything is arranged.</p></div>
 </div>
 <div class="faq-item">
-<button aria-expanded="false" class="faq-trigger" onclick="toggleFaq(this)">
+<button type="button" aria-expanded="false" class="faq-trigger" onclick="toggleFaq(this)">
 <span class="faq-q-text">Will workshops be photographed or filmed?</span>
 <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 16 16"><path d="M4 6l4 4 4-4"></path></svg>
 </button>
@@ -1523,6 +1549,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 </div>
 </div>
 </div>
+</main>
 <!-- FOOTER -->
 <footer>
 <div class="ft-logo">GIDF <span>2026</span></div>
@@ -1532,7 +1559,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
   </div>
 <div class="socials">
 <!-- Update href values with actual social media URLs -->
-<a class="soc-btn" href="https://www.instagram.com/gentindiadansfestival" target="_blank">📸 Instagram</a>
+<a class="soc-btn" href="https://www.instagram.com/gentindiadansfestival" target="_blank" rel="noopener noreferrer">📸 Instagram</a>
 </div>
 <div class="ft-copy">© 2026 GIDF  ·  All rights reserved</div>
 </footer>
@@ -1579,7 +1606,15 @@ function buildProgramme() {
 
 function tab(name, btn, fromNav) {
   ['workshops','show','party','prices'].forEach(id => {
-    document.getElementById('tab-'+id).style.display = id===name?'':'none';
+    var el = document.getElementById('tab-'+id);
+    if (id === name) {
+      el.style.display = '';
+      el.classList.remove('tab-fade-in');
+      void el.offsetWidth; // force reflow
+      el.classList.add('tab-fade-in');
+    } else {
+      el.style.display = 'none';
+    }
   });
   document.querySelectorAll('.snav-btn').forEach(b => {
     b.classList.toggle('active', (b.getAttribute('onclick')||'').includes("'"+name+"'"));
@@ -1734,6 +1769,24 @@ function toggleBio(el) {
   document.getElementById('trow-panel-text').textContent = el.dataset.bio;
   panel.classList.add('open');
 }
+// Scroll reveals (skip if user prefers reduced motion)
+if (!window.matchMedia('(prefers-reduced-motion:reduce)').matches) {
+  (function() {
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('sr-visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, {threshold: 0.1});
+    ['.faculty-strip', '.story-section'].forEach(function(sel) {
+      var el = document.querySelector(sel);
+      if (el) { el.classList.add('scroll-reveal'); io.observe(el); }
+    });
+  })();
+}
+
 document.addEventListener('click', function(e) {
   if (!e.target.closest('#faculty-section')) {
     document.querySelectorAll('.trow-item.active').forEach(i => i.classList.remove('active'));
