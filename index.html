@@ -521,9 +521,9 @@ body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg
 .op-perf-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:28px}
 @media(max-width:700px){.op-perf-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:420px){.op-perf-grid{grid-template-columns:repeat(2,1fr)}}
-.op-perf-card{cursor:pointer;border-radius:10px;overflow:hidden;background:var(--surface);border:1px solid var(--border);transition:transform .18s,box-shadow .18s;padding:0;text-align:left}
+.op-perf-card{cursor:pointer;border-radius:10px;overflow:hidden;background:var(--surface);border:1px solid var(--border);transition:transform .18s,box-shadow .18s;padding:0;text-align:left;display:block;line-height:0}
 .op-perf-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.12)}
-.op-perf-card img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;display:block}
+.op-perf-card img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 20%;display:block}
 .op-perf-card-name{font-size:12px;font-weight:700;color:var(--dark);padding:8px 10px 10px;line-height:1.3}
 /* Performer panel (mirrors trow-panel) */
 .perf-panel{overflow:hidden;max-height:0;transition:max-height .38s ease,margin .38s ease;background:var(--dark);border-radius:12px;margin-top:0}
