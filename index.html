@@ -275,7 +275,7 @@ body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg
 .ev-tag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--t3);margin-bottom:5px}
 .ev-name{font-family:'Inter',sans-serif;font-size:18px;font-weight:700;color:var(--dark);margin-bottom:7px}
 .ev-desc{font-size:13px;color:var(--t2);line-height:1.6;margin-bottom:12px;flex:1}
-.ev-btn{display:inline-flex;align-items:center;padding:11px 18px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;font-family:'Hind',sans-serif;transition:background .15s;align-self:flex-start;color:#fff}
+.ev-btn{display:inline-flex;align-items:center;padding:11px 18px;min-height:44px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;font-family:'Hind',sans-serif;transition:background .15s;align-self:flex-start;color:#fff}
 .ev-btn-dark{background:var(--dark)}.ev-btn-dark:hover{background:#1A1430}
 .ev-btn-gold{background:var(--gold)}.ev-btn-gold:hover{background:#A06B12}
 .ev-btn-accent{background:var(--accent)}.ev-btn-accent:hover{background:#A03818}
@@ -427,7 +427,7 @@ body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg
 .venue-address{font-size:13px;color:var(--gold);font-weight:600;margin-bottom:18px;letter-spacing:.2px}
 .venue-desc{font-size:14px;color:rgba(255,255,255,.6);line-height:1.8;max-width:580px;margin-bottom:24px}
 .venue-actions{display:flex;gap:10px;flex-wrap:wrap}
-.venue-map-btn{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.2);color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:600;font-family:'Hind',sans-serif;transition:all .15s}
+.venue-map-btn{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.2);color:#fff;padding:12px 18px;min-height:44px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:600;font-family:'Hind',sans-serif;transition:all .15s}
 .venue-map-btn:hover{background:rgba(255,255,255,.18)}
 @media(max-width:640px){.venue-card{flex-direction:column;gap:24px;padding:28px}}
 .irows{display:flex;flex-direction:column;gap:9px}
@@ -435,7 +435,7 @@ body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg
 .irow-lbl{font-weight:700;color:var(--accent);text-transform:uppercase;font-size:10px;letter-spacing:.6px;min-width:72px;padding-top:2px;flex-shrink:0}
 .irow-val{color:var(--text);line-height:1.55}
 .map-btn{display:inline-flex;align-items:center;gap:7px;background:#FEF0E8;border:1.5px solid var(--accent);
-  color:var(--accent);padding:12px 16px;border-radius:8px;text-decoration:none;font-size:13px;
+  color:var(--accent);padding:12px 16px;min-height:44px;border-radius:8px;text-decoration:none;font-size:13px;
   font-weight:700;margin-top:16px;transition:background .15s}
 .map-btn:hover{background:#FEE0CC}
 .checklist{display:flex;flex-direction:column;gap:8px}
@@ -455,7 +455,7 @@ body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg
 .reg-bar-text strong{font-size:14px;font-weight:700;color:var(--dark);display:block;margin-bottom:2px}
 .reg-bar-text span{font-size:13px;color:var(--t2)}
 .reg-btn{display:inline-flex;align-items:center;gap:7px;background:var(--accent);color:#fff;
-  padding:13px 22px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;
+  padding:13px 22px;min-height:44px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;
   font-family:'Hind',sans-serif;transition:background .15s;white-space:nowrap}
 .reg-btn:hover{background:#A03818}
 .reg-bar-soldout{background:#F9F6F3;border-color:#DDD5C8}
@@ -514,6 +514,29 @@ body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg
 .sched-legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}
 .sl-item{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--t2)}
 .sl-swatch{width:10px;height:10px;border-radius:3px;flex-shrink:0}
+
+/* ── OPENING PARTY PERFORMERS ── */
+.op-performers{margin-top:36px}
+.op-perf-block-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2.5px;color:var(--accent);margin-bottom:12px}
+.op-perf-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:28px}
+@media(max-width:700px){.op-perf-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:420px){.op-perf-grid{grid-template-columns:repeat(2,1fr)}}
+.op-perf-card{cursor:pointer;border-radius:10px;overflow:hidden;background:var(--surface);border:1px solid var(--border);transition:transform .18s,box-shadow .18s;padding:0;text-align:left}
+.op-perf-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.12)}
+.op-perf-card img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;display:block}
+.op-perf-card-name{font-size:12px;font-weight:700;color:var(--dark);padding:8px 10px 10px;line-height:1.3}
+/* Performer panel (mirrors trow-panel) */
+.perf-panel{overflow:hidden;max-height:0;transition:max-height .38s ease,margin .38s ease;background:var(--dark);border-radius:12px;margin-top:0}
+.perf-panel.open{max-height:260px;margin-top:14px}
+.perf-panel-inner{padding:20px 22px;display:flex;gap:18px;align-items:flex-start}
+.perf-panel-photo{width:80px;height:96px;border-radius:8px;overflow:hidden;flex-shrink:0;border:1px solid rgba(255,255,255,.12)}
+.perf-panel-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.perf-panel-info{flex:1;min-width:0}
+.perf-panel-block{font-size:10px;font-weight:700;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px}
+.perf-panel-name{font-size:15px;font-weight:700;color:var(--gold);margin-bottom:8px}
+.perf-panel-text{font-size:12px;color:rgba(255,255,255,.72);line-height:1.72}
+.op-perf-card.active{outline:2px solid var(--gold);outline-offset:2px}
+@media(max-width:600px){.perf-panel.open{max-height:420px}.perf-panel-inner{flex-direction:column}.perf-panel-photo{width:64px;height:76px}}
 
 /* ── FAQ ── */
 .faq-section{margin-top:44px}
@@ -602,7 +625,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 .ft-sub{font-size:12px;color:#5C4E3C;margin-bottom:24px;line-height:1.8}
 .socials{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:28px}
 .soc-btn{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);
-  border:1.5px solid rgba(255,255,255,.14);color:#C8A87A;padding:12px 20px;border-radius:50px;
+  border:1.5px solid rgba(255,255,255,.14);color:#C8A87A;padding:12px 20px;min-height:44px;border-radius:50px;
   text-decoration:none;font-size:13px;font-weight:600;font-family:'Hind',sans-serif;transition:all .18s}
 .soc-btn:hover{border-color:var(--gold);color:var(--gold)}
 .ft-copy{font-size:11px;color:#3A3028}
@@ -610,11 +633,27 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 @media(max-width:640px){
   .hero{padding:52px 20px 44px}
   .content{padding:32px 16px 48px}
-  .sticky-nav{justify-content:flex-start}
+  .sticky-nav{justify-content:flex-start;-webkit-overflow-scrolling:touch}
   .snav-btn{padding:13px 15px;font-size:13px}
   .op-banner{padding:32px 24px}
   .op-feat-title{font-size:18px}
   footer{padding:36px 20px}
+  /* reg-bar: stack on small screens */
+  .reg-bar{flex-direction:column;gap:12px;align-items:flex-start}
+  .reg-btn,.reg-btn-soldout{width:100%;justify-content:center}
+  /* venue map buttons: stack and full-width */
+  .venue-actions{flex-direction:column;gap:10px}
+  .venue-map-btn{width:100%;justify-content:center}
+  /* performers section full-width padding */
+  .op-performers{padding-left:0;padding-right:0}
+  /* FAQ trigger target size */
+  .faq-trigger{padding:16px 20px}
+}
+@media(max-width:420px){
+  .hero-title{font-size:clamp(36px,10vw,52px)}
+  .hero-cd-num{font-size:28px}
+  .snav-btn{padding:12px 12px;font-size:12px}
+  .op-perf-card-name{font-size:11px;padding:6px 8px 8px}
 }
 </style>
 </head>
@@ -1204,6 +1243,80 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
   </div>
 
 </div>
+
+<!-- PERFORMERS -->
+<div class="op-performers" style="max-width:980px;margin:36px auto 0;padding:0 28px 0">
+  <div style="font-family:'Inter',sans-serif;font-size:18px;font-weight:700;color:var(--dark);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border)">Live Performances</div>
+
+  <div class="op-perf-block-label">21:00 Block</div>
+  <div class="op-perf-grid">
+    <button type="button" class="op-perf-card" onclick="togglePerformer(this,'perf-panel-2100')" data-block="21:00" data-name="Shilpa Joy" data-intro="Shilpa Joy, based in the Netherlands, began her journey in Bharatanatyam at the age of five. Her practice is grounded in rigorous classical training and a deep relationship with rhythm, expression and devotion." data-img="images/opening-party/Shilpa_Joy_2100Block.jpg">
+      <img src="images/opening-party/Shilpa_Joy_2100Block.jpg" alt="Shilpa Joy" loading="lazy">
+      <div class="op-perf-card-name">Shilpa Joy</div>
+    </button>
+    <button type="button" class="op-perf-card" onclick="togglePerformer(this,'perf-panel-2100')" data-block="21:00" data-name="Dounia &amp; Elsa" data-intro="Dounia Chaoui, founder of the Indian Dance Lab collective in Liège, performs alongside Elsa in a duet that weaves Bollywood and contemporary movement into something intimate and alive." data-img="images/opening-party/Dounia_and_Elsa_2100Block.jpg">
+      <img src="images/opening-party/Dounia_and_Elsa_2100Block.jpg" alt="Dounia &amp; Elsa" loading="lazy">
+      <div class="op-perf-card-name">Dounia &amp; Elsa</div>
+    </button>
+    <button type="button" class="op-perf-card" onclick="togglePerformer(this,'perf-panel-2100')" data-block="21:00" data-name="Aniqa Nawar" data-intro="Aniqa Nawar is a Bangladeshi-Belgian dancer with thirty years of experience across Bengali folk and modern dance, Odissi and Bharatnatyam. She has performed across Asia, Europe and beyond — bringing together classical and folk traditions through a deeply personal movement vocabulary." data-img="images/opening-party/Aniqa_Nawar_2100Block.jpeg">
+      <img src="images/opening-party/Aniqa_Nawar_2100Block.jpeg" alt="Aniqa Nawar" loading="lazy">
+      <div class="op-perf-card-name">Aniqa Nawar</div>
+    </button>
+    <button type="button" class="op-perf-card" onclick="togglePerformer(this,'perf-panel-2100')" data-block="21:00" data-name="Kiran Maya Priya Barua" data-intro="Kiran Maya Priya Barua is an 18-year-old self-taught dancer drawn to the expressive freedom of Bollywood and contemporary movement — performing with a clarity and commitment that belies her years." data-img="images/opening-party/Kiran_Maya_Priya_Barua_2100Block.jpg">
+      <img src="images/opening-party/Kiran_Maya_Priya_Barua_2100Block.jpg" alt="Kiran Maya Priya Barua" loading="lazy">
+      <div class="op-perf-card-name">Kiran Maya Priya Barua</div>
+    </button>
+    <button type="button" class="op-perf-card" onclick="togglePerformer(this,'perf-panel-2100')" data-block="21:00" data-name="Nikta Jaamei" data-intro="Nikmyu is a Swiss dancer of Persian origins who has been training across Bollywood, classical Indian and contemporary forms for over a decade — fusing these influences into a movement language distinctly her own." data-img="images/opening-party/Nikta_Jaamei_2100Block.jpg">
+      <img src="images/opening-party/Nikta_Jaamei_2100Block.jpg" alt="Nikta Jaamei" loading="lazy">
+      <div class="op-perf-card-name">Nikta Jaamei</div>
+    </button>
+  </div>
+  <div class="perf-panel" id="perf-panel-2100">
+    <div class="perf-panel-inner">
+      <div class="perf-panel-photo"><img id="perf-panel-2100-img" src="" alt="" loading="lazy"></div>
+      <div class="perf-panel-info">
+        <div class="perf-panel-block" id="perf-panel-2100-block"></div>
+        <div class="perf-panel-name" id="perf-panel-2100-name"></div>
+        <div class="perf-panel-text" id="perf-panel-2100-text"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="op-perf-block-label" style="margin-top:24px">21:45 Block</div>
+  <div class="op-perf-grid">
+    <button type="button" class="op-perf-card" onclick="togglePerformer(this,'perf-panel-2145')" data-block="21:45" data-name="Srimahavalli Thiyagarajan" data-intro="Srimahavalli Thiyagarajan, from Seychelles and currently studying in Ghent, began her dance training at the age of five — bringing a joyful, grounded Bharatanatyam practice shaped by years of dedication and love for the form." data-img="images/opening-party/Srimahavalli_Thiyagarajan_2145Block.jpg">
+      <img src="images/opening-party/Srimahavalli_Thiyagarajan_2145Block.jpg" alt="Srimahavalli Thiyagarajan" loading="lazy">
+      <div class="op-perf-card-name">Srimahavalli Thiyagarajan</div>
+    </button>
+    <button type="button" class="op-perf-card" onclick="togglePerformer(this,'perf-panel-2145')" data-block="21:45" data-name="Silva Basu" data-intro="Silva Basu brings the expressive, free-flowing vocabulary of the Uday Shankar style to the stage — a movement practice rooted in the meeting of Indian classical and modern contemporary dance." data-img="images/opening-party/Silva_Basu_2145Block.jpg">
+      <img src="images/opening-party/Silva_Basu_2145Block.jpg" alt="Silva Basu" loading="lazy">
+      <div class="op-perf-card-name">Silva Basu</div>
+    </button>
+    <button type="button" class="op-perf-card" onclick="togglePerformer(this,'perf-panel-2145')" data-block="21:45" data-name="Akshaya Sundar" data-intro="Akshaya Sundar has trained in Kuchipudi for the past 13 years under Smt. Kalpana Ananth — bringing the grace, precision and emotive depth of this classical Telugu form to the GIDF opening night." data-img="images/opening-party/Akshaya_Sundar_2145Block.jpeg">
+      <img src="images/opening-party/Akshaya_Sundar_2145Block.jpeg" alt="Akshaya Sundar" loading="lazy">
+      <div class="op-perf-card-name">Akshaya Sundar</div>
+    </button>
+    <button type="button" class="op-perf-card" onclick="togglePerformer(this,'perf-panel-2145')" data-block="21:45" data-name="Divina Anil" data-intro="Divina Anil has trained for over twenty years in the lineage of Padmavibhushan Guru Yamini Krishnamurthy — carrying forward a Bharatanatyam tradition of rare depth and refinement." data-img="images/opening-party/Divina_Anil_2145Block.jpeg">
+      <img src="images/opening-party/Divina_Anil_2145Block.jpeg" alt="Divina Anil" loading="lazy">
+      <div class="op-perf-card-name">Divina Anil</div>
+    </button>
+    <button type="button" class="op-perf-card" onclick="togglePerformer(this,'perf-panel-2145')" data-block="21:45" data-name="Bollybandits" data-intro="Bollybandits is a Swiss dance collective born from friendship and a shared passion for Bollywood — performing together since 2014 with an energy that is equal parts technical and joyful." data-img="images/opening-party/Bollybandits_2145Block.jpg">
+      <img src="images/opening-party/Bollybandits_2145Block.jpg" alt="Bollybandits" loading="lazy">
+      <div class="op-perf-card-name">Bollybandits</div>
+    </button>
+  </div>
+  <div class="perf-panel" id="perf-panel-2145">
+    <div class="perf-panel-inner">
+      <div class="perf-panel-photo"><img id="perf-panel-2145-img" src="" alt="" loading="lazy"></div>
+      <div class="perf-panel-info">
+        <div class="perf-panel-block" id="perf-panel-2145-block"></div>
+        <div class="perf-panel-name" id="perf-panel-2145-name"></div>
+        <div class="perf-panel-text" id="perf-panel-2145-text"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 </div>
 <!-- ═══ PASSES & PRICES ═══ -->
 <div id="tab-prices" style="display:none">
@@ -1785,6 +1898,23 @@ if (!window.matchMedia('(prefers-reduced-motion:reduce)').matches) {
       if (el) { el.classList.add('scroll-reveal'); io.observe(el); }
     });
   })();
+
+  function togglePerformer(btn, panelId) {
+    var panel = document.getElementById(panelId);
+    var isActive = btn.classList.contains('active');
+    document.querySelectorAll('.op-perf-card.active').forEach(function(c) { c.classList.remove('active'); });
+    if (isActive) { panel.classList.remove('open'); return; }
+    btn.classList.add('active');
+    document.getElementById(panelId + '-img').src = btn.dataset.img;
+    document.getElementById(panelId + '-img').alt = btn.dataset.name;
+    document.getElementById(panelId + '-block').textContent = 'Performance · ' + btn.dataset.block;
+    document.getElementById(panelId + '-name').textContent = btn.dataset.name;
+    document.getElementById(panelId + '-text').textContent = btn.dataset.intro;
+    panel.classList.add('open');
+    // close the other panel
+    document.querySelectorAll('.perf-panel').forEach(function(p) { if (p.id !== panelId) p.classList.remove('open'); });
+  }
+
 }
 
 document.addEventListener('click', function(e) {
