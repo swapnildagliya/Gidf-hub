@@ -664,9 +664,12 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
   --row-2024:#8C2E0F; --row-2024-hi:#A33A14;
   --row-2025:#5C3D7A; --row-2025-hi:#724B95;
   --row-2026-hi:#5B936C; --row-2023-hi:#C8521F;
+  /* Layout tokens */
   --year-col:clamp(96px,16vw,120px);
   --row-gap:24px;
   --dot-offset:8px;
+  --dot-marker-x:-31px;   /* dot left-offset relative to faculty/block element */
+  --on-row:#fff;          /* text colour on coloured row blocks */
   font-family:'Hind',system-ui,sans-serif;
   color:var(--text);
 }
@@ -699,6 +702,12 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 }
 .pe-ethos p + p{margin-top:12px}
 .pe-ethos-stabs em{font-weight:600;color:var(--accent);font-style:italic}
+.pe-ethos-cite{
+  display:block;margin-top:14px;
+  font-family:'Hind',sans-serif;font-style:normal;font-weight:600;
+  font-size:11px;letter-spacing:1.6px;text-transform:uppercase;
+  color:var(--t3);
+}
 .pe-timeline{position:relative;display:flex;flex-direction:column}
 .pe-timeline::before{
   content:"";position:absolute;
@@ -729,7 +738,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 }
 .pe-faculty{position:relative;font-size:13.5px;line-height:1.55;color:var(--t2)}
 .pe-faculty::before{
-  content:"";position:absolute;left:-31px;top:8px;
+  content:"";position:absolute;left:var(--dot-marker-x);top:8px;
   width:11px;height:11px;border-radius:50%;
   background:var(--row-soft,var(--t3));
 }
@@ -743,29 +752,29 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
   position:relative;padding:18px 22px;
   background:var(--row-color,var(--accent));
   background-image:linear-gradient(135deg, var(--row-color-2,var(--accent)) 0%, var(--row-color,var(--accent)) 100%);
-  color:#fff;margin-top:6px;
+  color:var(--on-row);margin-top:6px;
 }
 .pe-block::before{
-  content:"";position:absolute;left:-31px;top:22px;
+  content:"";position:absolute;left:var(--dot-marker-x);top:22px;
   width:11px;height:11px;border-radius:50%;
   background:var(--row-color,var(--accent));
 }
 .pe-block-meta{
   font-size:11px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;
-  color:#fff;margin-bottom:6px;
+  color:var(--on-row);margin-bottom:6px;
 }
 .pe-block-title{
   font-family:'Inter',sans-serif;font-weight:800;
   font-size:clamp(18px,2.4vw,22px);line-height:1.15;letter-spacing:-.3px;
-  color:#fff;margin:0 0 6px;
+  color:var(--on-row);margin:0 0 6px;
 }
-.pe-block-sub{font-size:14px;line-height:1.6;color:#fff;max-width:54ch;margin:0}
+.pe-block-sub{font-size:14px;line-height:1.6;color:var(--on-row);max-width:54ch;margin:0}
 .pe-block-sub em{font-style:italic;font-weight:500}
 .pe-block-styles{
   margin-top:14px;padding-top:12px;
-  border-top:1px solid rgba(255,255,255,.28);
+  border-top:1px solid color-mix(in srgb, var(--on-row) 28%, transparent);
   font-size:11.5px;line-height:1.55;letter-spacing:.4px;
-  color:#fff;font-style:italic;
+  color:var(--on-row);font-style:italic;
 }
 .pe-row[data-year="2023"]{--row-color:var(--accent);    --row-color-2:var(--row-2023-hi);--row-soft:var(--accent)}
 .pe-row[data-year="2024"]{--row-color:var(--row-2024); --row-color-2:var(--row-2024-hi);--row-soft:var(--row-2024)}
@@ -777,6 +786,15 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
   background:var(--gold);color:var(--dark);
   padding:3px 8px;border-radius:2px;
   vertical-align:middle;text-transform:uppercase;
+}
+/* Midrange (tablet portrait) — keeps two-column but tightens spacing */
+@media (min-width:561px) and (max-width:760px){
+  .past-editions{
+    --year-col:88px;
+    --row-gap:18px;
+  }
+  .past-editions .pe-year{font-size:30px}
+  .past-editions .pe-block{padding:16px 18px}
 }
 @media (max-width:560px){
   .past-editions .pe-timeline::before{display:none}
@@ -1632,16 +1650,17 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
      PAST EDITIONS TAB
      ════════════════════════════════════════════════════════════ -->
 <div id="tab-history" style="display:none">
-<section class="past-editions" aria-label="Past Editions of GIDF">
+<section class="past-editions" aria-labelledby="past-editions-heading">
 <header class="pe-header">
 <div class="pe-eyebrow">Past Editions</div>
-<h2 class="pe-title">Four years of <em>GIDF</em>.</h2>
+<h2 class="pe-title" id="past-editions-heading">Four years of <em>GIDF</em>.</h2>
 <p class="pe-sub">Ghent&rsquo;s annual festival of Indian dance &mdash; workshops, showcases, an opening party, a city brought into the rhythm. Since 2023.</p>
 </header>
 
 <blockquote class="pe-ethos">
 <p>&ldquo;Gent India Dans Festival has always been about creating a space for Indian dance that feels thoughtful, grounded, and honest.&rdquo;</p>
 <p class="pe-ethos-stabs"><em>Not rushed. Not overproduced. Not reduced to trends.</em></p>
+<cite class="pe-ethos-cite">&mdash; Swapnil, December 2025</cite>
 </blockquote>
 
 <div class="pe-timeline">
