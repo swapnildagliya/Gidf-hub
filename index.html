@@ -90,7 +90,7 @@ body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg
 .content{max-width:980px;margin:0 auto;padding:44px 28px 60px}
 @media(min-width:769px){.content{padding-right:28px}}
 .sec-header{margin-bottom:36px}
-#tab-workshops,#tab-show,#tab-party,#tab-prices{max-width:980px;margin:0 auto;padding:48px 28px 60px}
+#tab-workshops,#tab-show,#tab-party,#tab-prices,#tab-history{max-width:980px;margin:0 auto;padding:48px 28px 60px}
 .sec-title{font-family:'Inter',sans-serif;font-size:clamp(28px,5vw,40px);
   font-weight:800;color:var(--dark);line-height:1.1;margin-bottom:10px;letter-spacing:-.5px}
 .sec-intro{font-size:16px;color:var(--t2);max-width:640px;line-height:1.75}
@@ -655,6 +655,139 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
   .snav-btn{padding:12px 12px;font-size:12px}
   .op-perf-card-name{font-size:11px;padding:6px 8px 8px}
 }
+
+/* ─────────────────── PAST EDITIONS TAB ─────────────────── */
+#tab-history .past-editions{padding:0;max-width:none}
+.past-editions{
+  /* Section-scoped tokens — don't leak into rest of hub */
+  --dark:#1C1108; --rule:#D6C9B3;
+  --row-2024:#8C2E0F; --row-2024-hi:#A33A14;
+  --row-2025:#5C3D7A; --row-2025-hi:#724B95;
+  --row-2026-hi:#5B936C; --row-2023-hi:#C8521F;
+  --year-col:clamp(96px,16vw,120px);
+  --row-gap:24px;
+  --dot-offset:8px;
+  font-family:'Hind',system-ui,sans-serif;
+  color:var(--text);
+}
+.pe-header{margin-bottom:44px}
+.pe-eyebrow{
+  font-size:11px;font-weight:700;letter-spacing:2.6px;text-transform:uppercase;
+  color:var(--accent);margin-bottom:14px;
+  display:flex;align-items:center;gap:12px;
+}
+.pe-eyebrow::before{content:"";display:inline-block;width:24px;height:1px;background:var(--accent);opacity:.6}
+.pe-title{
+  font-family:'Inter',sans-serif;font-style:italic;font-weight:800;
+  font-size:clamp(28px,4.4vw,38px);line-height:1.1;letter-spacing:-.02em;
+  color:var(--dark);margin:0;
+}
+.pe-title em{color:var(--accent);font-weight:900}
+.pe-sub{
+  margin-top:12px;
+  font-size:14.5px;color:var(--t2);
+  max-width:48ch;line-height:1.6;
+}
+.pe-ethos{
+  margin:36px 0 44px;padding:26px 0;max-width:60ch;
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+}
+.pe-ethos p{
+  font-family:'Inter',sans-serif;font-style:italic;font-weight:500;
+  font-size:clamp(18px,2.4vw,22px);line-height:1.5;letter-spacing:-.2px;
+  color:var(--dark);
+}
+.pe-ethos p + p{margin-top:12px}
+.pe-ethos-stabs em{font-weight:600;color:var(--accent);font-style:italic}
+.pe-timeline{position:relative;display:flex;flex-direction:column}
+.pe-timeline::before{
+  content:"";position:absolute;
+  left:calc(var(--year-col) + var(--row-gap) + var(--dot-offset));
+  top:14px;bottom:14px;
+  border-left:1px dashed var(--rule);pointer-events:none;
+}
+.pe-row{
+  display:grid;grid-template-columns:var(--year-col) 1fr;
+  gap:var(--row-gap);padding:24px 0;
+}
+.pe-row:first-child{padding-top:4px}
+.pe-row:last-child{padding-bottom:4px}
+.pe-year{
+  font-family:'Inter',sans-serif;font-style:italic;font-weight:800;
+  font-size:34px;line-height:1;letter-spacing:-.04em;
+  color:var(--dark);padding-top:2px;margin:0;
+}
+.pe-dates{
+  margin-top:10px;font-size:11px;font-weight:700;
+  letter-spacing:1.6px;text-transform:uppercase;color:var(--t3);
+}
+.pe-track{position:relative;padding-left:34px;display:flex;flex-direction:column;gap:10px}
+.pe-track::before{
+  content:"";position:absolute;
+  left:8px;top:6px;bottom:-4px;width:0;
+  border-left:1px dashed var(--rule);display:none;
+}
+.pe-faculty{position:relative;font-size:13.5px;line-height:1.55;color:var(--t2)}
+.pe-faculty::before{
+  content:"";position:absolute;left:-31px;top:8px;
+  width:11px;height:11px;border-radius:50%;
+  background:var(--row-soft,var(--t3));
+}
+.pe-faculty strong{
+  font-family:'Inter',sans-serif;font-style:normal;font-weight:700;
+  color:var(--dark);font-size:15px;
+  display:block;margin-bottom:4px;letter-spacing:-.1px;
+}
+.pe-faculty span{color:var(--t2)}
+.pe-block{
+  position:relative;padding:18px 22px;
+  background:var(--row-color,var(--accent));
+  background-image:linear-gradient(135deg, var(--row-color-2,var(--accent)) 0%, var(--row-color,var(--accent)) 100%);
+  color:#fff;margin-top:6px;
+}
+.pe-block::before{
+  content:"";position:absolute;left:-31px;top:22px;
+  width:11px;height:11px;border-radius:50%;
+  background:var(--row-color,var(--accent));
+}
+.pe-block-meta{
+  font-size:11px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;
+  color:#fff;margin-bottom:6px;
+}
+.pe-block-title{
+  font-family:'Inter',sans-serif;font-weight:800;
+  font-size:clamp(18px,2.4vw,22px);line-height:1.15;letter-spacing:-.3px;
+  color:#fff;margin:0 0 6px;
+}
+.pe-block-sub{font-size:14px;line-height:1.6;color:#fff;max-width:54ch;margin:0}
+.pe-block-sub em{font-style:italic;font-weight:500}
+.pe-block-styles{
+  margin-top:14px;padding-top:12px;
+  border-top:1px solid rgba(255,255,255,.28);
+  font-size:11.5px;line-height:1.55;letter-spacing:.4px;
+  color:#fff;font-style:italic;
+}
+.pe-row[data-year="2023"]{--row-color:var(--accent);    --row-color-2:var(--row-2023-hi);--row-soft:var(--accent)}
+.pe-row[data-year="2024"]{--row-color:var(--row-2024); --row-color-2:var(--row-2024-hi);--row-soft:var(--row-2024)}
+.pe-row[data-year="2025"]{--row-color:var(--row-2025); --row-color-2:var(--row-2025-hi);--row-soft:var(--row-2025)}
+.pe-row[data-year="2026"]{--row-color:var(--green);    --row-color-2:var(--row-2026-hi);--row-soft:var(--green)}
+.pe-now{
+  display:inline-block;margin-left:10px;
+  font-size:10px;font-weight:800;letter-spacing:1.6px;
+  background:var(--gold);color:var(--dark);
+  padding:3px 8px;border-radius:2px;
+  vertical-align:middle;text-transform:uppercase;
+}
+@media (max-width:560px){
+  .past-editions .pe-timeline::before{display:none}
+  .past-editions .pe-track::before{display:block;left:6px}
+  .past-editions .pe-row{grid-template-columns:1fr;gap:14px}
+  .past-editions .pe-year{font-size:28px;display:flex;align-items:baseline;gap:14px}
+  .past-editions .pe-dates{margin-top:0}
+  .past-editions .pe-track{padding-left:28px}
+  .past-editions .pe-faculty::before,.past-editions .pe-block::before{left:-25px;width:9px;height:9px}
+  .past-editions .pe-block-title{font-size:18px}
+}
 </style>
 </head>
 <body>
@@ -685,6 +818,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <button type="button" class="snav-btn" onclick="tab('show',this,true)">Gala Showcase</button>
 <button type="button" class="snav-btn" onclick="tab('party',this,true)">Opening Party</button>
 <button type="button" class="snav-btn" onclick="tab('prices',this,true)">Passes &amp; Prices</button>
+<button type="button" class="snav-btn" onclick="tab('history',this,true)">Past Editions</button>
 </nav>
 <!-- WHAT IS GIDF -->
 <div class="gidf-what">
@@ -1494,6 +1628,109 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
   </div>
 </div><!-- /prices -->
 <!-- /content -->
+<!-- ════════════════════════════════════════════════════════════
+     PAST EDITIONS TAB
+     ════════════════════════════════════════════════════════════ -->
+<div id="tab-history" style="display:none">
+<section class="past-editions" aria-label="Past Editions of GIDF">
+<header class="pe-header">
+<div class="pe-eyebrow">Past Editions</div>
+<h2 class="pe-title">Four years of <em>GIDF</em>.</h2>
+<p class="pe-sub">Ghent&rsquo;s annual festival of Indian dance &mdash; workshops, showcases, an opening party, a city brought into the rhythm. Since 2023.</p>
+</header>
+
+<blockquote class="pe-ethos">
+<p>&ldquo;Gent India Dans Festival has always been about creating a space for Indian dance that feels thoughtful, grounded, and honest.&rdquo;</p>
+<p class="pe-ethos-stabs"><em>Not rushed. Not overproduced. Not reduced to trends.</em></p>
+</blockquote>
+
+<div class="pe-timeline">
+
+<!-- 2023 -->
+<article class="pe-row" data-year="2023">
+<div>
+<h3 class="pe-year">2023</h3>
+<div class="pe-dates">5 – 7 May</div>
+</div>
+<div class="pe-track">
+<div class="pe-faculty">
+<strong>8 Teachers</strong>
+<span>Vaishali Sagar · Lavesh Pritmani · Shreyashee Nag · Girish Kumar · RMoves · Jana Jayanti · Dounia Devsena · Swapnil Dagliya</span>
+</div>
+<div class="pe-block">
+<div class="pe-block-meta">Edition One · Inaugural</div>
+<h4 class="pe-block-title">Eight teachers, eight traditions</h4>
+<p class="pe-block-sub">From Bharatanatyam to BollyHop. From Punjab&rsquo;s Bhangra to Bengal&rsquo;s Kathak. Eight teachers, eight different lineages &mdash; <em>Indian dance, in its full breadth, not narrowed to a single school.</em> The festival&rsquo;s proposition, made on day one.</p>
+<div class="pe-block-styles">Folk Fusion · Bhangra · Kathak · Indian Contemporary · BollyHop · BollyBelly · Bharatanatyam · Semi-classical</div>
+</div>
+</div>
+</article>
+
+<!-- 2024 -->
+<article class="pe-row" data-year="2024">
+<div>
+<h3 class="pe-year">2024</h3>
+<div class="pe-dates">26 – 28 April</div>
+</div>
+<div class="pe-track">
+<div class="pe-faculty">
+<strong>7 Teachers</strong>
+<span>Vaishali Sagar · Shreyashee Nag · Aakansha Maheshwari · Navjot Minhas · Jana Jayanti · Julien Touati · Swapnil Dagliya</span>
+</div>
+<div class="pe-block">
+<div class="pe-block-meta">Edition Two · The growth year</div>
+<h4 class="pe-block-title">Kathakali enters the room</h4>
+<p class="pe-block-sub">The second year aimed deeper, not just wider. Julien Touati brought Kathakali &mdash; <em>a precision form rarely taught in Belgium</em>. Shampa Gopikrishna was billed for Lavani and Mujra, the courtesan-court traditions. Then her visa came in too late. Seven teachers taught instead of eight. The festival learned its first lesson in international logistics, and grew.</p>
+<div class="pe-block-styles">Kathakali · Folk Fusion · Kathak · Kalbeliya · Bhangra · BollyBelly · Semi-classical</div>
+</div>
+</div>
+</article>
+
+<!-- 2025 -->
+<article class="pe-row" data-year="2025">
+<div>
+<h3 class="pe-year">2025</h3>
+<div class="pe-dates">25 – 27 April</div>
+</div>
+<div class="pe-track">
+<div class="pe-faculty">
+<strong>6 Teachers</strong>
+<span>Vaishali Sagar · Shampa Gopikrishna · Lavesh Pritmani · Lenka Badriyah · Aakansha Maheshwari · Swapnil Dagliya</span>
+</div>
+<div class="pe-block">
+<div class="pe-block-meta">Edition Three · The year of joy</div>
+<h4 class="pe-block-title">A Friday for the city</h4>
+<p class="pe-block-sub">The festival&rsquo;s first community class &mdash; <em>Garba &amp; Bollywood Party</em> &mdash; to open GIDF up to new people. The same year, the festival tried competitions for the first time. And recognised what it was doing: following trends, drifting from its essence. GIDF chose to stay true to itself. <em>The community class stayed. The competitions didn&rsquo;t.</em> And Shampa, kept by a visa the year before, finally taught.</p>
+<div class="pe-block-styles">Lavani · Mujra · Bhangra · Jhoomar · Folk Fusion · Fusion Bellydance · Kalbeliya · Bharatanatyam · Garba</div>
+</div>
+</div>
+</article>
+
+<!-- 2026 -->
+<article class="pe-row" data-year="2026">
+<div>
+<h3 class="pe-year">2026</h3>
+<div class="pe-dates">1 – 3 May</div>
+</div>
+<div class="pe-track">
+<div class="pe-faculty">
+<strong>7 Master Teachers</strong>
+<span>Colleena Shakti · Vaishali Sagar · Shampa Gopikrishna · Hameed Khan Kawa · Manasi Khanna · Desihop · Swapnil Dagliya</span>
+</div>
+<div class="pe-block">
+<div class="pe-block-meta">Edition Four <span class="pe-now">Now</span></div>
+<h4 class="pe-block-title">The first year with a live band</h4>
+<p class="pe-block-sub">This year, <em>live music arrives</em> &mdash; a live band at the Opening Party, a musician on the festival stage. A new workshop format alongside it: <em>Technique &amp; Tools Lab</em>. Vaishali Sagar back for her fourth straight year, the festival&rsquo;s quiet constant; Shampa for her second; Swapnil teaching his fifth different style focus across four editions.</p>
+<div class="pe-block-styles">New this year: Technique &amp; Tools Lab · Live Band · Musician on stage</div>
+</div>
+</div>
+</article>
+
+</div>
+</section>
+</div>
+
+
 <!-- ═══ PRACTICAL INFO ═══ -->
 <div class="content" id="practical-info" style="border-top:1px solid var(--border)">
 <div class="sec-header">
@@ -1718,7 +1955,7 @@ function buildProgramme() {
 }
 
 function tab(name, btn, fromNav) {
-  ['workshops','show','party','prices'].forEach(id => {
+  ['workshops','show','party','prices','history'].forEach(id => {
     var el = document.getElementById('tab-'+id);
     if (id === name) {
       el.style.display = '';
