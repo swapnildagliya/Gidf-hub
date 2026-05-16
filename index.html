@@ -463,14 +463,14 @@ body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg
 .reg-btn-soldout{background:#E8E0D4;color:var(--t3);cursor:default;font-size:13px;font-weight:700;padding:11px 22px;border-radius:8px;white-space:nowrap}
 .fn-cta-soldout{background:transparent !important;color:var(--t3) !important;font-weight:700;font-size:11px;cursor:default;pointer-events:none;letter-spacing:.3px}
 
-/* ── RECAP LINE ── */
-.hero-recap{margin:0 0 36px;position:relative;text-align:center}
-.hero-recap-stats{display:flex;justify-content:center;align-items:center;gap:0;flex-wrap:wrap}
-.hero-recap-stat{display:flex;flex-direction:column;align-items:center;padding:0 28px;position:relative}
-.hero-recap-stat:not(:last-child)::after{content:'·';position:absolute;right:-4px;top:50%;transform:translateY(-60%);color:rgba(255,255,255,.2);font-size:22px}
-.hero-recap-num{font-family:'Inter',sans-serif;font-size:clamp(30px,6vw,48px);font-weight:900;color:#fff;line-height:1;display:block}
-.hero-recap-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,.45);margin-top:5px}
-.hero-recap-gold{color:var(--gold)}
+/* ── EDITION 5 ANNOUNCEMENT ── */
+.hero-announce{margin:0 0 36px;position:relative;text-align:center}
+.hero-announce-line{font-family:'Inter',sans-serif;font-style:italic;font-size:clamp(18px,3.5vw,26px);font-weight:700;color:#fff;letter-spacing:-.2px;margin-bottom:14px}
+.hero-announce-line em{color:var(--gold);font-style:italic}
+.hero-announce-cta{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:50px;padding:9px 22px;font-size:13px;font-weight:600;color:rgba(255,255,255,.5);text-decoration:none;transition:background .2s,border-color .2s;font-family:'Hind',sans-serif}
+.hero-announce-cta:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.25);color:rgba(255,255,255,.75)}
+.hero-announce-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);flex-shrink:0;animation:annDot 2s ease-in-out infinite}
+@keyframes annDot{0%,100%{opacity:1}50%{opacity:.3}}
 
 /* ── SCHEDULE GRID ── */
 .sched-note{font-size:13px;color:var(--t2);background:var(--surface);border:1px solid var(--border);
@@ -651,7 +651,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 }
 @media(max-width:420px){
   .hero-title{font-size:clamp(36px,10vw,52px)}
-  .hero-recap-num{font-size:28px}
+  .hero-announce-line{font-size:16px}
   .snav-btn{padding:12px 12px;font-size:12px}
   .op-perf-card-name{font-size:11px;padding:6px 8px 8px}
 }
@@ -814,28 +814,13 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <div class="hero">
 <div class="hero-photo"></div>
 <div class="hero-eyebrow">Gent India Dans Festival</div>
-<h1 class="hero-title">GIDF <span>2026</span></h1>
+<h1 class="hero-title">GIDF <span>2027</span></h1>
 <div class="hero-tagline">An annual celebration of Indian dance in Belgium</div>
-<div class="hero-meta"><strong>1 – 3 May 2026</strong>  ·  Shoonya Dance Centre, Ghent</div>
-<div class="hero-recap hero-cd">
-<div class="hero-recap-stats">
-<div class="hero-recap-stat">
-<span class="hero-recap-num hero-recap-gold">4</span>
-<span class="hero-recap-lbl">Editions</span>
-</div>
-<div class="hero-recap-stat">
-<span class="hero-recap-num">7</span>
-<span class="hero-recap-lbl">Master Teachers</span>
-</div>
-<div class="hero-recap-stat">
-<span class="hero-recap-num hero-recap-gold">18</span>
-<span class="hero-recap-lbl">Acts on Stage</span>
-</div>
-<div class="hero-recap-stat">
-<span class="hero-recap-num">1</span>
-<span class="hero-recap-lbl">Sold-Out Gala</span>
-</div>
-</div>
+<div class="hero-cd hero-announce">
+<div class="hero-announce-line">See you next May for <em>Edition Five</em>.</div>
+<a class="hero-announce-cta" href="https://www.instagram.com/gentindiadansfestival" target="_blank" rel="noopener noreferrer">
+<span class="hero-announce-dot"></span>Follow us on Instagram for news
+</a>
 </div>
 </div>
 <!-- STICKY NAV (mobile) -->
