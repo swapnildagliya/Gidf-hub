@@ -463,14 +463,14 @@ body{font-family:'Hind',system-ui,sans-serif;line-height:1.6;background:var(--bg
 .reg-btn-soldout{background:#E8E0D4;color:var(--t3);cursor:default;font-size:13px;font-weight:700;padding:11px 22px;border-radius:8px;white-space:nowrap}
 .fn-cta-soldout{background:transparent !important;color:var(--t3) !important;font-weight:700;font-size:11px;cursor:default;pointer-events:none;letter-spacing:.3px}
 
-/* ── COUNTDOWN ── */
-.hero-cd{margin:0 0 36px;position:relative}
-.hero-cd-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2.5px;color:rgba(255,255,255,.45);margin-bottom:12px}
-.hero-cd-units{display:flex;justify-content:center;align-items:center;gap:2px}
-.hero-cd-unit{display:flex;flex-direction:column;align-items:center;min-width:68px}
-.hero-cd-num{font-family:'Inter',sans-serif;font-size:clamp(34px,7vw,54px);font-weight:900;color:#fff;line-height:1;display:block}
-.hero-cd-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,.4);margin-top:4px}
-.hero-cd-sep{font-family:'Inter',sans-serif;font-size:clamp(26px,5vw,42px);font-weight:700;color:rgba(255,255,255,.25);padding-bottom:18px;margin:0 2px;line-height:1}
+/* ── RECAP LINE ── */
+.hero-recap{margin:0 0 36px;position:relative;text-align:center}
+.hero-recap-stats{display:flex;justify-content:center;align-items:center;gap:0;flex-wrap:wrap}
+.hero-recap-stat{display:flex;flex-direction:column;align-items:center;padding:0 28px;position:relative}
+.hero-recap-stat:not(:last-child)::after{content:'·';position:absolute;right:-4px;top:50%;transform:translateY(-60%);color:rgba(255,255,255,.2);font-size:22px}
+.hero-recap-num{font-family:'Inter',sans-serif;font-size:clamp(30px,6vw,48px);font-weight:900;color:#fff;line-height:1;display:block}
+.hero-recap-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,.45);margin-top:5px}
+.hero-recap-gold{color:var(--gold)}
 
 /* ── SCHEDULE GRID ── */
 .sched-note{font-size:13px;color:var(--t2);background:var(--surface);border:1px solid var(--border);
@@ -651,7 +651,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 }
 @media(max-width:420px){
   .hero-title{font-size:clamp(36px,10vw,52px)}
-  .hero-cd-num{font-size:28px}
+  .hero-recap-num{font-size:28px}
   .snav-btn{padding:12px 12px;font-size:12px}
   .op-perf-card-name{font-size:11px;padding:6px 8px 8px}
 }
@@ -817,16 +817,24 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <h1 class="hero-title">GIDF <span>2026</span></h1>
 <div class="hero-tagline">An annual celebration of Indian dance in Belgium</div>
 <div class="hero-meta"><strong>1 – 3 May 2026</strong>  ·  Shoonya Dance Centre, Ghent</div>
-<div class="hero-cd" id="hero-cd">
-<div class="hero-cd-label">Festival opens in</div>
-<div class="hero-cd-units">
-<div class="hero-cd-unit"><span class="hero-cd-num" id="cd-days">--</span><span class="hero-cd-lbl">Days</span></div>
-<div class="hero-cd-sep">:</div>
-<div class="hero-cd-unit"><span class="hero-cd-num" id="cd-hours">--</span><span class="hero-cd-lbl">Hours</span></div>
-<div class="hero-cd-sep">:</div>
-<div class="hero-cd-unit"><span class="hero-cd-num" id="cd-mins">--</span><span class="hero-cd-lbl">Min</span></div>
-<div class="hero-cd-sep">:</div>
-<div class="hero-cd-unit"><span class="hero-cd-num" id="cd-secs">--</span><span class="hero-cd-lbl">Sec</span></div>
+<div class="hero-recap hero-cd">
+<div class="hero-recap-stats">
+<div class="hero-recap-stat">
+<span class="hero-recap-num hero-recap-gold">4</span>
+<span class="hero-recap-lbl">Editions</span>
+</div>
+<div class="hero-recap-stat">
+<span class="hero-recap-num">7</span>
+<span class="hero-recap-lbl">Master Teachers</span>
+</div>
+<div class="hero-recap-stat">
+<span class="hero-recap-num hero-recap-gold">18</span>
+<span class="hero-recap-lbl">Acts on Stage</span>
+</div>
+<div class="hero-recap-stat">
+<span class="hero-recap-num">1</span>
+<span class="hero-recap-lbl">Sold-Out Gala</span>
+</div>
 </div>
 </div>
 </div>
@@ -835,7 +843,6 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <button type="button" class="snav-btn active" onclick="tab('workshops',this,true)">Workshops</button>
 <button type="button" class="snav-btn" onclick="tab('show',this,true)">Gala Showcase</button>
 <button type="button" class="snav-btn" onclick="tab('party',this,true)">Opening Party</button>
-<button type="button" class="snav-btn" onclick="tab('prices',this,true)">Passes &amp; Prices</button>
 <button type="button" class="snav-btn" onclick="tab('history',this,true)">Past Editions</button>
 </nav>
 <!-- WHAT IS GIDF -->
@@ -1031,8 +1038,8 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <!-- ═══ WORKSHOPS ═══ -->
 <div id="tab-workshops">
 <div class="reg-bar">
-<div class="reg-bar-text"><strong>Reserve your place</strong><span>Limited spots available · Bookings are non-refundable</span></div>
-<a class="reg-btn" href="https://creatorapp.zohopublic.eu/developer_shoonyadance/shoonya-dance-studio/form-perma/Workshop_Registration_Form/uOO7GVYHQEJn5dSVDz7z1nTXXeEfD0AZ4PJvtQJ0ZbMRum3tBX30zxQHC02n9b3bvTO6ORFDsVCfS4bJQF1VOZdBMZquYuPb4xx8" target="_blank" rel="noopener noreferrer">Register for Workshops →</a>
+<div class="reg-bar-text"><strong>GIDF 2026 is over</strong><span>Registration is closed — follow us on Instagram for news about 2027</span></div>
+<a class="reg-btn reg-btn-soldout" href="https://www.instagram.com/gentindiadansfestival" target="_blank" rel="noopener noreferrer">@gentindiadansfestival</a>
 </div>
 <div class="sec-header">
 <h2 class="sec-title">Workshops</h2>
@@ -1328,9 +1335,8 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <p class="sec-intro">Friday 1 May 2026 · Studio Ananta, Shoonya Dance Centre · Doors from 19:30</p>
 </div>
 <div class="reg-bar" style="max-width:980px;margin:20px auto 0;">
-<div class="reg-bar-text"><strong>Join the Opening Party</strong><span>Friday 1 May 2026 · Studio Ananta · From 19:30 · Non-refundable</span></div>
-<!-- Update href with actual ticket/registration URL -->
-<a class="reg-btn" href="https://creatorapp.zohopublic.eu/developer_shoonyadance/shoonya-dance-studio/form-perma/Ticket_Registration_Form/uw8PV66d5s2Z5z2G04kXNwjhGMA3B6vBpBWX6NSUC9Ybb0eyb4tUTbNTh0teeDSbAB5O6jnU4wPy67fT7feU3s7h1pyxe2mEtsu4" target="_blank" rel="noopener noreferrer">Get Tickets →</a>
+<div class="reg-bar-text"><strong>GIDF 2026 is over</strong><span>Registration is closed — follow us on Instagram for news about 2027</span></div>
+<a class="reg-btn reg-btn-soldout" href="https://www.instagram.com/gentindiadansfestival" target="_blank" rel="noopener noreferrer">@gentindiadansfestival</a>
 </div>
 <div class="op-banner">
 <video autoplay="" class="op-video-bg" loop="" muted="" playsinline="" preload="none" src="images/events/Opening Party.MOV"></video>
@@ -1471,7 +1477,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 
 </div>
 <!-- ═══ PASSES & PRICES ═══ -->
-<div id="tab-prices" style="display:none">
+<div id="tab-prices" style="display:none" aria-hidden="true"><!-- 2026 prices archived — see GIDF-2026-Archive.md -->
 <div class="sec-header">
 <h2 class="sec-title">Passes &amp; Prices</h2>
 <p class="sec-intro">Choose the pass that fits — from a single workshop to the full three-day experience. All passes include Rise &amp; Riyaaz, Spill the Chai &amp; One Last Gupshup.</p>
@@ -1653,7 +1659,7 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <section class="past-editions" aria-labelledby="past-editions-heading">
 <header class="pe-header">
 <div class="pe-eyebrow">Past Editions</div>
-<h2 class="pe-title" id="past-editions-heading">Four years of <em>GIDF</em>.</h2>
+<h2 class="pe-title" id="past-editions-heading">Four editions of <em>GIDF</em>.</h2>
 <p class="pe-sub">Ghent&rsquo;s annual festival of Indian dance &mdash; workshops, showcases, an opening party, a city brought into the rhythm. Since 2023.</p>
 </header>
 
@@ -1737,10 +1743,10 @@ footer{background:var(--dark);padding:44px 32px;text-align:center}
 <span>Colleena Shakti · Vaishali Sagar · Shampa Gopikrishna · Hameed Khan Kawa · Manasi Khanna · Desihop · Swapnil Dagliya</span>
 </div>
 <div class="pe-block">
-<div class="pe-block-meta">Edition Four <span class="pe-now">Now</span></div>
-<h4 class="pe-block-title">The first year with a live band</h4>
-<p class="pe-block-sub">This year, <em>live music arrives</em> &mdash; a live band at the Opening Party, a musician on the festival stage. A new workshop format alongside it: <em>Technique &amp; Tools Lab</em>. Vaishali Sagar back for her fourth straight year, the festival&rsquo;s quiet constant; Shampa for her second; Swapnil teaching his fifth different style focus across four editions.</p>
-<div class="pe-block-styles">New this year: Technique &amp; Tools Lab · Live Band · Musician on stage</div>
+<div class="pe-block-meta">Edition Four · The year music arrived</div>
+<h4 class="pe-block-title">Live music. A sold-out Gala. Seven traditions.</h4>
+<p class="pe-block-sub">Colleena Shakti made her GIDF debut &mdash; four uninterrupted hours in the new <em>Technique &amp; Tools Lab</em> format. Vaishali Sagar returned for her fourth straight year, the festival&rsquo;s quiet constant; Shampa Gopikrishna for her second. Desihop brought Kuthu from the streets of Tamil Nadu; Manasi Khanna brought the pulse of Punjab. Swapnil taught Lavani &mdash; his fifth different style focus across four editions. And for the first time, <em>live music was on the festival stage</em> &mdash; Hameed Khan Kawa on tabla at the T&amp;T Lab, the Dariya Live Band at the Opening Party. The Gala Showcase sold out.</p>
+<div class="pe-block-styles">Rajasthani Folk · Abhinaya · Indian Fusion Bellydance · Bollywood Folk Fusion · Cheraw · Mayurbhanj Chhau · Garba · Kuthu · Desi-Afro Grooves · Giddha · Lavani · Kalbeliya</div>
 </div>
 </div>
 </article>
@@ -1974,7 +1980,7 @@ function buildProgramme() {
 }
 
 function tab(name, btn, fromNav) {
-  ['workshops','show','party','prices','history'].forEach(id => {
+  ['workshops','show','party','history'].forEach(id => {
     var el = document.getElementById('tab-'+id);
     if (id === name) {
       el.style.display = '';
@@ -2087,30 +2093,8 @@ function buildSchedule() {
   document.getElementById('schedule-grid').innerHTML = axis + daysHtml;
 }
 
-/* ── COUNTDOWN ── */
-function startCountdown() {
-  const target = new Date(2026, 4, 1, 0, 0, 0); // May 1 2026
-  function tick() {
-    const diff = target - Date.now();
-    if(diff <= 0){
-      document.getElementById('hero-cd').innerHTML = '<div style="font-size:18px;font-weight:700;color:var(--gold);letter-spacing:1px">The festival is here — enjoy every moment ✦</div>';
-      return;
-    }
-    const d = Math.floor(diff/86400000);
-    const h = Math.floor((diff%86400000)/3600000);
-    const m = Math.floor((diff%3600000)/60000);
-    const s = Math.floor((diff%60000)/1000);
-    document.getElementById('cd-days').textContent  = String(d).padStart(2,'0');
-    document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
-    document.getElementById('cd-mins').textContent  = String(m).padStart(2,'0');
-    document.getElementById('cd-secs').textContent  = String(s).padStart(2,'0');
-  }
-  tick(); setInterval(tick, 1000);
-}
-
 if(document.getElementById('programme')) buildProgramme();
 if(document.getElementById('schedule-grid')) buildSchedule();
-startCountdown();
 
 // Lazy-load hero background after page paint
 window.addEventListener('load', function() {
