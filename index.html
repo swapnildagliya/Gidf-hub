@@ -1,512 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<meta name="google-site-verification" content="5YE8lmnvJG1C-1UUB8fQOXfI2pLPeGB9X7HtJqTafzk" />
-<meta name="theme-color" content="#0A0A14"/>
-<title>Gent India Dans Festival (GIDF) — Indian Dance Festival in Belgium</title>
-<meta name="description" content="Belgium's annual Indian dance festival in Ghent — three days of workshops, a gala showcase &amp; an opening party, every May at Shoonya Dance Centre. Edition Five returns May 2027."/>
-<link rel="canonical" href="https://gidf.abcdans.com/"/>
-<meta name="robots" content="index,follow"/>
-<meta property="og:type" content="website"/>
-<meta property="og:title" content="Gent India Dans Festival (GIDF) — Indian Dance Festival in Belgium"/>
-<meta property="og:description" content="Belgium's annual Indian dance festival in Ghent. Workshops, Gala Showcase &amp; Opening Party at Shoonya Dance Centre. Edition Five returns May 2027."/>
-<meta property="og:image" content="https://gidf.abcdans.com/images/hero/finale-hero.jpg"/>
-<meta property="og:image:alt" content="The finale of the GIDF Gala Showcase, dancers on the Shoonya stage."/>
-<meta property="og:url" content="https://gidf.abcdans.com/"/>
-<meta property="og:site_name" content="Gent India Dans Festival"/>
-<meta property="og:locale" content="en_BE"/>
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Gent India Dans Festival (GIDF) — Indian Dance Festival in Belgium"/>
-<meta name="twitter:description" content="Belgium's annual Indian dance festival in Ghent. Workshops, gala &amp; opening party, every May. Edition Five returns May 2027."/>
-<meta name="twitter:image" content="https://gidf.abcdans.com/images/hero/finale-hero.jpg"/>
+<meta charset="utf-8">
+<script>document.documentElement.className+=' js'</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GIDF — Indian Dance Festival in Belgium</title>
+<meta name="description" content="Belgium’s annual Indian dance festival in Ghent: three days of workshops, a gala showcase and an opening party. Edition Five runs 7–9 May 2027.">
+<link rel="canonical" href="https://gidf.abcdans.com/">
+<meta property="og:title" content="GIDF — Indian Dance Festival in Belgium">
+<meta property="og:description" content="Belgium’s annual Indian dance festival in Ghent: three days of workshops, a gala showcase and an opening party. Edition Five runs 7–9 May 2027.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gidf.abcdans.com/">
+<meta property="og:image" content="https://gidf.abcdans.com/assets/img/gidf/finale-hero.jpg">
+<meta name="theme-color" content="#FAF6EE">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://images.squarespace-cdn.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Gent India Dans Festival",
-  "alternateName": "GIDF",
-  "url": "https://gidf.abcdans.com/",
-  "description": "Gent India Dans Festival (GIDF) is Belgium's annual Indian dance festival, held every May in Ghent — three days of workshops, a gala showcase and an opening party at Shoonya Dance Centre.",
-  "foundingDate": "2023",
-  "founder": { "@type": "Person", "name": "Swapnil Dagliya" },
-  "location": {
-    "@type": "Place",
-    "name": "Shoonya Dance Centre",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Stapelplein 41",
-      "postalCode": "9000",
-      "addressLocality": "Gent",
-      "addressCountry": "BE"
-    }
-  },
-  "sameAs": [ "https://www.instagram.com/gentindiadansfestival" ]
-}
-</script>
-<style>
-/* ═══════════════════════════════════════════════════════════════
-   GIDF hub — Shoonya design system
-   Foundations: cream / near-black. Type: Playfair Display + Inter.
-   Programme-coded accents (ND-003 resolved 2026-06-04):
-   host purple · workshops saffron · gala yellow · opening pink.
-   Sharp corners, no shadows, no gradients (flat scrims only), image-led.
-   ═══════════════════════════════════════════════════════════════ */
-:root{
-  /* foundation */
-  --cream:#F7F0E6; --surface:#FFFDF8; --ink:#1C1108; --body:#5C4A33; --muted:#8A795F;
-  --dark:#0A0A14; --hair:#E2D8C7; --hair-dk:rgba(255,255,255,.13);
-  /* host / default chrome — Shoonya purple */
-  --host:#B564F7; --host-ink:#7C3FB0;
-  /* programme lanes — identity fill + text-safe ink */
-  --work:#E85D1F; --work-ink:#C2470F;
-  --gala:#FBC70F; --gala-ink:#9A7400;
-  --open:#EEAACF; --open-ink:#B85C8E;
-  --comm:#B564F7; --comm-ink:#7C3FB0;
-  /* type */
-  --serif:"Playfair Display",Georgia,"Times New Roman",serif;
-  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
-  --ease:cubic-bezier(.22,.61,.36,1);
-  --hero:clamp(40px,7.4vw,84px);
-  --h2:clamp(28px,4.4vw,48px);
-  --h3:clamp(20px,2.4vw,27px);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
-body{font-family:var(--sans);background:var(--cream);color:var(--body);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;font-feature-settings:"kern","liga"}
-img{display:block;max-width:100%}
-a{color:inherit;text-decoration:none}
-.link{color:var(--host-ink);border-bottom:1px solid currentColor;transition:opacity .15s}
-.link:hover{opacity:.65}
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css?v=89c2f0f9">
 
-/* a11y */
-.skip{position:absolute;left:-9999px;top:0;background:var(--dark);color:#fff;padding:12px 18px;z-index:200;font-size:13px}
-.skip:focus{left:8px;top:8px}
-:focus-visible{outline:2px solid var(--host);outline-offset:3px}
-
-/* type primitives */
-.eyebrow{font-family:var(--sans);font-weight:600;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--host-ink)}
-h1,h2,h3,.serif{font-family:var(--serif);font-weight:500;color:var(--ink);line-height:1.08;letter-spacing:-.01em}
-h2{font-size:var(--h2)}
-.iserif{font-family:var(--serif);font-style:italic;font-weight:400}
-em{font-style:italic}
-
-/* layout */
-.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(20px,5vw,44px)}
-.section{padding:clamp(56px,9vw,116px) 0;border-top:1px solid var(--hair)}
-.surface{background:var(--surface)}
-.cream{background:var(--cream)}
-.dark{background:var(--dark);color:#E9E2D6;border-top:none}
-.dark h1,.dark h2,.dark h3{color:#fff}
-.dark .eyebrow{color:#C7A4EF}
-.sec-head{max-width:760px;margin-bottom:clamp(34px,5vw,56px)}
-.sec-head .eyebrow{margin-bottom:16px}
-.sec-head p{margin-top:18px;color:var(--body);font-size:clamp(16px,1.8vw,18px)}
-
-/* buttons */
-.btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--sans);font-weight:600;font-size:12.5px;letter-spacing:.07em;text-transform:uppercase;padding:14px 26px;cursor:pointer;border:1px solid var(--host);background:var(--host);color:var(--dark);transition:background .25s,color .25s,border-color .25s}
-.btn:hover{background:transparent;color:#fff}
-.btn--ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}
-.btn--ghost:hover{border-color:#fff;background:rgba(255,255,255,.07);color:#fff}
-.btn svg{width:15px;height:15px}
-
-/* ── NAV ── */
-.nav{position:sticky;top:0;z-index:50;height:58px;display:flex;align-items:center;justify-content:space-between;
-  padding:0 clamp(18px,5vw,44px);background:rgba(10,10,20,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--hair-dk)}
-.nav-mark{font-family:var(--serif);font-weight:500;font-size:16px;color:#fff;white-space:nowrap}
-.nav-links{display:flex;align-items:center;gap:clamp(16px,2.6vw,32px)}
-.nav-links a{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:rgba(255,255,255,.6);transition:color .18s}
-.nav-links a:hover{color:#fff}
-.nav-cta{color:#C7A4EF!important}
-@media(max-width:680px){.nav-links a:not(.nav-cta){display:none}}
-
-/* ── HERO ── */
-.hero{position:relative;min-height:clamp(560px,90vh,820px);display:flex;align-items:center;background:var(--dark);overflow:hidden}
-.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 26%;opacity:.4}
-.hero-scrim{position:absolute;inset:0;background:rgba(8,8,15,.5)}
-.hero-scrim.bottom{background:linear-gradient(0deg,rgba(10,10,20,.72),rgba(10,10,20,0) 42%)}
-.hero .wrap{position:relative;z-index:2;width:100%;padding-top:54px;padding-bottom:54px}
-.hero-eyebrow{font-family:var(--sans);font-weight:600;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.62);margin-bottom:22px}
-.hero h1{color:#fff;font-size:var(--hero);max-width:14ch;letter-spacing:-.015em}
-.hero-rule{width:54px;height:2px;background:var(--host);margin:26px 0 24px}
-.hero-tag{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(18px,2.6vw,26px);color:rgba(255,255,255,.92);max-width:30ch;line-height:1.3}
-.hero-meta{font-family:var(--sans);font-size:12.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:26px}
-.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
-
-/* ── ABOUT ── */
-.about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,6vw,76px);align-items:center}
-.about-line{font-family:var(--serif);font-weight:500;font-size:var(--h2);line-height:1.1;color:var(--ink);margin-bottom:26px}
-.about-line em{font-style:italic;color:var(--host-ink)}
-.about p{font-size:clamp(16px,1.8vw,18px);color:var(--body);margin-bottom:18px;max-width:56ch}
-.about-credit{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);line-height:1.85;margin-top:28px}
-.about-figure{position:relative}
-.about-figure img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 30%}
-.about-figure figcaption{font-family:var(--sans);font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-top:10px}
-@media(max-width:780px){.about-grid{grid-template-columns:1fr;gap:36px}.about-figure{order:-1}.about-figure img{aspect-ratio:3/2}}
-
-/* ── WHAT TO EXPECT ── */
-.prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,26px)}
-@media(max-width:820px){.prog-grid{grid-template-columns:1fr}}
-.pcard{--c:var(--host);--ct:var(--host-ink);background:var(--cream);border:1px solid var(--hair);display:flex;flex-direction:column;overflow:hidden;transition:border-color .25s}
-.pcard:hover{border-color:var(--c)}
-.pcard[data-lane="work"]{--c:var(--work);--ct:var(--work-ink)}
-.pcard[data-lane="gala"]{--c:var(--gala);--ct:var(--gala-ink)}
-.pcard[data-lane="open"]{--c:var(--open);--ct:var(--open-ink)}
-.pcard-photo{position:relative;aspect-ratio:3/2;overflow:hidden}
-.pcard-photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
-.pcard:hover .pcard-photo img{transform:scale(1.04)}
-.pcard-bar{height:5px;background:var(--c)}
-.pcard-body{padding:22px 24px 26px;display:flex;flex-direction:column;gap:9px;flex:1}
-.pcard-label{display:flex;align-items:center;gap:9px;font-family:var(--sans);font-weight:600;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ct)}
-.pcard-label .chip{width:10px;height:10px;background:var(--c);flex:none}
-.pcard h3{font-size:var(--h3)}
-.pcard p{font-size:15px;color:var(--body);line-height:1.6}
-
-/* community rituals strip */
-.rituals{margin-top:clamp(20px,3vw,30px);border:1px solid var(--hair);border-left:4px solid var(--comm);background:var(--cream);padding:clamp(24px,3.4vw,34px) clamp(22px,3vw,38px)}
-.rituals-label{display:flex;align-items:center;gap:9px;font-family:var(--sans);font-weight:600;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--comm-ink);margin-bottom:22px}
-.rituals-label .chip{width:10px;height:10px;background:var(--comm);flex:none}
-.rituals-row{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,38px)}
-@media(max-width:720px){.rituals-row{grid-template-columns:1fr;gap:22px}}
-.ritual h3{font-size:19px;margin-bottom:6px}
-.ritual p{font-size:14.5px;color:var(--body)}
-
-/* ── EDITION FIVE ── */
-.next{position:relative;overflow:hidden;text-align:center}
-.next-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;opacity:.16}
-.next-scrim{position:absolute;inset:0;background:rgba(10,10,20,.55)}
-.next .wrap{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center}
-.next .eyebrow{margin-bottom:20px}
-.next h2{font-size:clamp(40px,7vw,76px)}
-.next h2 em{font-style:italic;color:#C7A4EF}
-.next-when{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.8vw,28px);color:rgba(255,255,255,.95);margin:10px 0 22px}
-.next p{max-width:48ch;color:rgba(255,255,255,.72);font-size:clamp(15px,1.8vw,17px);margin-bottom:34px}
-
-/* ── PRACTICAL ── */
-.prac-top{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,64px);align-items:end;margin-bottom:clamp(36px,5vw,58px)}
-.prac-figure img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:center 42%}
-.prac-figure figcaption{font-family:var(--sans);font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-top:10px}
-@media(max-width:780px){.prac-top{grid-template-columns:1fr;gap:28px}.prac-figure{order:-1}}
-.prac-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(36px,5vw,72px)}
-@media(max-width:680px){.prac-grid{grid-template-columns:1fr}}
-.prac-item{padding:22px 0;border-top:1px solid var(--hair)}
-.prac-item h3{font-size:18px;margin-bottom:8px}
-.prac-item p{font-size:15px;color:var(--body);max-width:48ch}
-
-/* ── PAST EDITIONS ── */
-.ethos{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(20px,2.7vw,29px);line-height:1.42;color:var(--ink);max-width:30ch;border-left:2px solid var(--host);padding-left:26px;margin:0 0 clamp(40px,6vw,64px)}
-.ethos .stab{display:block;font-size:.82em;color:var(--host-ink);margin-top:14px}
-.ethos cite{display:block;font-style:normal;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-top:18px}
-.timeline{display:flex;flex-direction:column}
-.ed{display:grid;grid-template-columns:170px 1fr;gap:clamp(18px,4vw,48px);padding:clamp(26px,3.6vw,38px) 0;border-top:1px solid var(--hair)}
-.ed:last-child{border-bottom:1px solid var(--hair)}
-.ed-year{font-family:var(--serif);font-weight:500;font-size:clamp(30px,4vw,42px);color:var(--ink);line-height:1}
-.ed-edition{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--host-ink);margin-top:10px}
-.ed-body h3{font-size:var(--h3);margin-bottom:10px}
-.ed-body p{font-size:15.5px;color:var(--body);max-width:62ch}
-@media(max-width:620px){.ed{grid-template-columns:1fr;gap:10px}.ed-edition{margin-top:6px}}
-
-/* ── FOOTER ── */
-.foot{background:var(--dark);color:#C9C0B2;padding:clamp(54px,8vw,88px) 0 40px}
-.foot-mark{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(26px,4vw,40px);color:#fff;margin-bottom:14px}
-.foot-tag{font-size:16px;color:rgba(255,255,255,.72);max-width:42ch;margin-bottom:30px}
-.foot-ig{display:inline-flex;align-items:center;gap:9px;font-family:var(--sans);font-weight:600;font-size:13px;letter-spacing:.04em;color:#C7A4EF;margin-bottom:34px}
-.foot-ig svg{width:18px;height:18px}
-.foot-meta{display:flex;flex-wrap:wrap;gap:6px 28px;font-size:13px;color:rgba(255,255,255,.6);line-height:1.7;padding-top:26px;border-top:1px solid var(--hair-dk)}
-.foot-meta a{color:rgba(255,255,255,.78);border-bottom:1px solid rgba(255,255,255,.3)}
-.foot-copy{margin-top:22px;font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.38)}
-
-/* scroll reveal */
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
-.reveal.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
-</style>
 </head>
-<body id="top">
-<a class="skip" href="#about">Skip to content</a>
+<body>
 
-<!-- ═══ NAV ═══ -->
-<header class="nav">
-  <a class="nav-mark" href="#top">Gent India Dans Festival</a>
-  <nav class="nav-links" aria-label="Primary">
-    <a href="#about">About</a>
-    <a href="#festival">The festival</a>
-    <a href="#practical">Practical</a>
-    <a href="#editions">Past editions</a>
-    <a class="nav-cta" href="#next">May 2027 →</a>
-  </nav>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-nav">
+  <a class="brand" href="./"><b>gidf</b><i>gent india dans festival</i></a>
+  <nav class="nav-links" aria-label="Primary"><a href="#about">What is GIDF</a><a href="#editions">Past Editions</a><a href="#festival">The Festival</a><a href="#practical">Practical</a></nav>
+  <div style="display:flex;gap:0.7rem;align-items:center">
+    <a class="btn btn-gold" href="https://www.shoonyadance.com/contact">Contact<span class="btn-orb"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg></span></a>
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span></button>
+  </div>
 </header>
+<div class="menu-overlay"><nav aria-label="Menu"><a href="#about">What is GIDF</a><a href="#editions">Past Editions</a><a href="#festival">The Festival</a><a href="#practical">Practical</a><a href="https://www.shoonyadance.com/contact">Contact ↗</a></nav></div>
+<main id="main">
 
-<!-- ═══ HERO ═══ -->
-<section class="hero" aria-label="Gent India Dans Festival">
-  <img class="hero-bg" src="images/hero/finale-hero.jpg" alt="" fetchpriority="high" width="2000" height="1333"/>
-  <div class="hero-scrim"></div>
-  <div class="hero-scrim bottom"></div>
-  <div class="wrap">
-    <p class="hero-eyebrow">Every May · Ghent, Belgium</p>
-    <h1>Gent India Dans Festival</h1>
-    <div class="hero-rule"></div>
-    <p class="hero-tag">Come celebrate Indian dance with us — in the heart of Europe.</p>
-    <p class="hero-meta">Three days · Workshops · Gala showcase · Opening party · One community</p>
-    <div class="hero-cta">
-      <a class="btn" href="https://www.instagram.com/gentindiadansfestival" target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="2"/><circle cx="17.6" cy="6.4" r="1.4" fill="currentColor"/></svg>
-        Follow on Instagram
-      </a>
-      <a class="btn btn--ghost" href="#festival">What to expect ↓</a>
+<section class="hero" style="min-height:100svh;border-radius:0">
+  <div class="hero-media"><img src="assets/img/gidf/finale-hero.jpg" alt="The finale of the GIDF Gala Showcase, dancers on the Shoonya stage" fetchpriority="high" width="2000" height="1333"></div>
+  <div class="hero-scrim" style="background:linear-gradient(180deg,rgba(10,6,3,0.4),rgba(10,6,3,0.1) 45%,rgba(16,9,4,0.88))"></div>
+  <div class="hero-content"><div class="container-wide">
+    <span class="eyebrow rv">The next edition · Ghent, Belgium</span>
+    <h1 class="rv" style="--rv-d:120ms">Gent India<br>Dans <span class="font-italic" style="color:var(--marigold)">Festival</span></h1>
+    <p class="rv font-display" style="--rv-d:200ms;font-size:clamp(1.7rem,3.4vw,2.7rem);color:var(--marigold);margin-top:1.2rem;letter-spacing:-0.01em">Edition Five · 7–9 May 2027</p>
+    <p class="lede rv" style="--rv-d:280ms;margin-top:1.2rem">Three days of Indian dance in Ghent.<br>Workshops, a gala showcase and an opening party.</p>
+    <div class="rv" style="--rv-d:380ms;margin-top:2.4rem;display:flex;gap:0.8rem;flex-wrap:wrap">
+      <a class="btn btn-gold" href="assets/gidf-edition-five.ics" download>Add to calendar<span class="btn-orb"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13 13 3M5.5 3H13v7.5"/></svg></span></a>
+      <a class="btn btn-ghost" style="color:var(--cream)" href="https://www.instagram.com/gentindiadansfestival" target="_blank" rel="noopener">Follow on Instagram<span class="btn-orb"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13 13 3M5.5 3H13v7.5"/></svg></span></a>
     </div>
-  </div>
-</section>
+  </div></div>
+</section><nav class="subnav container-wide" aria-label="On this page"><a href="#about">What is GIDF</a><a href="#editions">Editions</a><a href="#festival">What to expect</a><a href="#practical">Good to know</a></nav>
 
-<main>
-<!-- ═══ ABOUT ═══ -->
-<section class="section cream about" id="about">
-  <div class="wrap about-grid">
-    <div class="reveal">
-      <p class="eyebrow" style="margin-bottom:18px">What is GIDF</p>
-      <p class="about-line">Indian dance is <em>not one thing.</em></p>
-      <p>It is Kalbeliya from the desert of Rajasthan. Chhau from the tribal heartlands of Odisha. Lavani from Maharashtra. Kuthu from Tamil Nadu. Giddha from Punjab — each with its own history, its own community, its own way of moving through the world.</p>
-      <p>Every May, GIDF brings these traditions to Ghent — not as performance alone, but as experience. You learn from teachers who carry these forms in their bodies. You dance, you watch, you celebrate with a live band until late. You leave knowing something you didn't before.</p>
-      <p>Three days. Master teachers from across India. One community that keeps coming back.</p>
-      <p class="about-credit">Curated by Swapnil Dagliya · Organised by ABC a Bollywood Company<br>Shoonya Dance Centre, Ghent</p>
-    </div>
-    <figure class="about-figure reveal">
-      <img src="images/venue/aakansha%20bollypop%20kalbeliya%20pc%20stijn%20dejonckheere.jpg" alt="A dancer mid-movement in a folk piece at GIDF" loading="lazy"/>
-      <figcaption>Photography · Stijn Dejonckheere</figcaption>
-    </figure>
-  </div>
-</section>
+<div data-theme="dark">
+<div class="marquee" aria-hidden="true"><div class="marquee-track"><span class="m-item">Every May · Ghent <span class="star">✦</span> Workshops · Gala · Party <span class="star">✦</span></span><span class="m-item">Every May · Ghent <span class="star">✦</span> Workshops · Gala · Party <span class="star">✦</span></span><span class="m-item">Every May · Ghent <span class="star">✦</span> Workshops · Gala · Party <span class="star">✦</span></span></div></div>
 
-<!-- ═══ WHAT TO EXPECT ═══ -->
-<section class="section surface" id="festival">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="eyebrow">What to expect</p>
-      <h2>Three days, one building, many ways in.</h2>
-      <p>Every edition is built from the same parts — workshops by day, a gala by night, a party to open it all, and the small rituals that hold a community together.</p>
-    </div>
-
-    <div class="prog-grid">
-      <article class="pcard reveal" data-lane="work">
-        <div class="pcard-photo"><img src="images/venue/Vanisha%20Kathak%20PC%20Stijn%20Dejonckheere.jpg" alt="A teacher leading a dance workshop at Shoonya Dance Centre" loading="lazy"/></div>
-        <div class="pcard-bar"></div>
-        <div class="pcard-body">
-          <p class="pcard-label"><span class="chip"></span>Workshops</p>
-          <h3>One tradition, one teacher</h3>
-          <p>Master teachers from across India, each carrying a single folk or classical form — taught hands-on across the weekend. Past editions have spanned Kalbeliya, Chhau, Giddha, Lavani, Kuthu, Garba and more.</p>
-        </div>
-      </article>
-
-      <article class="pcard reveal" data-lane="gala">
-        <div class="pcard-photo"><img src="images/venue/Julien%20Gala%20Showcase%20PC%20Stijn%20Dejonckheere.jpg" alt="A performer on stage during the GIDF Gala Showcase" loading="lazy"/></div>
-        <div class="pcard-bar"></div>
-        <div class="pcard-body">
-          <p class="pcard-label"><span class="chip"></span>Gala Showcase</p>
-          <h3>One theatrical evening</h3>
-          <p>A seated showcase on the Shoonya stage — faculty, guest artists, and the ABC company together, lights down, full theatre. The festival's big night.</p>
-        </div>
-      </article>
-
-      <article class="pcard reveal" data-lane="open">
-        <div class="pcard-photo"><img src="images/events/opening-party.jpg" alt="A crowd of all ages dancing together at an Indian dance celebration in Ghent" loading="lazy"/></div>
-        <div class="pcard-bar"></div>
-        <div class="pcard-body">
-          <p class="pcard-label"><span class="chip"></span>Opening Party</p>
-          <h3>The night it all begins</h3>
-          <p>A community dance class, live music, and a DJ until late — with Indian food and drink. All levels, all ages welcome to open the festival together.</p>
-        </div>
-      </article>
-    </div>
-
-    <div class="rituals reveal">
-      <p class="rituals-label"><span class="chip"></span>Community rituals</p>
-      <div class="rituals-row">
-        <div class="ritual">
-          <h3>Rise &amp; Riyaaz</h3>
-          <p>A short morning warm-up to start each day grounded, together.</p>
-        </div>
-        <div class="ritual">
-          <h3>Spill the Chai</h3>
-          <p>The mid-session break — chai, conversation, and catching your breath.</p>
-        </div>
-        <div class="ritual">
-          <h3>One Last Gupshup</h3>
-          <p>The closing circle on the final day. However it began, we end together.</p>
-        </div>
+<section class="section" id="about">
+  <div class="container">
+    <div class="split" style="align-items:start">
+      <div>
+        <span class="eyebrow rv">What is GIDF</span>
+        <h2 class="rv" style="font-size:var(--text-3xl)">Indian dance is<br><span class="font-italic" style="color:var(--marigold)">not one thing.</span></h2>
+      </div>
+      <div class="prose" style="padding-top:0.5rem">
+        <p class="rv">It is Kalbeliya from the desert of Rajasthan. Chhau from the tribal heartlands of Odisha. Lavani from Maharashtra. Kuthu from Tamil Nadu. Giddha from Punjab — each with its own history, its own community, its own way of moving through the world.</p>
+        <p class="rv">Every May, GIDF brings these traditions to Ghent — not as performance alone, but as experience. You learn from teachers who carry these forms in their bodies. You dance, you watch, you celebrate with a live band until late.</p>
+        <p class="rv" style="font-weight:600;color:var(--cream)">Three days. Master teachers from across India.</p>
+        <p class="rv" style="font-size:0.85rem;color:rgba(250,246,238,0.5)">Curated by Swapnil Dagliya · Organised by ABC a bollywood company<br>Shoonya Dance Centre, Ghent · Photography Stijn Dejonckheere</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ EDITION FIVE ═══ -->
-<section class="section dark next" id="next">
-  <img class="next-bg" src="images/teachers/Kalbeliya-Swapnil%20Kalbeliya-Stijn%20Dejonckheere.jpg" alt="" loading="lazy"/>
-  <div class="next-scrim"></div>
-  <div class="wrap reveal">
-    <p class="eyebrow">The next edition</p>
-    <h2>Edition <em>Five</em></h2>
-    <p class="next-when">Returns May 2027.</p>
-    <p>Faculty, the full programme, and tickets are announced one edition at a time — and Instagram is where it all goes live first. Follow along so you don't miss the dates.</p>
-    <a class="btn" href="https://www.instagram.com/gentindiadansfestival" target="_blank" rel="noopener noreferrer">
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="2"/><circle cx="17.6" cy="6.4" r="1.4" fill="currentColor"/></svg>
-      Follow @gentindiadansfestival
-    </a>
-  </div>
-</section>
-
-<!-- ═══ PRACTICAL ═══ -->
-<section class="section cream" id="practical">
-  <div class="wrap">
-    <div class="prac-top">
-      <div class="sec-head reveal" style="margin-bottom:0">
-        <p class="eyebrow">Practical</p>
-        <h2>Good to know</h2>
-        <p>The essentials that stay true edition to edition. Dates, faculty and prices are confirmed each year — everything else below is how GIDF always runs.</p>
-      </div>
-      <figure class="prac-figure reveal">
-        <img src="images/venue/Shoonya%20Facade.jpg" alt="The facade of Shoonya Dance Centre on Stapelplein in Ghent" loading="lazy"/>
-        <figcaption>Shoonya Dance Centre · Stapelplein 41, Ghent</figcaption>
-      </figure>
-    </div>
-
-    <div class="prac-grid">
-      <div class="prac-item reveal">
-        <h3>The venue</h3>
-        <p>Shoonya Dance Centre, Stapelplein 41, 9000 Gent. The whole festival unfolds under one roof — studios, stage, and party.</p>
-      </div>
-      <div class="prac-item reveal">
-        <h3>Who it's for</h3>
-        <p>All levels and backgrounds, ages 12+. No prior Indian-dance experience needed — just come ready to move.</p>
-      </div>
-      <div class="prac-item reveal">
-        <h3>Getting there</h3>
-        <p>A 10-minute walk from Gent-Dampoort station. Street parking out front, Dok Noord parking five minutes away, and the city centre ten minutes on foot.</p>
-      </div>
-      <div class="prac-item reveal">
-        <h3>Shoe-free floors</h3>
-        <p>Our dance floors are danced barefoot or in socks. Some folk workshops use a long, flowing skirt — bring your own; a few are available to borrow, first-come.</p>
-      </div>
-      <div class="prac-item reveal">
-        <h3>Food &amp; drink</h3>
-        <p>Snacks and drinks at the opening party, and a simple lunch (soup &amp; sandwiches, veg and vegan) on workshop days. Outside food and drink isn't permitted, water aside.</p>
-      </div>
-      <div class="prac-item reveal">
-        <h3>Where to stay</h3>
-        <p>Find hotels via <a class="link" href="https://visit.gent.be/en" target="_blank" rel="noopener noreferrer">visit.gent.be</a>, or ask in the festival's Facebook group for shared accommodation with other dancers.</p>
-      </div>
-      <div class="prac-item reveal">
-        <h3>Tickets &amp; refunds</h3>
-        <p>Registration opens ahead of each edition and closes once we're full. All registrations and tickets are non-transferable and non-refundable.</p>
-      </div>
-      <div class="prac-item reveal">
-        <h3>Questions</h3>
-        <p>Write to <a class="link" href="mailto:info@shoonyadance.com">info@shoonyadance.com</a> (Mon–Fri, 10:00–18:00). For news and announcements, follow <a class="link" href="https://www.instagram.com/gentindiadansfestival" target="_blank" rel="noopener noreferrer">@gentindiadansfestival</a>.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ PAST EDITIONS ═══ -->
-<section class="section surface" id="editions">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="eyebrow">Past editions</p>
-      <h2>Four editions, and counting.</h2>
-      <p>Ghent's annual festival of Indian dance — workshops, showcases, an opening party, a city brought into the rhythm. Since 2023.</p>
-    </div>
-
-    <blockquote class="ethos reveal">
-      "Gent India Dans Festival has always been about creating a space for Indian dance that feels thoughtful, grounded, and honest."
-      <span class="stab">Not rushed. Not overproduced. Not reduced to trends.</span>
-      <cite>— Swapnil, December 2025</cite>
+<section class="section-tight" id="editions">
+  <div class="container">
+    <span class="eyebrow rv">The story so far</span>
+    <h2 class="rv">Four editions, <span class="font-italic">and counting.</span></h2>
+    <p class="lede rv" style="--rv-d:130ms;margin-top:1rem">Ghent’s annual festival of Indian dance, since 2023. Workshops, showcases and an opening party.</p>
+    <blockquote class="rv" style="border-left:2px solid var(--marigold);padding-left:1.4rem;margin-block:2.5rem;font-family:var(--font-display);font-style:italic;font-size:var(--text-lg);color:rgba(250,246,238,0.85);max-width:52ch">
+      “Gent India Dans Festival has always been about creating a space for Indian dance that feels thoughtful, grounded, and honest.”
+      <footer style="font-family:var(--font-body);font-style:normal;font-size:0.85rem;color:rgba(250,246,238,0.5);margin-top:0.7rem">Not rushed. Not overproduced. Not reduced to trends. — Swapnil, December 2025</footer>
     </blockquote>
-
-    <div class="timeline">
-      <article class="ed reveal">
-        <div><div class="ed-year">2023</div><div class="ed-edition">Edition One · Inaugural</div></div>
-        <div class="ed-body">
-          <h3>Eight teachers, eight traditions</h3>
-          <p>From Bharatanatyam to BollyHop, from Punjab's Bhangra to Bengal's Kathak — the festival's proposition, made on day one: Indian dance in its full breadth, not narrowed to a single school.</p>
+    <div style="margin-top:1rem"><article class="ed-chapter">
+      <div class="ed-year font-display rv">2023</div>
+      <div>
+        <p class="ed-label rv">Edition One · Inaugural</p>
+        <h3 class="rv" style="font-size:var(--text-xl);color:var(--cream);margin-top:0.4rem">Eight teachers, eight traditions</h3>
+        <p class="rv" style="color:rgba(250,246,238,0.65);max-width:56ch;margin-top:0.7rem">From Bharatanatyam to BollyHop, from Punjab’s Bhangra to Bengal’s Kathak — the festival’s proposition, made on day one: Indian dance in its full breadth, not narrowed to a single school.</p>
+        <figure class="ed-film rv-img" data-clip="assets/media/editions/edition-2023.mp4" data-clip-hd="assets/media/editions/edition-2023-hd.mp4" data-poster="assets/media/editions/edition-2023.jpg">
+          <div class="ed-frame" style="--film-scale:1.18;--film-origin:55% 20%">
+            <img src="assets/media/editions/edition-2023.jpg" alt="Bhangra ensemble · Gala Showcase 2023" loading="lazy" width="640" height="360">
+          </div>
+          <figcaption>Bhangra ensemble · Gala Showcase 2023</figcaption>
+        </figure>
+      </div>
+    </article><article class="ed-chapter">
+      <div class="ed-year font-display rv">2024</div>
+      <div>
+        <p class="ed-label rv">Edition Two · The growth year</p>
+        <h3 class="rv" style="font-size:var(--text-xl);color:var(--cream);margin-top:0.4rem">Kathakali enters the room</h3>
+        <p class="rv" style="color:rgba(250,246,238,0.65);max-width:56ch;margin-top:0.7rem">A precision form rarely taught in Belgium joined the line-up. The year the festival aimed deeper, not just wider — and learned its first lessons in international logistics.</p>
+        <figure class="ed-film rv-img" data-clip="assets/media/editions/edition-2024.mp4" data-clip-hd="assets/media/editions/edition-2024-hd.mp4" data-poster="assets/media/editions/edition-2024.jpg">
+          <div class="ed-frame" style="--film-scale:1;--film-origin:50% 50%">
+            <img src="assets/media/editions/edition-2024.jpg" alt="Vanisha · Kathak · Gala Showcase 2024" loading="lazy" width="640" height="360">
+          </div>
+          <figcaption>Vanisha · Kathak · Gala Showcase 2024</figcaption>
+        </figure>
+      </div>
+    </article><article class="ed-chapter">
+      <div class="ed-year font-display rv">2025</div>
+      <div>
+        <p class="ed-label rv">Edition Three · The year of joy</p>
+        <h3 class="rv" style="font-size:var(--text-xl);color:var(--cream);margin-top:0.4rem">A Friday for the city</h3>
+        <p class="rv" style="color:rgba(250,246,238,0.65);max-width:56ch;margin-top:0.7rem">The first community class opened the festival up to new people. A year of choosing essence over trend — the community class stayed; the competitions didn’t. And Shampa, kept away by a visa the year before, finally taught.</p>
+        <figure class="ed-film rv-img" data-clip="assets/media/editions/edition-2025.mp4" data-clip-hd="assets/media/editions/edition-2025-hd.mp4" data-poster="assets/media/editions/edition-2025.jpg">
+          <div class="ed-frame" style="--film-scale:1.5;--film-origin:46% 55%">
+            <img src="assets/media/editions/edition-2025.jpg" alt="Shampa Gopikrishna · Gala Showcase 2025" loading="lazy" width="640" height="360">
+          </div>
+          <figcaption>Shampa Gopikrishna · Gala Showcase 2025</figcaption>
+        </figure>
+      </div>
+    </article><article class="ed-chapter">
+      <div class="ed-year font-display rv">2026</div>
+      <div>
+        <p class="ed-label rv">Edition Four · The year music arrived</p>
+        <h3 class="rv" style="font-size:var(--text-xl);color:var(--cream);margin-top:0.4rem">Live music. A sold-out gala. Seven traditions.</h3>
+        <p class="rv" style="color:rgba(250,246,238,0.65);max-width:56ch;margin-top:0.7rem">For the first time, live music was on the festival stage — tabla on the workshop floor and a live band at the opening party. A new four-hour deep-dive format joined the weekend.</p>
+        <figure class="ed-film rv-img" data-clip="assets/media/editions/edition-2026.mp4" data-clip-hd="assets/media/editions/edition-2026-hd.mp4" data-poster="assets/media/editions/edition-2026.jpg">
+          <div class="ed-frame" style="--film-scale:1.28;--film-origin:43% 55%">
+            <img src="assets/media/editions/edition-2026.jpg" alt="Colleena Shakti · Gala Showcase 2026" loading="lazy" width="640" height="360">
+          </div>
+          <figcaption>Colleena Shakti · Gala Showcase 2026</figcaption>
+        </figure>
+      </div>
+    </article><article class="ed-chapter ed-next">
+      <div class="ed-year font-display rv" style="color:var(--cream)">2027</div>
+      <div>
+        <p class="ed-label rv">Edition Five · The next edition</p>
+        <h3 class="rv font-display" style="font-size:clamp(2rem,4vw,3rem);color:var(--marigold);margin-top:0.4rem;letter-spacing:-0.01em">7–9 May 2027</h3>
+        <p class="rv" style="color:rgba(250,246,238,0.65);max-width:56ch;margin-top:0.7rem">Three days at Shoonya Dance Centre, Ghent. Until we dance again — artists and programme are announced on Instagram first.</p>
+        <div class="rv" style="--rv-d:180ms;margin-top:1.8rem;display:flex;gap:0.8rem;flex-wrap:wrap">
+          <a class="btn btn-gold" href="assets/gidf-edition-five.ics" download>Add to calendar<span class="btn-orb"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13 13 3M5.5 3H13v7.5"/></svg></span></a>
+          <a class="btn btn-ghost" style="color:var(--cream)" href="https://www.instagram.com/gentindiadansfestival" target="_blank" rel="noopener">Follow @gentindiadansfestival<span class="btn-orb"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13 13 3M5.5 3H13v7.5"/></svg></span></a>
         </div>
-      </article>
-      <article class="ed reveal">
-        <div><div class="ed-year">2024</div><div class="ed-edition">Edition Two · The growth year</div></div>
-        <div class="ed-body">
-          <h3>Kathakali enters the room</h3>
-          <p>A precision form rarely taught in Belgium joined the line-up. The year the festival aimed deeper, not just wider — and learned its first lessons in international logistics.</p>
-        </div>
-      </article>
-      <article class="ed reveal">
-        <div><div class="ed-year">2025</div><div class="ed-edition">Edition Three · The year of joy</div></div>
-        <div class="ed-body">
-          <h3>A Friday for the city</h3>
-          <p>The first community class opened the festival up to new people. A year of choosing essence over trend — the community class stayed; the competitions didn't. And Shampa, kept away by a visa the year before, finally taught.</p>
-        </div>
-      </article>
-      <article class="ed reveal">
-        <div><div class="ed-year">2026</div><div class="ed-edition">Edition Four · The year music arrived</div></div>
-        <div class="ed-body">
-          <h3>Live music. A sold-out gala. Seven traditions.</h3>
-          <p>For the first time, live music was on the festival stage — tabla on the workshop floor and a live band at the opening party. A new four-hour deep-dive format joined the weekend, and the Gala Showcase sold out.</p>
-        </div>
-      </article>
-    </div>
+      </div>
+    </article></div>
   </div>
 </section>
+
+<section class="section-tight" id="festival">
+  <div class="container">
+    <span class="eyebrow rv">What to expect</span>
+    <h2 class="rv">Three days, one building, <span class="font-italic">many ways in.</span></h2>
+    <p class="lede rv" style="--rv-d:140ms;margin-top:1rem">Every edition is built from the same parts: workshops by day, a gala by night, and a party to open it all.</p>
+    <div class="grid-cards" style="margin-top:3rem" data-stagger><div class="bezel rv" style="grid-column:span 6;--rv-d:0ms">
+      <div class="bezel-core" style="padding:1.9rem 1.8rem">
+        <span class="card-tag">Explore</span>
+        <h3 style="font-size:1.5rem;color:var(--cream)">The Workshops</h3>
+        <p style="color:rgba(250,246,238,0.65);font-size:0.95rem;margin-top:0.6rem">One tradition, one teacher — master teachers from across India, taught hands-on across the weekend.</p>
+      </div></div><div class="bezel rv" style="grid-column:span 6;--rv-d:100ms">
+      <div class="bezel-core" style="padding:1.9rem 1.8rem">
+        <span class="card-tag">Explore</span>
+        <h3 style="font-size:1.5rem;color:var(--cream)">The Gala Showcase</h3>
+        <p style="color:rgba(250,246,238,0.65);font-size:0.95rem;margin-top:0.6rem">A seated theatrical evening on the Shoonya stage — faculty, guest artists and the ABC company together.</p>
+      </div></div><div class="bezel rv" style="grid-column:span 6;--rv-d:200ms">
+      <div class="bezel-core" style="padding:1.9rem 1.8rem">
+        <span class="card-tag">Explore</span>
+        <h3 style="font-size:1.5rem;color:var(--cream)">The Opening Party</h3>
+        <p style="color:rgba(250,246,238,0.65);font-size:0.95rem;margin-top:0.6rem">A community dance class, live music and a DJ until late — the night it all begins.</p>
+      </div></div><div class="bezel rv" style="grid-column:span 6;--rv-d:300ms">
+      <div class="bezel-core" style="padding:1.9rem 1.8rem">
+        <span class="card-tag">Explore</span>
+        <h3 style="font-size:1.5rem;color:var(--cream)">The Artists</h3>
+        <p style="color:rgba(250,246,238,0.65);font-size:0.95rem;margin-top:0.6rem">The teachers and performers who have carried their traditions to the GIDF floor.</p>
+      </div></div></div>
+  </div>
+</section>
+
+<section class="section-tight" id="gallery">
+  <div class="container"><div class="masonry"><button class="g-item rv" style="--rv-d:0ms" ><img src="assets/img/gidf/kalbeliya-swapnil-kalbeliya-stijn-dejonckheere.jpg" alt="Kalbeliya on the GIDF floor — photo Stijn Dejonckheere" loading="lazy" width="800" height="1200"></button><button class="g-item rv" style="--rv-d:100ms" ><img src="assets/img/gidf/julien-gala-showcase-pc-stijn-dejonckheere.jpg" alt="The Gala Showcase, 2024 — photo Stijn Dejonckheere" loading="lazy" width="1400" height="933"></button><button class="g-item rv" style="--rv-d:200ms" ><img src="assets/img/gidf/vanisha-kathak-pc-stijn-dejonckheere.jpg" alt="Kathak at the gala, 2024 — photo Stijn Dejonckheere" loading="lazy" width="933" height="1400"></button><button class="g-item rv" style="--rv-d:0ms" ><img src="assets/img/gidf/aakansha-bollypop-kalbeliya-pc-stijn-dejonckheere.jpg" alt="BollyPop workshop — photo Stijn Dejonckheere" loading="lazy" width="1400" height="933"></button></div></div>
+</section>
+
+<section class="section-tight" id="practical">
+  <div class="container">
+    <span class="eyebrow rv">Practical</span>
+    <h2 class="rv">Good to know</h2>
+    <p class="lede rv" style="--rv-d:130ms;margin-top:1rem">This is how GIDF always runs. Dates, faculty and prices are confirmed each year.</p>
+    <div class="grid-cards" style="margin-top:2.6rem"><div class="bezel rv" style="grid-column:span 6;--rv-d:0ms"><div class="bezel-core" style="padding:1.6rem 1.5rem">
+      <h3 style="font-size:1.05rem;color:var(--marigold)">The venue</h3>
+      <p style="color:rgba(250,246,238,0.7);font-size:0.92rem;margin-top:0.5rem">Shoonya Dance Centre, Stapelplein 41, 9000 Gent. The whole festival unfolds under one roof — studios, stage, and party.</p>
+    </div></div><div class="bezel rv" style="grid-column:span 6;--rv-d:110ms"><div class="bezel-core" style="padding:1.6rem 1.5rem">
+      <h3 style="font-size:1.05rem;color:var(--marigold)">Who it’s for</h3>
+      <p style="color:rgba(250,246,238,0.7);font-size:0.92rem;margin-top:0.5rem">All levels and backgrounds, ages 12+. No prior Indian-dance experience needed — just come ready to move.</p>
+    </div></div><div class="bezel rv" style="grid-column:span 6;--rv-d:0ms"><div class="bezel-core" style="padding:1.6rem 1.5rem">
+      <h3 style="font-size:1.05rem;color:var(--marigold)">Getting there</h3>
+      <p style="color:rgba(250,246,238,0.7);font-size:0.92rem;margin-top:0.5rem">A 10-minute walk from Gent-Dampoort station. Street parking out front, Dok Noord parking five minutes away, and the city centre ten minutes on foot.</p>
+    </div></div><div class="bezel rv" style="grid-column:span 6;--rv-d:110ms"><div class="bezel-core" style="padding:1.6rem 1.5rem">
+      <h3 style="font-size:1.05rem;color:var(--marigold)">Shoe-free floors</h3>
+      <p style="color:rgba(250,246,238,0.7);font-size:0.92rem;margin-top:0.5rem">Our dance floors are danced barefoot or in socks. Some folk workshops use a long, flowing skirt — bring your own; a few are available to borrow, first-come.</p>
+    </div></div><div class="bezel rv" style="grid-column:span 6;--rv-d:0ms"><div class="bezel-core" style="padding:1.6rem 1.5rem">
+      <h3 style="font-size:1.05rem;color:var(--marigold)">Food &amp; drink</h3>
+      <p style="color:rgba(250,246,238,0.7);font-size:0.92rem;margin-top:0.5rem">Snacks and drinks at the opening party, and a simple lunch (soup & sandwiches, veg and vegan) on workshop days. Outside food and drink isn’t permitted, water aside.</p>
+    </div></div><div class="bezel rv" style="grid-column:span 6;--rv-d:110ms"><div class="bezel-core" style="padding:1.6rem 1.5rem">
+      <h3 style="font-size:1.05rem;color:var(--marigold)">Where to stay</h3>
+      <p style="color:rgba(250,246,238,0.7);font-size:0.92rem;margin-top:0.5rem">Find hotels via <a href="https://visit.gent.be/en" target="_blank" rel="noopener">visit.gent.be</a>, or ask in the festival’s Facebook group for shared accommodation with other dancers.</p>
+    </div></div><div class="bezel rv" style="grid-column:span 6;--rv-d:0ms"><div class="bezel-core" style="padding:1.6rem 1.5rem">
+      <h3 style="font-size:1.05rem;color:var(--marigold)">Tickets &amp; refunds</h3>
+      <p style="color:rgba(250,246,238,0.7);font-size:0.92rem;margin-top:0.5rem">Registration opens ahead of each edition and closes once we’re full. All registrations and tickets are non-transferable and non-refundable.</p>
+    </div></div><div class="bezel rv" style="grid-column:span 6;--rv-d:110ms"><div class="bezel-core" style="padding:1.6rem 1.5rem">
+      <h3 style="font-size:1.05rem;color:var(--marigold)">Questions</h3>
+      <p style="color:rgba(250,246,238,0.7);font-size:0.92rem;margin-top:0.5rem">Write to us via our <a href="https://www.shoonyadance.com/contact">contact page</a> (Mon–Fri, 10:00–18:00). For news, follow <a href="https://www.instagram.com/gentindiadansfestival" target="_blank" rel="noopener">@gentindiadansfestival</a>.</p>
+    </div></div></div>
+  </div>
+</section>
+</div>
 </main>
 
-<!-- ═══ FOOTER ═══ -->
-<footer class="foot" id="contact">
-  <div class="wrap">
-    <p class="foot-mark">Gent India Dans Festival</p>
-    <p class="foot-tag">An annual celebration of Indian dance in Ghent, Belgium — every May.</p>
-    <a class="foot-ig" href="https://www.instagram.com/gentindiadansfestival" target="_blank" rel="noopener noreferrer">
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="2"/><circle cx="17.6" cy="6.4" r="1.4" fill="currentColor"/></svg>
-      @gentindiadansfestival
-    </a>
-    <div class="foot-meta">
-      <span>Curated by Swapnil Dagliya · Organised by ABC a Bollywood Company</span>
-      <span>Shoonya Dance Centre · Stapelplein 41, 9000 Gent · <a href="mailto:info@shoonyadance.com">info@shoonyadance.com</a></span>
+<footer class="site-footer">
+  <div class="container-wide">
+    <p class="footer-giant">Dance <span class="foil">with us.</span></p>
+    <div class="footer-grid">
+      <div>
+        <h4>ABC a bollywood company</h4>
+        <p style="color:var(--cream-70);font-size:0.92rem">Indian dance company. Ghent, since 2017.</p>
+        <div class="footer-social" style="margin-top:1.4rem">
+          <a href="https://instagram.com/gentindiadansfestival" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2" y="2" width="12" height="12" rx="3.4"/><circle cx="8" cy="8" r="2.9"/><circle cx="11.6" cy="4.4" r="0.8" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://facebook.com/abollywoodcompany" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M9.4 14V9h1.9l.35-2.2H9.4V5.3c0-.64.3-1.1 1.15-1.1h1.15V2.2S10.9 2 10.1 2C8.4 2 7.2 3 7.2 5v1.8H5.3V9h1.9v5"/></svg></a>
+          <a href="https://www.youtube.com/c/swapkebolly" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="1.6" y="3.6" width="12.8" height="8.8" rx="2.6"/><path d="M6.8 6.1 10 8l-3.2 1.9z" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+      <div><h4>Explore</h4><div class="footer-links"><a href="#about">What is GIDF</a><a href="#editions">Past Editions</a><a href="#festival">The Festival</a><a href="#practical">Practical</a></div></div>
+      <div><h4>More</h4><div class="footer-links"><a href="https://www.abcdans.com" target="_blank" rel="noopener">ABC a Bollywood Company</a><a href="https://www.shoonyadance.com" target="_blank" rel="noopener">Shoonya Dance Centre</a><a href="https://www.shoonyadance.com/contact" target="_blank" rel="noopener">Contact</a></div></div>
+      <div><h4>Find us</h4><p style="font-size:0.92rem;color:var(--cream-70)">Shoonya Dance Centre · Stapelplein 41, 9000 Gent, Belgium</p>
+        <p style="margin-top:0.8rem"><a class="link-arrow" href="https://www.shoonyadance.com/contact">Get in touch <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg></a></p></div>
     </div>
-    <p class="foot-copy">© Gent India Dans Festival</p>
+    <div class="footer-bottom"><span>© 2016–2026 ABC a bollywood company</span><span>Gent · Belgium</span></div>
   </div>
 </footer>
-
-<script>
-/* scroll reveal — IntersectionObserver, reduced-motion safe */
-(function(){
-  var els = document.querySelectorAll('.reveal');
-  if(!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    els.forEach(function(el){el.classList.add('in')}); return;
-  }
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, {rootMargin:'0px 0px -8% 0px', threshold:0.08});
-  els.forEach(function(el){io.observe(el)});
-})();
-
-/* active nav link on scroll */
-(function(){
-  var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
-  var map = {};
-  links.forEach(function(l){ var id=l.getAttribute('href').slice(1); var s=document.getElementById(id); if(s) map[id]=l; });
-  var ids = Object.keys(map);
-  if(!ids.length || !('IntersectionObserver' in window)) return;
-  var spy = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){
-        links.forEach(function(l){l.style.color=''});
-        var l=map[e.target.id]; if(l) l.style.color='#fff';
-      }
-    });
-  }, {rootMargin:'-45% 0px -50% 0px'});
-  ids.forEach(function(id){spy.observe(document.getElementById(id))});
-})();
-</script>
+<script src="assets/js/main.js?v=0cad5c1f" defer></script>
 </body>
 </html>
