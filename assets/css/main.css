@@ -17,8 +17,8 @@
   --aubergine: #3A1263;
   --terracotta: #C76630;
 
-  --font-display: "Fraunces", Georgia, serif;
-  --font-body: "Plus Jakarta Sans", -apple-system, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", -apple-system, sans-serif;
 
   --text-hero: clamp(3.2rem, 10.5vw, 9rem);
   --text-3xl: clamp(2.4rem, 6vw, 4.6rem);
@@ -32,6 +32,28 @@
   --r-lg: 26px;
   --space-block: clamp(1.4rem, 3vw, 2.2rem);
   --nav-clear: 5.5rem;
+}
+
+@font-face{
+  font-family:'Inter';
+  font-style:normal;
+  font-weight:100 900;
+  font-display:swap;
+  src:url('../fonts/inter-latin.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Playfair Display';
+  font-style:normal;
+  font-weight:400 900;
+  font-display:swap;
+  src:url('../fonts/playfair-latin.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Playfair Display';
+  font-style:italic;
+  font-weight:400 900;
+  font-display:swap;
+  src:url('../fonts/playfair-latin-italic.woff2') format('woff2');
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -73,12 +95,8 @@ p { max-width: 68ch; }
   .hero .eyebrow::before { display: none; }
 }
 .foil {
-  background: linear-gradient(105deg, #E8A81C, #FFE9A8 40%, #F0B42A 55%, #B87F0E 75%, #FFD668);
-  background-size: 220% 100%;
-  -webkit-background-clip: text; background-clip: text; color: transparent;
-  animation: foil-slide 7s linear infinite;
+  color: var(--marigold);
 }
-@keyframes foil-slide { to { background-position: -220% 0; } }
 
 .container { width: min(72rem, 92vw); margin-inline: auto; }
 .container-wide { width: min(88rem, 94vw); margin-inline: auto; }
