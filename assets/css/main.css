@@ -131,27 +131,14 @@ p { max-width: 68ch; }
   border: 1px solid rgba(250,246,238,0.18);
 }
 .about-moment-a {
-  width: 72%;
-  aspect-ratio: 16 / 10;
-  right: 0;
-  top: 0;
-  object-position: center 42%;
-  z-index: 1;
-}
-.about-moment-b {
-  width: 39%;
-  aspect-ratio: 3 / 4;
-  left: 0;
-  top: 20%;
-  object-position: center 18%;
-  z-index: 3;
+  display: none;
 }
 .about-moment-c {
-  width: 54%;
+  width: 100%;
   aspect-ratio: 16 / 10;
   right: 0;
-  bottom: 0;
-  object-position: center 48%;
+  top: 9%;
+  object-position: center 50%;
   z-index: 2;
 }
 .about-credit {
@@ -196,9 +183,7 @@ p { max-width: 68ch; }
 }
 @media (max-width: 560px) {
   .about-moments { min-height: 24rem; }
-  .about-moment-a { width: 82%; }
-  .about-moment-b { width: 45%; top: 27%; }
-  .about-moment-c { width: 70%; right: 0; }
+  .about-moment-c { width: 100%; right: 0; top: 6%; aspect-ratio: 4 / 3; object-position: center center; }
 }
 
 /* ---------- top bar ---------- */
