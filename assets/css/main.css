@@ -707,3 +707,15 @@ section > .container, section > .container-wide { position: relative; z-index: 1
   .ed-origin { grid-template-columns: 1fr; }
   .ed-origin span { min-height: 0; gap: 0.7rem; }
 }
+
+/* FAQ accordion (D-074) */
+.faq { max-width: 52rem; }
+.faq details { border-top: 1px solid var(--line); }
+.faq details:last-child { border-bottom: 1px solid var(--line); }
+.faq summary { list-style: none; cursor: pointer; position: relative; padding: 1.3rem 2.6rem 1.3rem 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(1.1rem, 2.2vw, 1.4rem); color: var(--cream); }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; position: absolute; right: 0.3rem; top: 50%; transform: translateY(-50%); font-family: var(--font-body); font-weight: 400; font-size: 1.6rem; color: var(--marigold); }
+.faq details[open] summary::after { content: "−"; }
+.faq summary:focus-visible { outline: 2px solid var(--marigold); outline-offset: 2px; }
+.faq-a { padding: 0 2.6rem 1.5rem 0; }
+.faq-a p { font-size: 1rem; color: var(--cream-70); max-width: 64ch; }
